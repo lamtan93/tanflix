@@ -1,0 +1,23 @@
+// --------------------Mixins-------------------
+
+@mixin tablet() {
+    @media screen and (max-width: 1150px) {
+        @content;
+    }
+}
+
+@mixin mobile() {
+    @media screen and (max-width: 768px){
+        @content;
+    }
+}
+
+@mixin flex($typeFlex: null, $justifyContent: null, $alignItem: null){
+    display: flex;
+    @if $typeFlex == column{
+        flex-direction: column;
+    }
+    
+    @if($justifyContent){justify-content: $justifyContent;}
+    @if($alignItem){align-items: $alignItem}
+}

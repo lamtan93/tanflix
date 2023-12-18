@@ -1,0 +1,12 @@
+@import "../_abstracts/mixins";
+
+.footer {
+    padding: 2rem;
+    height: 300px;
+    width: 100%;
+    font-size: 2rem;
+    &__container {
+        height: 100%;
+        @include flex(column, space-between, center);
+    }
+}

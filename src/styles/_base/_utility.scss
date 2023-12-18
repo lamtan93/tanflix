@@ -1,0 +1,21 @@
+// --------------------Utils-------------------
+.u__center-text{
+    &--left{
+        text-align: left;
+    }
+    &--right {
+        text-align: right;
+    }
+}
+
+.u__mb {
+    &--medium {
+        margin-bottom: 4rem;
+    }
+}
+
+.u__mt {
+    &--big {
+        margin-top: 12rem;
+    }
+}

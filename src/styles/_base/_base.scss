@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Bevan&family=Roboto:wght@300;400;500;700;900&display=swap');
+@import "../_abstracts/mixins";
+@import "../_abstracts/variables";
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+html {
+    font-size: 62.5%;
+    @include tablet(){
+        font-size: 56.25%;
+    }
+    @include mobile(){
+        font-size: 50%;
+    }
+
+    font-family: $font-default;
+    color: white;
+}
+
+body {
+    background-color: black;
+    padding: 3rem;
+    background-color: #1a1a1a;
+    @include mobile(){
+        padding: 0;
+    }
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}

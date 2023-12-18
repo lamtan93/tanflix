@@ -1,0 +1,76 @@
+@import "../_abstracts/mixins";
+@import "../_abstracts/variables";
+@import "../_base//animation";
+
+.header {
+    padding: 1rem;
+    height: 95vh;
+    background-image: linear-gradient(to right bottom,
+    rgba(rgb(72, 70, 70), 0.9), rgba(rgb(30, 16, 6), 0.5)) 
+    ,url('../../assets/images/movie-bg-2.jpeg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+
+    &__container-nav {
+        @include flex(row, null, center);
+        // display: flex;
+        // align-items: center;
+        gap: 2rem;
+        @include mobile(){
+            @include flex(column);
+            gap: 1rem;
+        }
+    }
+    &__brand {
+        flex: 1;
+        font-size: 4rem;
+        color: $color-primary-light;
+        font-family: $font-secondary;
+        font-weight: 700;
+    }
+
+    &__nav {
+        flex: 2;
+        display: flex;
+        justify-content: flex-end;
+        gap: 3rem;
+        font-size: 1.8rem;
+    }
+
+    &__search {
+        flex: 1;
+        border: 1px solid orange;
+        border-radius: 1rem;
+        height: 40px;
+        outline: none;
+    }
+
+    &__container-slogan {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    &__slogan {
+        display: block;
+        &--main {
+            font-size: 7rem;
+            font-weight: 300;
+            letter-spacing: 3rem;
+            text-transform: uppercase;
+            animation: moveRight 1s alternate ease-out;
+        }
+
+        &--sub {
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: 1.2rem;
+            animation: moveToLeft 1s alternate ease-out;
+            text-transform: uppercase;
+        }
+    }
+}

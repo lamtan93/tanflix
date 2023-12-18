@@ -1,0 +1,15 @@
+@import "./card";
+
+.trending-section {
+    padding: 7rem 2rem;
+
+    @include mobile(){
+        padding: 0;
+    }
+    
+    &__movies {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 2rem;
+    }
+}

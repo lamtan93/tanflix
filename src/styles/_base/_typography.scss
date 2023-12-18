@@ -1,0 +1,16 @@
+@import "../_abstracts/variables";
+
+/*--------------------Title--------------------*/
+.title {
+    font-size: 4rem;
+    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 0.2rem;
+    transition: all .4s ;
+    
+    &:hover {
+        transform: scale(1.1) skew(15deg, 2deg);
+    }
+}
