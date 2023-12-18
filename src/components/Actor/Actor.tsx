@@ -1,10 +1,8 @@
 import { FC } from "react";
-import actor1 from "../assets/images/actor-1.jpeg";
-import "../styles/_components/_actor.scss";
+import actor1 from "../../assets/images/actor-1.jpeg";
+import "../../styles/_components/_actor.scss";
+import { IActor } from "./interfaces/IActor";
 
-interface IActor {
-    name: string,
-}
 
 const Actor: FC<IActor> = ({name}) => {
     return (

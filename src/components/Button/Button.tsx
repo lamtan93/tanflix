@@ -1,12 +1,7 @@
 import { FC } from 'react';
-import "../styles/_components/_button.scss";
-import "../styles/_base/_utility.scss";
-
-interface IButton {
-    animated: boolean,
-    color: 'white' | 'orange',
-    title: string
-}
+import "../../styles/_components/_button.scss";
+import "../../styles/_base/_utility.scss";
+import { IButton } from './interfaces/IButton';
 
 const Button: FC<IButton> = ({animated, color, title}) => {
     return (

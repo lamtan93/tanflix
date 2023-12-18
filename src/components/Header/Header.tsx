@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import Button from './Button';
-import "../styles/_layouts/_header.scss";
+import Button from '../Button/Button';
+import "../../styles/_layouts/_header.scss";
 
 const Header: FC = () => {
     return (

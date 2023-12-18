@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import Title from './Title';
-import Card from './Card';
-
-import "../styles/_components/_trending.scss";
+import Title from '../Title/Title';
+import Card from '../Card/Card';
+import "../../styles/_components/_trending.scss";
+// import { IMovieList } from './interfaces/IMovieList';
 
 const MovieList: FC = () => {
     return (

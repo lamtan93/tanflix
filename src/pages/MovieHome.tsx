@@ -1,25 +1,27 @@
-import { FC, useEffect, useState } from 'react';
-import Trending from '../components/Trending';
-import MovieList from '../components/MovieList';
+import { FC, useState, useEffect } from 'react';
+import Trending from '../components/Trending/Trending';
+import MovieList from '../components/MovieList/MovieList';
+import { useActions } from '../hooks/useActions';
+import { useTypedSelector } from '../hooks/useTypedSelector';
 
-interface IMovie {
-    name: string,
-    categorie: string,
-    description: string,
-}
+// interface IMovie {
+//     name: string,
+//     categorie: string,
+//     description: string,
+// }
 
-type IMoviesList = IMovie[];
+// type IMoviesList = IMovie[];
 
 const MovieHome:FC = () => {
-    const [movies, setMovies] = useState<IMoviesList>([]);
+    const { fetchMovieList } = useActions();
+    const { movieListLoading ,movieListData, movieListError } = useTypedSelector(state => state.movieList);
 
-    // useEffect(() => {
-    //     fetch('https://api.themoviedb.org/3/discover/tv?api_key=92b418e837b833be308bbfb1fb2aca1e&language=en-US&sort_by=popularity.desc&page=1&timezone=America/New_York&include_null_first_air_dates=false')
-    //     .then(response => response.json())
-    //     .then(data => {console.log(data); setMovies(data)})
-    //     .catch(error => console.error(error));
+    console.log({movieListLoading, movieListData, movieListError});
 
-    // }, [])
+    useEffect(() => {
+        fetchMovieList();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return (
         <>

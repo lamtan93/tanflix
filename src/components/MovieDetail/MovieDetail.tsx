@@ -1,12 +1,9 @@
 import { FC } from 'react';
-import Button from './Button';
-import "../styles/_components/_movieDetail.scss";
-import Actor from './Actor';
-import { useParams } from 'react-router-dom';
-
-interface IMovieDetail {
-    id: string | undefined,
-}
+import Button from '../Button/Button';
+import "../../styles/_components/_movieDetail.scss";
+import Actor from '../Actor/Actor';
+import { IMovieDetail } from './interfaces/IMovieDetail';
+// import { useParams } from 'react-router-dom';
 
 const MovieDetail: FC<IMovieDetail> = ({id}) => {
     return (

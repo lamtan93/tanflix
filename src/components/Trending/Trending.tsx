@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import Title from './Title';
-import "../styles/_components/_trending.scss";
-import Card from './Card';
+import Title from '../Title/Title';
+import "../../styles/_components/_trending.scss";
+import Card from '../Card/Card';
 
 const Trending: FC = () => {
     return (
