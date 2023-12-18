@@ -1,19 +1,19 @@
 import React from 'react';
-// import './App.scss';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Trending from './components/Trending';
-import MovieList from './components/MovieList';
-import MovieDetail from './components/MovieDetail';
 import Footer from './components/Footer';
+import MovieDetailHome from './pages/MovieDetailHome';
+import MovieHome from './pages/MovieHome';
 
 function App() {
   return (
     <>
       <Header />
       <main>
-        <Trending />
-        <MovieList />
-        <MovieDetail />
+        <Routes>
+          <Route path='/movies' element={<MovieHome />} />
+          <Route path='/movie-detail/:id' element={<MovieDetailHome />} />
+        </Routes>
       </main>
       <Footer />
     </>

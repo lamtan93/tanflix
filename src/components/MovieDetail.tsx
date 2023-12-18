@@ -2,9 +2,13 @@ import { FC } from 'react';
 import Button from './Button';
 import "../styles/_components/_movieDetail.scss";
 import Actor from './Actor';
+import { useParams } from 'react-router-dom';
 
+interface IMovieDetail {
+    id: string | undefined,
+}
 
-const MovieDetail: FC = () => {
+const MovieDetail: FC<IMovieDetail> = ({id}) => {
     return (
         <section className="detailmovie-section">
             <div className="detailmovie">

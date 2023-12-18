@@ -12,7 +12,7 @@ const Button: FC<IButton> = ({animated, color, title}) => {
     return (
         <a className={`btn-seemovies ${animated ? 'btn-seemovies--animated' : null} btn-seemovies--${color} u__mt--big`} 
             href="/movies">
-                Découvrir nos films
+                {title}
         </a>
     )
 }
