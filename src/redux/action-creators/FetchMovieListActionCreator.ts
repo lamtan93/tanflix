@@ -1,12 +1,10 @@
-import { MovieListActionType } from './../action-types.ts/MovieListActionType';
+import { MovieListActionType } from '../action-types.ts/MovieListActionType';
 import { Dispatch } from "redux"
 import { MovieListAction } from "../actions/MovieListAction";
 import sendAPIRequest from '../../utils/utils';
 import { ICard } from '../../components/Card/interfaces/ICard';
 import { IRawMovieListDataFromAPI } from './interfaces';
 
-// const movieListURL = 'https://api.themoviedb.org/3/discover/tv?api_key=92b418e837b833be308bbfb1fb2aca1e&language=en-US&sort_by=popularity.desc&page=1&timezone=America/New_York&include_null_first_air_dates=false';
-// const movieListURL = 'https://api.themoviedb.org/3/movie/popular';
 export const fetchMovieList = () => {
     return async (dispatch: Dispatch<MovieListAction>) => {
         dispatch({
@@ -21,7 +19,8 @@ export const fetchMovieList = () => {
                     id: data.id,
                     name: data.title,
                     description: data.overview,
-                    imgSrc: data.poster_path
+                    imgSrc: data.poster_path,
+                    liked: false
                 }
             });
             dispatch({

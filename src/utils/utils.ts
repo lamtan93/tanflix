@@ -1,13 +1,15 @@
-enum CONFIG_API {
-    BASE_URL = "https://api.themoviedb.org/3",
+import { ICard } from './../components/Card/interfaces/ICard';
+export enum CONFIG_API {
+    BASE_URL = 'https://api.themoviedb.org/3',
+    AUTHORIZATION_KEY = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNmE4MzdhYWQ5MjIzNjI0YjhmY2ZkYzcwYmVlNTE5MSIsInN1YiI6IjY1NTczOGRkNTM4NjZlMDBlMjkzYzliZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.93TJVaRMLkBN3W5vMRdl1fZxTGG00bZI7he-I2ImqKA',
+    BASE_IMAGE_URL= 'https://image.tmdb.org/t/p/w500',
 }
 
 type Method = 'GET' | 'POST' | 'PUT' | 'DELETE';
-
 const returnCorrectRequest = (method: Method, data: unknown) => {
     const headers = {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNmE4MzdhYWQ5MjIzNjI0YjhmY2ZkYzcwYmVlNTE5MSIsInN1YiI6IjY1NTczOGRkNTM4NjZlMDBlMjkzYzliZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.93TJVaRMLkBN3W5vMRdl1fZxTGG00bZI7he-I2ImqKA'
+        'Authorization': CONFIG_API.AUTHORIZATION_KEY
     };
 
     if(method === 'GET'){
@@ -35,5 +37,11 @@ const sendAPIRequest = async <T>(url: string, method: Method, data: unknown = {}
     return await (responseAPI.json()) as T;
 }
 
+
+export const getMoviesByName = (movieName: string, movieList: Array<ICard>) => {
+    return movieList.filter(movie => {
+        return movie.name.toLowerCase().includes(movieName.toLocaleLowerCase());
+    });
+}
 
 export default sendAPIRequest;

@@ -1,4 +1,5 @@
 import { ICard } from "../../Card/interfaces/ICard";
 export interface IMovieList {
- movieList: ICard[]
+ movieList: ICard[],
+ onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };

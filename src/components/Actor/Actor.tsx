@@ -1,14 +1,14 @@
 import { FC } from "react";
-import actor1 from "../../assets/images/actor-1.jpeg";
 import "../../styles/_components/_actor.scss";
 import { IActor } from "./interfaces/IActor";
+import { CONFIG_API } from "../../utils/utils";
 
 
-const Actor: FC<IActor> = ({name}) => {
+const Actor: FC<IActor> = ({name, imgSrc}) => {
     return (
         <div className="actor">
             <figure className="actor__shape">
-                    <img className="actor__image" src={actor1} alt="actor-1"/>
+                    <img className="actor__image" src={`${CONFIG_API.BASE_IMAGE_URL}/${imgSrc}`} alt={`actor-${name}`}/>
                     <figcaption className="actor__caption">{name}</figcaption>
             </figure>
         </div> 

@@ -10,9 +10,7 @@ const Header: FC = () => {
             <nav className="header__nav">
                 <a href="/">Home</a>
                 <a href="/movies">Movies</a>
-                <a href="/favoris">Favoris</a>
             </nav>
-            <input className="header__search" type='text' placeholder="search your movie"></input>
         </div>
         <div className="header__container-slogan">
             <h1>

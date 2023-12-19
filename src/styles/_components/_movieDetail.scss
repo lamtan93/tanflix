@@ -2,42 +2,46 @@
 @import "../_abstracts/mixins";
 
 .detailmovie-section {
-    height: 600px;
+    // height: 600px;
 }
 .detailmovie {
-    @include flex();
-    height: 100%;
-    
     &__preview {
-        border: 1px solid white;
-        flex: 40%;
-        background-image: url(../../assets/images/trending-2.jpeg);
-        background-position: center;
-        background-size: cover;
-        object-fit: cover;
+        width: 100%;
+        @include flex();
+        justify-content: center;
+        & img {
+            width: 20%;
+            height: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba($color-primary-light, .3);
+            border-radius: 10px;
+        }
     }
 
     &__content {
         @include flex(column);
-        border: 1px solid white;
-        flex: 60%;
+        // border: 1px solid white;
+        // flex: 60%;
         padding: 2rem;
+        // flex: 2;
+        box-shadow: 0 10px 20px rgba($color-primary-light, .3)
     }
 
     &__name {
-        @include flex(row, space-between, center);
+        @include flex(row, null, center);
         flex-basis: 20%;
         font-size: 2rem;
         font-weight: 700;
         color: $color-primary-light;
+        gap: 2rem;
     }
 
     &__tag {
         background-color: $color-white;
         color: $color-black;
-        padding: .7rem;
-        border-radius: 2rem;
-        font-size: 1.3rem;
+        padding: .3rem;
+        border-radius: 1rem;
+        font-size: 1.1rem;
     }
     &__description {
         // background-color: yellow;

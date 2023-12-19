@@ -14,6 +14,7 @@ const Trending: FC = () => {
                     name='Many Lives Many Times'
                     description='Sometimes you feel good, sometime you feel not...'
                     imgSrc=''
+                    liked={false}
                     // categorie='Fiction'
                 />
               
@@ -23,6 +24,7 @@ const Trending: FC = () => {
                     name='Squid game the challenge'
                     description='Sometimes you feel good, sometime you feel not...'
                     imgSrc=''
+                    liked={false}
                     // categorie='Action'
                 />
 
@@ -32,6 +34,7 @@ const Trending: FC = () => {
                     name='My best friend'
                     description='Sometimes you feel good, sometime you feel not...'
                     imgSrc=''
+                    liked={false}
                     // categorie='Fiction'
                 />
             </div>

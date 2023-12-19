@@ -29,11 +29,11 @@ export const fetchMovieDetail = (idMovie: number) => {
 
             const movieDetail: IMovieDetail = {
                     id,
+                    popularity,
+                    genres,
                     name: title,
                     description: overview,
                     imgSrc: poster_path,
-                    popularity,
-                    genres,
                     date: release_date,
                     companies: production_companies,
                     countries: production_countries

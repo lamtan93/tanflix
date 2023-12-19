@@ -3,6 +3,7 @@ import Button from '../Button/Button';
 import "../../styles/_components/_movieDetail.scss";
 import Actor from '../Actor/Actor';
 import { IMovieDetail } from './interfaces/IMovieDetail';
+import { CONFIG_API } from "../../utils/utils";
 
 const MovieDetail: FC<IMovieDetail> = ({
     id,
@@ -18,9 +19,10 @@ const MovieDetail: FC<IMovieDetail> = ({
     return (
         <section className="detailmovie-section">
             <div className="detailmovie">
-                <div className="detailmovie__preview">
-                </div>
                 <div className="detailmovie__content">
+                <div className="detailmovie__preview">
+                    <img src={`${CONFIG_API.BASE_IMAGE_URL}/${imgSrc}`} alt={`img-${name}`} />
+                </div>
                     <div className="detailmovie__name">
                         <h1>{name}</h1>
                         {genres.map(genre => (
@@ -32,11 +34,8 @@ const MovieDetail: FC<IMovieDetail> = ({
                         <span className="detailmovie__companies">Production companies: </span>
                         <div className="detailmovie__actors">
                             {companies.map(company => (
-                                <Actor key={company.name} name={company.name} />
+                                <Actor key={company.name} name={company.name} imgSrc={company.logo_path}/>
                             ))}
-                            {/* <Actor name='Jack Wilson'/>
-                            <Actor name='Corgi Jaune'/>
-                            <Actor name='Jackie Chan'/> */}
                         </div>
 
                         <span className="detailmovie__country">Country: {

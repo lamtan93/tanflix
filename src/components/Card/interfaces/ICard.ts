@@ -4,4 +4,5 @@ export interface ICard {
     name: string,
     description: string,
     imgSrc: string,
+    liked?: boolean ,
 }

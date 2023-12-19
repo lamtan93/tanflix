@@ -1,5 +1,4 @@
 import { ICard } from "../../../components/Card/interfaces/ICard";
-import { IMovieList } from "../../../components/MovieList/interfaces/IMovieList";
 import { MovieListActionType } from "../../action-types.ts/MovieListActionType";
 import { MovieListAction } from "../../actions/MovieListAction"
 
@@ -26,6 +25,7 @@ const MovieListReducer = (state: MovieListState = initialMovieListState, action:
                 movieListData: [],
             }
         case MovieListActionType.FETCH_MOVIE_LIST_REQUEST_SUCCESS:
+            
             return {
                 ...state,
                 movieListLoading: false,
@@ -38,6 +38,16 @@ const MovieListReducer = (state: MovieListState = initialMovieListState, action:
                 movieListLoading: false,
                 movieListData: [],
                 movieListError: action.payload
+            }
+        case MovieListActionType.UPDATE_LIKE_MOVIE_LIST_REQUEST:
+            let movieListWithUpdatedLike = [...state.movieListData];
+            const movieToUpdateLike = movieListWithUpdatedLike.filter(movie => movie.id === action.payload)[0];
+            movieToUpdateLike['liked'] = !movieToUpdateLike['liked'];
+            return {
+                ...state,
+                movieListLoading: false,
+                movieListData: [...movieListWithUpdatedLike],
+                movieListError: null,
             }
         default:
             return {

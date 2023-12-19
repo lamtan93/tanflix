@@ -1,9 +1,11 @@
-import { fetchMovieList } from "./MovieListActionCreator";
-import { fetchMovieDetail } from "./MovieDetailActionCreator";
+import { fetchMovieList } from "./FetchMovieListActionCreator";
+import { fetchMovieDetail } from "./FetchMovieDetailActionCreator";
+import { updateLikeMovieList } from "./UpdateLikeMovieListActionCreator";
 
 const actionCreators = {
     fetchMovieList,
-    fetchMovieDetail
+    fetchMovieDetail,
+    updateLikeMovieList,
 }
 
 export default actionCreators;
