@@ -1,4 +1,5 @@
-import { MovieListActionType } from "../action-types.ts/MovieListActionType"
+import { ICard } from "../../components/Card/interfaces/ICard";
+import { MovieListActionType } from "../action-types.ts/MovieListActionType";
 
 interface FetchMovieListRequestAction {
     type: MovieListActionType.FETCH_MOVIE_LIST_REQUEST
@@ -6,7 +7,7 @@ interface FetchMovieListRequestAction {
 
 interface FetchMovieListRequestSucessAction {
     type: MovieListActionType.FETCH_MOVIE_LIST_REQUEST_SUCCESS,
-    payload: [],
+    payload: ICard[],
 }
 
 interface FetchMovieListRequestErrorAction {

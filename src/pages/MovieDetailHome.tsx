@@ -1,13 +1,25 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import MovieDetail from '../components/MovieDetail/MovieDetail';
+import { useActions } from '../hooks/useActions';
+import { useTypedSelector } from '../hooks/useTypedSelector';
 import { useParams } from 'react-router-dom';
 
 const MovieDetailHome:FC = () => {
-    const { id } = useParams();
-    console.log({id});
+    const { fetchMovieDetail } = useActions();
+    const { movieDetailLoading, movieDetailData, movieDetailError } = useTypedSelector(state => state.movieDetail);
+    const {id: idMovie} = useParams();
+    useEffect(()=> {
+        if(idMovie){fetchMovieDetail(Number(idMovie));}
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])  
     return (
         <>
-            <MovieDetail id={id} />
+            {movieDetailLoading && <h1>Loading...</h1>}
+            {movieDetailError && <h1>Error</h1>}
+            {movieDetailData && (
+                <MovieDetail {...movieDetailData}/>
+            )}
+            
         </>
     )
 }

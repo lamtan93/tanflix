@@ -1,6 +1,7 @@
 export interface ICard {
-    type: "trending" | "others",
+    type?: "trending" | "others",
+    id: number,
     name: string,
     description: string,
-    categorie: string
+    imgSrc: string,
 }

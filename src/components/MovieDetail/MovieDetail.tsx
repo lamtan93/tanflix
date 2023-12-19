@@ -3,9 +3,18 @@ import Button from '../Button/Button';
 import "../../styles/_components/_movieDetail.scss";
 import Actor from '../Actor/Actor';
 import { IMovieDetail } from './interfaces/IMovieDetail';
-// import { useParams } from 'react-router-dom';
 
-const MovieDetail: FC<IMovieDetail> = ({id}) => {
+const MovieDetail: FC<IMovieDetail> = ({
+    id,
+    name,
+    description,
+    genres,
+    popularity,
+    date,
+    companies,
+    countries,
+    imgSrc,
+}) => {
     return (
         <section className="detailmovie-section">
             <div className="detailmovie">
@@ -13,26 +22,29 @@ const MovieDetail: FC<IMovieDetail> = ({id}) => {
                 </div>
                 <div className="detailmovie__content">
                     <div className="detailmovie__name">
-                        <h1>Many lives many times</h1>
-                        <span className="detailmovie__tag">#Fiction</span>
+                        <h1>{name}</h1>
+                        {genres.map(genre => (
+                            <span key={genre.id} className="detailmovie__tag">#{genre.name}</span>
+                        ))}
                     </div>
                     <div className="detailmovie__description">
-                        <p className="detailmovie__resume">Thank god, you are my best friend forever, sometimes you feel good
-                            sometimes you feel bad...
-                            Thank god, you are my best friend forever, sometimes you feel good
-                            sometimes you feel bad...
-                        </p>
-
+                        <p className="detailmovie__resume">{description}</p>
+                        <span className="detailmovie__companies">Production companies: </span>
                         <div className="detailmovie__actors">
-                            <Actor name='Jack Wilson'/>
+                            {companies.map(company => (
+                                <Actor key={company.name} name={company.name} />
+                            ))}
+                            {/* <Actor name='Jack Wilson'/>
                             <Actor name='Corgi Jaune'/>
-                            <Actor name='Jackie Chan'/>
+                            <Actor name='Jackie Chan'/> */}
                         </div>
 
-                        <span className="detailmovie__country">Country: France</span>
-                        <span className="detailmovie__imdb">IMDb: 7.2</span>
+                        <span className="detailmovie__country">Country: {
+                            countries.map(country => `${country.name} `)
+                        } </span>
+                        <span className="detailmovie__imdb">Popularity: {popularity} </span>
                         <span className="detailmovie__autor">Auteur: Jackie Chan</span>
-                        <span className="detailmovie__imdb">Date: 25/01/2023</span>
+                        <span className="detailmovie__imdb">Date: {date}</span>
                     </div>
                     <div className="detailmovie__play">
                         <Button title='Regarder le film' animated={true} color='orange' />

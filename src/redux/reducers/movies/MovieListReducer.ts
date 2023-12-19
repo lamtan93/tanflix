@@ -1,14 +1,16 @@
+import { ICard } from "../../../components/Card/interfaces/ICard";
+import { IMovieList } from "../../../components/MovieList/interfaces/IMovieList";
 import { MovieListActionType } from "../../action-types.ts/MovieListActionType";
 import { MovieListAction } from "../../actions/MovieListAction"
 
 
 interface MovieListState {
     movieListLoading: boolean,
-    movieListData: any,
+    movieListData: ICard[],
     movieListError: string | null;
 }
 
-const initialMovieListState = {
+const initialMovieListState: MovieListState = {
     movieListLoading: false,
     movieListData: [],
     movieListError: null
@@ -21,7 +23,7 @@ const MovieListReducer = (state: MovieListState = initialMovieListState, action:
                 ...state,
                 movieListLoading: true,
                 movieListError: null,
-                movieListData: []
+                movieListData: [],
             }
         case MovieListActionType.FETCH_MOVIE_LIST_REQUEST_SUCCESS:
             return {
