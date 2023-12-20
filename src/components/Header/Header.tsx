@@ -4,14 +4,14 @@ import "../../styles/_layouts/_header.scss";
 
 const Header: FC = () => {
     return (
-      <header className="header">
-        <div className="header__container-nav">
-            <a className="header__brand" href="/">TANFLIX</a>
-            <nav className="header__nav">
-                <a href="/">Home</a>
-                <a href="/movies">Movies</a>
+      <header className="header">  
+            <nav className="nav">
+                <a className="nav__brand" href="/">TANFLIX</a>
+                <div className='nav__links'>
+                    <a href="/">Home</a>
+                    <a href="/movies">Movies</a>
+                </div>
             </nav>
-        </div>
         <div className="header__container-slogan">
             <h1>
                 <span className="header__slogan header__slogan--main">together</span>

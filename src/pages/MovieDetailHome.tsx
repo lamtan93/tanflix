@@ -4,6 +4,7 @@ import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import { useParams } from 'react-router-dom';
 import { scrollToViewId } from '../utils/utils';
+import Title from '../components/Title/Title';
 
 const MovieDetailHome:FC = () => {
     const { fetchMovieDetail } = useActions();
@@ -16,9 +17,10 @@ const MovieDetailHome:FC = () => {
     }, [])  
     return (
         <>
-            {movieDetailLoading && <h1>Loading...</h1>}
-            {movieDetailError && <h1>Error</h1>}
-            {movieDetailData && (
+
+            {movieDetailLoading && <Title name='Loading...' position='center'/>}
+            {movieDetailError && <Title name='Sorry, something went wrong :(' position='center'/>}
+            {!movieDetailLoading && !movieDetailError && movieDetailData && (
                 <MovieDetail {...movieDetailData}/>
             )}
             

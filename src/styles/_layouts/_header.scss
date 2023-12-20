@@ -13,30 +13,6 @@
     position: relative;
     clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
 
-    &__container-nav {
-        @include flex(row, null, center);
-        gap: 2rem;
-        @include mobile(){
-            @include flex(column);
-            gap: 1rem;
-        }
-    }
-    &__brand {
-        flex: 1;
-        font-size: 4rem;
-        color: $color-primary-light;
-        font-family: $font-secondary;
-        font-weight: 700;
-    }
-
-    &__nav {
-        flex: 2;
-        display: flex;
-        justify-content: flex-end;
-        gap: 3rem;
-        font-size: 1.8rem;
-    }
-
     &__container-slogan {
         position: absolute;
         top: 50%;
@@ -69,4 +45,53 @@
             text-transform: uppercase;
         }
     }
+}
+
+.nav {
+    @include flex(row, null, center);
+    gap: 2rem;
+    @include mobile(){
+        @include flex(column);
+        gap: 1rem;
+    }
+
+    &__brand {
+        flex: 1;
+        font-size: 4rem;
+        color: $color-primary-light;
+        font-family: $font-secondary;
+        font-weight: 700;
+    }
+    
+    &__links {
+        flex: 2;
+        display: flex;
+        justify-content: flex-end;
+        gap: 3rem;
+        font-size: 2rem;
+        font-family: $font-secondary;
+        
+        & > a {
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 6rem;
+                height: .1rem;
+                transition: all .3s ease-out;
+                top: 90%;
+                left: -3rem;
+            }
+            transition: all .3s ease-out;
+        }
+        & > a:hover {
+            &::after {
+                background-color: $color-primary-light;
+                transform: translateX(4rem);
+            }
+        }
+    }
+
+   
 }

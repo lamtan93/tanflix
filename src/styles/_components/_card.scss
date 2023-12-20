@@ -8,7 +8,7 @@
             padding: 1rem;
             flex-basis: 10rem;
         }
-        @include tab-port(){ // 900px
+        @include tab-port(){
             padding: 1rem;
             flex-basis: 25rem;
         };
@@ -31,12 +31,11 @@
 
     &--others { 
         @include mobile(){
-            // flex: 40%;
             padding: 1.5rem;
             flex-basis: 25rem;
         }
 
-        @include tab-port(){ // 900px
+        @include tab-port(){
             padding: 1rem;
             flex-basis: 20rem;
         };

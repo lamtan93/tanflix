@@ -5,9 +5,9 @@ const Footer: FC = () => {
     return (
         <footer className="footer">
         <div className="footer__container">
-            <span>About</span>
-            <span>Contact: FB | Instagram | X</span>
-            <span>Made with love</span>
+            <span><a href="/">about</a></span>
+            <span><a href="/">fb</a> | <a href="/">instagram</a> | <a href="/">x</a></span>
+            <span>Made with <span>LOVE</span></span>
         </div>
         </footer>
     )
