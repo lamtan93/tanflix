@@ -1,46 +1,39 @@
-# Getting Started with Create React App
+# Welcome to TANFLIX
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+C'est une application web pour les personnes qui aiment les films/TV/Cinéma
 
-## Available Scripts
+## Pour lancer le projet
 
-In the project directory, you can run:
+#### 1/Cloner ce repository ici [Git](git@github.com:lamtan93/tanflix.git)
 
-### `npm start`
+#### 2/Installer les dépendances via ### `npm install`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### 3/Lancer l'application ### `npm start`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### 4/L'application se lance sur: [locahost](localhost:3000) port 3000
 
-### `npm test`
+## Technologies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### React - Typescript - Redux - HTML/SCSS
 
-### `npm run build`
+### API: [themoviedb](https://www.themoviedb.org/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Fonctionnalités:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Consulter les films en ce moment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Consulter le détail d'un film
 
-### `npm run eject`
+#### Mettre le film en favoris
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Chercher le film
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Note: La clé d'API n'est pas fournie, créez un fichier .env à la racine du projet et y mettez votre clé**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+REACT_APP_API_KEY=VOTRE_CLE
 
-## Learn More
+##
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Thanks
