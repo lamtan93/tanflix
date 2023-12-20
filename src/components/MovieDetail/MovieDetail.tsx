@@ -4,6 +4,7 @@ import "../../styles/_components/_movieDetail.scss";
 import Actor from '../Actor/Actor';
 import { IMovieDetail } from './interfaces/IMovieDetail';
 import { CONFIG_API } from "../../utils/utils";
+import PropTypes from 'prop-types';
 
 const MovieDetail: FC<IMovieDetail> = ({
     id,
@@ -58,3 +59,16 @@ const MovieDetail: FC<IMovieDetail> = ({
 }
 
 export default MovieDetail;
+
+MovieDetail.propTypes = {
+    type: PropTypes.oneOf([
+        "trending",
+        "others"
+    ]),
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    popularity: PropTypes.string.isRequired,
+}

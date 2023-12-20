@@ -3,6 +3,7 @@ import Title from '../Title/Title';
 import "../../styles/_components/_trending.scss";
 import Card from '../Card/Card';
 import { IMovieList } from '../MovieList/interfaces/IMovieList';
+import PropTypes from 'prop-types';
 
 const Trending: FC<IMovieList> = ({movieList}) => {
     return (
@@ -25,3 +26,7 @@ const Trending: FC<IMovieList> = ({movieList}) => {
 }
 
 export default Trending;
+
+Trending.propTypes = {
+    movieList: PropTypes.array.isRequired,
+}

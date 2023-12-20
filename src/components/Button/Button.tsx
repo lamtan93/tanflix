@@ -2,6 +2,7 @@ import { FC } from 'react';
 import "../../styles/_components/_button.scss";
 import "../../styles/_base/_utility.scss";
 import { IButton } from './interfaces/IButton';
+import PropTypes from 'prop-types';
 
 const Button: FC<IButton> = ({animated, color, title}) => {
     return (
@@ -14,3 +15,11 @@ const Button: FC<IButton> = ({animated, color, title}) => {
 
 
 export default Button;
+
+Button.propTypes = {
+    animated: PropTypes.bool.isRequired,
+    color: PropTypes.oneOf([
+        "white",
+        "orange"
+    ]as const).isRequired
+}

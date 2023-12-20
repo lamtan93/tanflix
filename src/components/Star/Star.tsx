@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import "../../styles/_components/_star.scss";
 import { IStar } from './interfaces/IStar';
+import PropTypes from 'prop-types';
 
 const Star: FC<IStar> = ({id, isLiked, onClick}) => {
     return (
@@ -13,3 +14,9 @@ const Star: FC<IStar> = ({id, isLiked, onClick}) => {
 }
 
 export default Star;
+
+Star.propTypes = {
+    onClick: PropTypes.func.isRequired,
+    id: PropTypes.number.isRequired,
+    isLiked: PropTypes.bool.isRequired,
+}

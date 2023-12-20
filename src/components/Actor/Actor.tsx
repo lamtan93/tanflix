@@ -1,8 +1,8 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import "../../styles/_components/_actor.scss";
 import { IActor } from "./interfaces/IActor";
 import { CONFIG_API } from "../../utils/utils";
-
+import PropTypes from 'prop-types';
 
 const Actor: FC<IActor> = ({name, imgSrc}) => {
     return (
@@ -16,3 +16,8 @@ const Actor: FC<IActor> = ({name, imgSrc}) => {
 }
 
 export default Actor;
+
+Actor.propTypes = {
+    name: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string.isRequired,
+}

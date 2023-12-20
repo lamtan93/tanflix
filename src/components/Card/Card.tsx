@@ -5,6 +5,7 @@ import { ICard } from './interfaces/ICard';
 import { useNavigate } from 'react-router-dom';
 import { useActions } from '../../hooks/useActions';
 import { CONFIG_API } from '../../utils/utils';
+import PropTypes from 'prop-types';
 
 const Card: FC<ICard> = ({type, id, name, description, imgSrc, liked}) => {
     const navigate = useNavigate();
@@ -32,3 +33,15 @@ const Card: FC<ICard> = ({type, id, name, description, imgSrc, liked}) => {
 }
 
 export default Card;
+
+Card.propTypes = {
+    type: PropTypes.oneOf([
+        "trending",
+        "others"
+    ]),
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string.isRequired,
+    liked: PropTypes.bool.isRequired,
+}
