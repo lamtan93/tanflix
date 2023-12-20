@@ -26,7 +26,7 @@ const MovieList: FC<IMovieList> = ({movieList, onChange = () => {}}) => {
     return (
         <section className="trending-section">
             <div className='trending-section__header'>
-                <Title name='Others movie' position='left'/>
+                <Title name='Other movies' position='left'/>
                 <input 
                     className="trending-section__search" 
                     type='text' 
@@ -37,7 +37,7 @@ const MovieList: FC<IMovieList> = ({movieList, onChange = () => {}}) => {
             
             <div id="movie-section" className="trending-section__movies">
                 {initialsMovies.length === 0 ? (
-                    <Title name='sorry, aucun movie à afficher :(' position='center'/>
+                    <Title name='sorry, no movies to display :(' position='center'/>
                 ): (
                     initialsMovies.map(movie => (
                         <Card

@@ -17,7 +17,7 @@ const Header: FC = () => {
                 <span className="header__slogan header__slogan--main">together</span>
                 <span className="header__slogan header__slogan--sub">let's make memories</span>
             </h1>
-            <Button title='Découvrir nos films' animated={true} color='white' />
+            <Button title='Discover Movies' animated={true} color='white' />
         </div>
     </header>
     );

@@ -52,7 +52,7 @@ const MovieDetail: FC<IMovieDetail> = ({
                         <span className="detailmovie__imdb">Date: {date}</span>
                     </div>
                     <div className="detailmovie__play">
-                        <Button title='Regarder le film' animated={true} color='orange' />
+                        <Button title='Watch now' animated={true} color='orange' />
                     </div>
                 </div>
                 
