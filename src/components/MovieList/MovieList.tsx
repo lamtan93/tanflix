@@ -4,9 +4,9 @@ import Card from '../Card/Card';
 import "../../styles/_components/_trending.scss";
 import { IMovieList } from './interfaces/IMovieList';
 
-const MovieList: FC<IMovieList> = ({movieList, onChange}) => {
+const MovieList: FC<IMovieList> = ({movieList, onChange = () => {}}) => {
     return (
-        <section id="/movies" className="trending-section">
+        <section className="trending-section">
             <div className='trending-section__header'>
                 <Title name='Others movie' position='left'/>
                 <input 
@@ -17,7 +17,7 @@ const MovieList: FC<IMovieList> = ({movieList, onChange}) => {
                 </input>
             </div>
             
-            <div className="trending-section__movies">
+            <div id="movie-section" className="trending-section__movies">
 
                 {movieList.map(movie => (
                     <Card

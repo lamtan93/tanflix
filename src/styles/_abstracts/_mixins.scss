@@ -1,17 +1,4 @@
 // --------------------Mixins-------------------
-
-@mixin tablet() {
-    @media screen and (max-width: 1150px) {
-        @content;
-    }
-}
-
-@mixin mobile() {
-    @media screen and (max-width: 768px){
-        @content;
-    }
-}
-
 @mixin flex($typeFlex: null, $justifyContent: null, $alignItem: null){
     display: flex;
     @if $typeFlex == column{
@@ -21,3 +8,59 @@
     @if($justifyContent){justify-content: $justifyContent;}
     @if($alignItem){align-items: $alignItem}
 }
+
+
+// MEDIA QUERY MANAGER
+/*
+0-600px:        Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet lanscape
+1200-1800px:    Normal screen
+1800px+         Big desktop
+*/
+
+@mixin big-desktop(){ // > 1800
+    @media screen and (min-width: 112.5em){
+        @content
+    }
+};
+
+@mixin normal-screen(){ // < 1800
+    @media screen and (max-width: 112.5em){
+        @content
+    }
+};
+
+@mixin tab-land(){ // 1200px
+    @media screen and (max-width: 75em){
+        @content
+    }
+};
+
+@mixin tab-port(){ // 900px
+    @media screen and (max-width: 56.25em){
+        @content
+    }
+};
+
+@mixin mobile(){ // 600px
+    @media screen and (max-width: 37.5em){
+        @content
+    }
+};
+
+
+
+// @mixin tablet() {
+//     @media screen and (max-width: 1150px) {
+//         @content;
+//     }
+// }
+
+// @mixin mobile() {
+//     @media screen and (max-width: 768px){
+//         @content;
+//     }
+// }
+
+

@@ -17,17 +17,19 @@ const MovieDetail: FC<IMovieDetail> = ({
     imgSrc,
 }) => {
     return (
-        <section className="detailmovie-section">
+        <section id='movie-detail-section' className="detailmovie-section">
             <div className="detailmovie">
                 <div className="detailmovie__content">
-                <div className="detailmovie__preview">
-                    <img src={`${CONFIG_API.BASE_IMAGE_URL}/${imgSrc}`} alt={`img-${name}`} />
-                </div>
+                    <div className="detailmovie__preview">
+                        <img src={`${CONFIG_API.BASE_IMAGE_URL}/${imgSrc}`} alt={`img-${name}`} />
+                    </div>
                     <div className="detailmovie__name">
                         <h1>{name}</h1>
+                        <div>
                         {genres.map(genre => (
                             <span key={genre.id} className="detailmovie__tag">#{genre.name}</span>
                         ))}
+                        </div>
                     </div>
                     <div className="detailmovie__description">
                         <p className="detailmovie__resume">{description}</p>

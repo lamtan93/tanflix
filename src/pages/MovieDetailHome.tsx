@@ -3,6 +3,7 @@ import MovieDetail from '../components/MovieDetail/MovieDetail';
 import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import { useParams } from 'react-router-dom';
+import { scrollToViewId } from '../utils/utils';
 
 const MovieDetailHome:FC = () => {
     const { fetchMovieDetail } = useActions();
@@ -10,6 +11,7 @@ const MovieDetailHome:FC = () => {
     const {id: idMovie} = useParams();
     useEffect(()=> {
         if(idMovie){fetchMovieDetail(Number(idMovie));}
+        scrollToViewId('movie-detail-section');
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])  
     return (

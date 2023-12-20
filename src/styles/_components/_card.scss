@@ -2,33 +2,64 @@
 @import "../_abstracts/mixins";
 
 .card {
+    flex-grow: 0;
     &--trending {
-        flex: auto;
+        @include mobile(){
+            padding: 1rem;
+            flex-basis: 10rem;
+        }
+        @include tab-port(){ // 900px
+            padding: 1rem;
+            flex-basis: 25rem;
+        };
 
-        @include tablet(){
-            flex: 30%
+        @include tab-land(){
+            padding: 1rem;
+            flex-basis: 30rem;
         }
 
-        @include mobile(){
-            background-color: purple;
+        @include normal-screen(){
+            padding: 1rem;
+            flex-basis: 27rem;
+        }
+
+        @include big-desktop(){
+            padding: 1rem;
+            flex-basis: 30rem;
         }
     }
 
-    &--others {
-        flex: 20%; //Gerer responsive avec 30% 40% 100%
-        @include tablet(){
-            flex: 30%;
+    &--others { 
+        @include mobile(){
+            // flex: 40%;
+            padding: 1.5rem;
+            flex-basis: 25rem;
         }
 
-        @include mobile(){
-            flex: 40%;
+        @include tab-port(){ // 900px
+            padding: 1rem;
+            flex-basis: 20rem;
+        };
+
+        @include tab-land(){
+            padding: 1rem;
+            flex-basis: 20rem;
+        }
+
+        @include normal-screen(){
+            padding: 1rem;
+            flex-basis: 20rem;
+        }
+
+        @include big-desktop(){
+            padding: 1rem;
+            flex-basis: 20rem;
         }
        
     }
 
     &__image {
         position: relative;
-        height: 500px;
         width: 100%;
         border-radius: 2rem;
 
@@ -41,15 +72,11 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            object-fit: cover; //Peut remplacer par contain
+            object-fit: cover;
             border-radius: 2rem;
         }
 
         transition: all .4s ease-out;
-    }
-
-    &__infos {
-        // padding: 3rem;
     }
 
     &__name {
@@ -57,7 +84,7 @@
         font-size: 1.3rem;
         display: block;
         text-align: right;
-        @include tablet(){font-size: 1.5rem};
+        @include tab-land(){font-size: 1.5rem};
     }
     
     &__description {
@@ -66,12 +93,13 @@
         font-weight: 300;
     }
 
-    &:hover &__infos {
+    &:hover &__name {
         font-weight: 500;
+        color: $color-primary-light;
     }
 
     &:hover &__image {
-        transform: translateY(-6rem) scaleX(1.1);
+        transform: translateY(-2rem) scaleX(1.1);
         box-shadow: 0 10px 20px rgba($color-primary-light, .5);
     }
 }

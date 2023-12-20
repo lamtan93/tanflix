@@ -15,6 +15,7 @@
         align-items: center;
 
         @include mobile(){
+            @include flex(column);
             justify-content: center;
         }
     }
@@ -29,8 +30,9 @@
     }
     
     &__movies {
-        display: flex;
-        flex-flow: row wrap;
-        gap: 2rem;
+        @include flex();
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
     }
 }

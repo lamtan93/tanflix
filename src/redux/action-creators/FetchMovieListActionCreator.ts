@@ -1,3 +1,4 @@
+import { truncateString } from './../../utils/utils';
 import { MovieListActionType } from '../action-types.ts/MovieListActionType';
 import { Dispatch } from "redux"
 import { MovieListAction } from "../actions/MovieListAction";
@@ -18,7 +19,7 @@ export const fetchMovieList = () => {
                 return {
                     id: data.id,
                     name: data.title,
-                    description: data.overview,
+                    description: truncateString(data.overview, 55),
                     imgSrc: data.poster_path,
                     liked: false
                 }
