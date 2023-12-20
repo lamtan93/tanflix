@@ -1,15 +1,16 @@
 import { ICard } from './../components/Card/interfaces/ICard';
 export enum CONFIG_API {
     BASE_URL = 'https://api.themoviedb.org/3',
-    AUTHORIZATION_KEY = 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNmE4MzdhYWQ5MjIzNjI0YjhmY2ZkYzcwYmVlNTE5MSIsInN1YiI6IjY1NTczOGRkNTM4NjZlMDBlMjkzYzliZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.93TJVaRMLkBN3W5vMRdl1fZxTGG00bZI7he-I2ImqKA',
     BASE_IMAGE_URL= 'https://image.tmdb.org/t/p/w500',
 }
+const KEY = process.env.REACT_APP_API_KEY;
 
 type Method = 'GET' | 'POST' | 'PUT' | 'DELETE';
+
 const returnCorrectRequest = (method: Method, data: unknown) => {
     const headers = {
         'Content-Type': 'application/json',
-        'Authorization': CONFIG_API.AUTHORIZATION_KEY
+        'Authorization': `Bearer ${KEY}`
     };
 
     if(method === 'GET'){
