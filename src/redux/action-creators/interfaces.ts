@@ -10,7 +10,7 @@ export interface IRawMovieListDataFromAPI {
 };
 
 export interface IRawMovieDetailDataFromAPI extends IRawMovieDataFromAPI{
-    popularity: string,
+    popularity: number,
     genres: [{id: number, name: string}],
     release_date: string,
     production_companies: [{name: string, logo_path: string}],

@@ -17,6 +17,7 @@ const MovieDetail: FC<IMovieDetail> = ({
     countries,
     imgSrc,
 }) => {
+    
     return (
         <section id='movie-detail-section' className="detailmovie-section">
             <div className="detailmovie">
@@ -36,9 +37,11 @@ const MovieDetail: FC<IMovieDetail> = ({
                         <p className="detailmovie__resume">{description}</p>
                         <span className="detailmovie__companies">Production companies: </span>
                         <div className="detailmovie__actors">
-                            {companies.map(company => (
-                                <Actor key={company.name} name={company.name} imgSrc={company.logo_path}/>
-                            ))}
+                            {companies.map(company => {
+                                if(company.logo_path)
+                                    return <Actor key={company.name} name={company.name} imgSrc={company.logo_path}/>
+                                return false;
+                            })}
                         </div>
 
                         <span className="detailmovie__country">Country: {
@@ -70,5 +73,5 @@ MovieDetail.propTypes = {
     description: PropTypes.string.isRequired,
     imgSrc: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
-    popularity: PropTypes.string.isRequired,
+    popularity: PropTypes.number.isRequired,
 }

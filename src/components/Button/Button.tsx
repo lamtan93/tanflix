@@ -4,10 +4,12 @@ import "../../styles/_base/_utility.scss";
 import { IButton } from './interfaces/IButton';
 import PropTypes from 'prop-types';
 
-const Button: FC<IButton> = ({animated, color, title}) => {
+const Button: FC<IButton> = ({animated, color, title, onClick}) => {
     return (
-        <a className={`btn-seemovies ${animated ? 'btn-seemovies--animated' : null} btn-seemovies--${color} u__mt--big`} 
-            href="/movies">
+        <a className={`btn ${animated ? 'btn--animated' : null} btn--${color} u__mt--big`} 
+            href="/movies"
+            onClick={onClick}
+        >
                 {title}
         </a>
     )

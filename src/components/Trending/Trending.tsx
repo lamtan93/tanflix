@@ -13,6 +13,7 @@ const Trending: FC<IMovieList> = ({movieList}) => {
                     {movieList.map(movie => 
                         <Card
                             type='trending'
+                            key={movie.id}
                             id={movie.id}
                             name={movie.name}
                             description={movie.description}

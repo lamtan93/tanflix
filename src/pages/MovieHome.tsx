@@ -7,14 +7,16 @@ import { getMoviesByName, scrollToViewId } from '../utils/utils';
 import Title from '../components/Title/Title';
 
 const MovieHome:FC = () => {
+    const [searchValue, setSearchValue] = useState('');
     const { fetchMovieList } = useActions();
     const { movieListLoading ,movieListData, movieListError } = useTypedSelector(state => state.movieList);
+
     useEffect(() => {
         fetchMovieList();
         scrollToViewId('movie-section');
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-    const [searchValue, setSearchValue] = useState('');
+    
     const handleOnChangeSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         const value = e.target.value;
         setSearchValue(value);
