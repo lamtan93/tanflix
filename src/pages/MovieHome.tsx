@@ -8,11 +8,14 @@ import Title from '../components/Title/Title';
 
 const MovieHome:FC = () => {
     const [searchValue, setSearchValue] = useState('');
-    const { fetchMovieList } = useActions();
+    const { fetchMovieList, fetchTrendingMovieList } = useActions();
     const { movieListLoading ,movieListData, movieListError } = useTypedSelector(state => state.movieList);
+    const { trendingMovieListLoading, trendingMovieListData,trendingMovieListError} = useTypedSelector(state => state.trendingMovieList);
 
+    // console.log({movieListData})
     useEffect(() => {
         fetchMovieList();
+        fetchTrendingMovieList();
         scrollToViewId('movie-section');
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
@@ -26,7 +29,7 @@ const MovieHome:FC = () => {
         <>
             {movieListLoading && <Title name='Loading...' position='center'/>}
             {movieListError && <Title name='Sorry, something went wrong :(' position='center'/>}
-            {!movieListLoading && !movieListError && <Trending movieList={movieListData.slice(0,3)}/>}
+            {!trendingMovieListLoading && !trendingMovieListError && <Trending movieList={trendingMovieListData.slice(0,3)}/>}
             {!movieListLoading && !movieListError && <MovieList movieList={getMoviesByName(searchValue,movieListData)} onChange={handleOnChangeSearch} />}
         </>
     )

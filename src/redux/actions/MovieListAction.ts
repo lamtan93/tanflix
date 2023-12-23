@@ -16,6 +16,21 @@ interface FetchMovieListRequestErrorAction {
     payload: string,
 }
 
+//Fetch trending movie list
+interface FetchTrendingMovieListRequestAction {
+    type: MovieListActionType.FETCH_TRENDING_MOVIE_LIST_REQUEST
+}
+
+interface FetchTrendingMovieListRequestSucessAction {
+    type: MovieListActionType.FETCH_TRENDING_MOVIE_LIST_REQUEST_SUCCESS,
+    payload: ICard[],
+}
+
+interface FetchTrendingMovieListRequestErrorAction {
+    type: MovieListActionType.FETCH_TRENDING_MOVIE_LIST_REQUEST_ERROR,
+    payload: string,
+}
+
 //Update liked movies
 interface UpdateLikeMovieListRequestAction {
     type: MovieListActionType.UPDATE_LIKE_MOVIE_LIST_REQUEST,
@@ -26,3 +41,7 @@ export type MovieListAction = FetchMovieListRequestAction
 | FetchMovieListRequestSucessAction
 | FetchMovieListRequestErrorAction
 | UpdateLikeMovieListRequestAction;
+
+export type TrendingMovieListAction = FetchTrendingMovieListRequestAction
+| FetchTrendingMovieListRequestSucessAction
+| FetchTrendingMovieListRequestErrorAction

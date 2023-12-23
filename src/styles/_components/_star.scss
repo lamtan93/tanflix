@@ -24,6 +24,10 @@
         background-color: $color-primary-light;
     }
 
+    &:active {
+        transform: scale(2);
+    }
+
     &--disliked{
         background-color: $color-white;
     }
