@@ -8,7 +8,11 @@ import { IMovieList } from './interfaces/IMovieList';
 import PropTypes from 'prop-types';
 import Button from '../Button/Button';
 
-const MovieList: FC<IMovieList> = ({movieList, onChange = () => {}}) => {
+const MovieList: FC<IMovieList> = ({
+    movieList,
+    onChange = () => {},
+    searchValue,
+}) => {
     const [index, setIndex] = useState(4);
     const initialsMovies = movieList.slice(0 ,index);
     const [isCompleted, setIsCompleted] = useState(false);
@@ -56,7 +60,10 @@ const MovieList: FC<IMovieList> = ({movieList, onChange = () => {}}) => {
                         />
                     ))
                 )}
-                {!isCompleted && initialsMovies.length > 0 && (
+                {!isCompleted 
+                && initialsMovies.length > 0 
+                && !searchValue
+                && (
                     <Button 
                         title='loadmore' 
                         color='orange' 

@@ -12,7 +12,6 @@ const MovieHome:FC = () => {
     const { movieListLoading ,movieListData, movieListError } = useTypedSelector(state => state.movieList);
     const { trendingMovieListLoading, trendingMovieListData,trendingMovieListError} = useTypedSelector(state => state.trendingMovieList);
 
-    // console.log({movieListData})
     useEffect(() => {
         fetchMovieList();
         fetchTrendingMovieList();
@@ -29,8 +28,18 @@ const MovieHome:FC = () => {
         <>
             {movieListLoading && <Title name='Loading...' position='center'/>}
             {movieListError && <Title name='Sorry, something went wrong :(' position='center'/>}
-            {!trendingMovieListLoading && !trendingMovieListError && <Trending movieList={trendingMovieListData.slice(0,3)}/>}
-            {!movieListLoading && !movieListError && <MovieList movieList={getMoviesByName(searchValue,movieListData)} onChange={handleOnChangeSearch} />}
+            {!trendingMovieListLoading && !trendingMovieListError 
+            && <Trending 
+                movieList={trendingMovieListData.slice(0,3)}
+                searchValue=''
+            />}
+
+            {!movieListLoading && !movieListError 
+            && <MovieList 
+                movieList={getMoviesByName(searchValue,movieListData)} 
+                onChange={handleOnChangeSearch} 
+                searchValue={searchValue}
+            />}
         </>
     )
 }
