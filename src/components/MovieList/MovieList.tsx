@@ -25,7 +25,7 @@ const MovieList: FC<IMovieList> = ({movieList, onChange = () => {}}) => {
 
     return (
         <section className="trending-section">
-            <div className='trending-section__header'>
+            <div className='trending-section__header' id="movie-section">
                 <Title name='Other movies' position='left'/>
                 <div className='trending-section__search'>
                     <input 
@@ -40,7 +40,7 @@ const MovieList: FC<IMovieList> = ({movieList, onChange = () => {}}) => {
                 </div>
             </div>
             
-            <div id="movie-section" className="trending-section__movies">
+            <div className="trending-section__movies">
                 {initialsMovies.length === 0 ? (
                     <Title name='sorry, no movies to display :(' position='center'/>
                 ): (
@@ -57,7 +57,12 @@ const MovieList: FC<IMovieList> = ({movieList, onChange = () => {}}) => {
                     ))
                 )}
                 {!isCompleted && initialsMovies.length > 0 && (
-                    <Button title='loadmore' color='orange' animated={true} onClick={loadMore} ></Button>
+                    <Button 
+                        title='loadmore' 
+                        color='orange' 
+                        animated={true} onClick={loadMore} 
+                        size={'med'}
+                    />
                 )}
             </div>
             

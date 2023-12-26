@@ -8,12 +8,8 @@
         display: inline-block;
         text-transform: uppercase;
         display: inline-block;
-        width: 20rem;
-        height: 5rem;
         border-radius: 10rem;
         text-align: center;
-        padding: 1.5rem;
-        font-size: 1.5rem;
         position: relative;
         transition: all 0.4s;
         font-weight: 300;
@@ -67,5 +63,25 @@
         background-color: $color-primary-light;
        }
         
+    }
+
+    &--big {
+        width: 20rem;
+        height: 5rem;
+        font-size: 1.5rem;
+        padding: 1.5rem;
+    }
+    &--med {
+        width: 15rem;
+        height: 4rem;
+        font-size: 1.3rem;
+        padding: 1.2rem;
+    }
+
+    &--small {
+        width: 8rem;
+        height: 2.8rem;
+        font-size: 1rem;
+        padding: .9rem;
     }
 }
