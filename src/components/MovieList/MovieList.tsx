@@ -27,12 +27,17 @@ const MovieList: FC<IMovieList> = ({movieList, onChange = () => {}}) => {
         <section className="trending-section">
             <div className='trending-section__header'>
                 <Title name='Other movies' position='left'/>
-                <input 
-                    className="trending-section__search" 
-                    type='text' 
-                    placeholder="search your movie"
-                    onChange={(e) => onChange(e)}>
-                </input>
+                <div className='trending-section__search'>
+                    <input 
+                        id='searchMovie'
+                        className="trending-section__search-input" 
+                        name='searchMovie'
+                        type='text' 
+                        placeholder="search your movie"
+                        onChange={(e) => onChange(e)}>
+                    </input>
+                    <label htmlFor='searchMovie' className='trending-section__search-label'>search your movie</label>
+                </div>
             </div>
             
             <div id="movie-section" className="trending-section__movies">

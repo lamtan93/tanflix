@@ -33,7 +33,7 @@
         &:nth-child(1){
             &::after {
                 content: '2';
-                font-size: 8rem;
+                font-size: 7rem;
             }
         }
 
@@ -47,7 +47,7 @@
         &:nth-child(3){
             &::after {
                 content: '3';
-                font-size: 8rem;
+                font-size: 7rem;
             }
         }
 
@@ -59,7 +59,6 @@
             left: 0;
             font-family: $font-secondary;
             color: rgba($color-white, .6);
-            
         }
     }
 
