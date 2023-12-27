@@ -56,4 +56,17 @@ export const scrollToViewId = (id: string) => {
     document.getElementById(`${id}`)?.scrollIntoView({ block: 'center',  behavior: 'smooth' });
 }
 
+
+export const stopVideo = () => {
+    const iframe = document.querySelector( 'iframe');
+    const video = document.querySelector( 'video');
+    
+    if(iframe){
+        let iframeSrc = iframe.src;
+        iframe.src = iframeSrc;
+    }
+    if(video){
+        video.pause();
+    }
+}
 export default sendAPIRequest;

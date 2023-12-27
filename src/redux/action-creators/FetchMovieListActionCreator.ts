@@ -14,7 +14,6 @@ export const fetchMovieList = () => {
         try {
             const rawDataFromAPI: IRawMovieListDataFromAPI = await sendAPIRequest<IRawMovieListDataFromAPI>('movie/popular', 'GET')
             .then(data => data);
-            console.log({rawDataFromAPI})
             const movieList: ICard[] = rawDataFromAPI.results.map(data => {
                 return {
                     id: data.id,

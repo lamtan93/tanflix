@@ -1,0 +1,44 @@
+@import "../_abstracts/variables";
+@import "../_abstracts/mixins";
+
+.popup {
+    background-color: linear-gradient(to right bottom,rgba($color-primary-dark, .5),
+    rgba($color-primary-light, .5), .5);
+    box-shadow: 0 10px 20px rgba($color-primary-light, .5);
+    padding: 1rem;
+    width: 50rem;
+    height: 60vh;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transition: all .5s ease-out;
+    transform: translate(-50%, -90%);
+    z-index: 99999;
+    
+
+    &__header {
+        @include flex(row, space-between);
+        padding: .5rem;
+    }
+
+    &__title {
+        font-weight: 300;
+    }
+
+    &__content {
+        width: 100%;
+        height: 90%;
+    }
+
+    &__footer {
+
+    }
+
+    &--close {
+        display: none;
+    }
+
+    &--open {
+        display: block;
+    }
+}

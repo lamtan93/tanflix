@@ -15,7 +15,7 @@ const initialMovieListState: MovieListState = {
     trendingMovieListError: null
 }
 
-const TRendingMovieListReducer = (state: MovieListState = initialMovieListState, action: TrendingMovieListAction): MovieListState => {
+const TrendingMovieListReducer = (state: MovieListState = initialMovieListState, action: TrendingMovieListAction): MovieListState => {
     switch(action.type){
         case MovieListActionType.FETCH_TRENDING_MOVIE_LIST_REQUEST:
             return {
@@ -46,4 +46,4 @@ const TRendingMovieListReducer = (state: MovieListState = initialMovieListState,
     }
 }
 
-export default TRendingMovieListReducer;
+export default TrendingMovieListReducer;

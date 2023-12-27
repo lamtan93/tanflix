@@ -15,8 +15,7 @@ const Button: FC<IButton> = ({
         <a className={
             `btn ${animated ? 'btn--animated' : null}
             btn--${color}
-            btn--${size}
-            u__mt--big`
+            btn--${size}`
         } 
             href="/movies"
             onClick={onClick}

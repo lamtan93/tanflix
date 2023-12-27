@@ -1,5 +1,5 @@
 type IButtonColor = 'white' | 'orange';
-type IButtonSize = 'big' | 'med' | 'small';
+type IButtonSize = 'big' | 'med' | 'small' | 'extra-small';
 export interface IButton {
     animated: boolean,
     color: IButtonColor,
