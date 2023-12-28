@@ -23,6 +23,7 @@ export const fetchMovieVideo = (idMovie: number) => {
                 type: MovieVideoActionType.FETCH_MOVIE_VIDEO_REQUEST_SUCCESS,
                 payload: moviesVideos
             });
+            
         } catch (error: unknown) {
             let errorMsg = 'sorry but something went wrong :(';
             if(typeof error === 'string'){

@@ -48,6 +48,12 @@
         animation-fill-mode: backwards;
     }
     
+    &--loading {
+        animation: loading .5s linear;
+        animation-iteration-count: infinite;
+        border: .3rem dashed $color-primary-dark;
+    }
+
     &--white {
         background-color: $color-white;
         color: black;
