@@ -49,8 +49,7 @@
     }
     
     &--loading {
-        animation: loading .5s linear;
-        animation-iteration-count: infinite;
+        animation: loading .4s linear infinite alternate;
         border: .3rem dashed $color-primary-dark;
     }
 

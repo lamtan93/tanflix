@@ -52,3 +52,14 @@
         border-top: .2rem dashed $color-black;
     }
 }
+
+
+@keyframes brand-gradient {
+    0%{
+        background-position: 0%; 
+    };
+    100%{
+        background-position: 100%; 
+        transform: translateY(-2rem);
+    }
+}

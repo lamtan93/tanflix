@@ -2,14 +2,21 @@
 @import "../_abstracts/variables";
 
 .footer {
-    padding: 2rem;
-    height: 150px;
+    height: 25vh;
+    &__container {
+        // padding: 2rem;
+        background-image: linear-gradient(to right bottom,
+        rgba(rgb(72, 70, 70), 0.9), rgba(rgb(30, 16, 6), 0.5)) 
+        ,url('../../assets/images/spiderman.jpeg');
+        background-size: cover;
+        background-position: center;
+    }
+    
     font-size: 1rem;
     margin: 0;
     &__container {
         height: 100%;
-        @include flex(column, null, center);
-        justify-content: space-between;
+        @include flex(column, space-around, center);
         &> span > a {
             font-size: 2rem;
             color: $color-primary-light;

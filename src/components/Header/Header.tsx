@@ -1,17 +1,12 @@
 import { FC } from 'react';
 import Button from '../Button/Button';
 import "../../styles/_layouts/_header.scss";
+import Navbar from '../Navbar/Navbar';
 
 const Header: FC = () => {
     return (
       <header className="header">  
-            <nav className="nav">
-                <a className="nav__brand" href="/">TANFLIX</a>
-                <div className='nav__links'>
-                    <a href="/">Home</a>
-                    <a href="/movies">Movies</a>
-                </div>
-            </nav>
+            <Navbar />
         <div className="header__container-slogan">
             <h1>
                 <span className="header__slogan header__slogan--main">together</span>

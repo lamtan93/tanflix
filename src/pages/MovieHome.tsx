@@ -5,6 +5,7 @@ import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import { getMoviesByName, scrollToViewId } from '../utils/utils';
 import Title from '../components/Title/Title';
+import Navbar from '../components/Navbar/Navbar';
 
 const MovieHome:FC = () => {
     const [searchValue, setSearchValue] = useState('');
@@ -26,6 +27,7 @@ const MovieHome:FC = () => {
 
     return (
         <>
+            <Navbar />
             {movieListLoading && <Title name='Loading...' position='center'/>}
             {movieListError && <Title name='Sorry, something went wrong :(' position='center'/>}
             {!trendingMovieListLoading && !trendingMovieListError 
