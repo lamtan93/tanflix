@@ -19,8 +19,8 @@ const MovieDetailHome:FC = () => {
     return (
         <>
             <Navbar />
-            {movieDetailLoading && <Title name='Loading...' position='center'/>}
-            {movieDetailError && <Title name='Sorry, something went wrong :(' position='center'/>}
+            {movieDetailLoading && <Title name='Loading...' position='center' size='small'/>}
+            {movieDetailError && <Title name='Sorry, something went wrong :(' position='center' size='small'/>}
             {!movieDetailLoading && !movieDetailError && movieDetailData && (
                 <MovieDetail {...movieDetailData}/>
             )}

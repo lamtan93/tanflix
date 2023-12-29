@@ -48,7 +48,7 @@ const MovieDetail: FC<IMovieDetail> = ({
                 <div className="detailmovie__content">
                     <div className="detailmovie__preview">
                         <img src={`${CONFIG_API.BASE_IMAGE_URL}/${imgSrc}`} alt={`img-${name}`} />
-                        {movieVideosError && <Title name='sorry, error loading video...' position='center' />}
+                        {movieVideosError && <Title name='sorry, error loading video...' position='center' size='small' />}
                         {!movieVideosLoading && !movieVideosError && movieVideosData && (
                             <Popup
                                 title={name}

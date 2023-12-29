@@ -2,7 +2,6 @@
 
 /*--------------------Title--------------------*/
 .title {
-    font-size: 4rem;
     background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
     background-clip: text;
     -webkit-background-clip: text;
@@ -12,5 +11,21 @@
     
     &:hover {
         transform: scale(1.1) skew(15deg, 2deg);
+    }
+
+    &--big {
+        font-size: 6rem;
+    }
+
+    &--med {
+        font-size: 4rem;
+    }
+
+    &--small {
+        font-size: 2rem;
+    }
+
+    &--extra-small {
+        font-size: 1rem;
     }
 }

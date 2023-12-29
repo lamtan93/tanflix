@@ -28,8 +28,8 @@ const MovieHome:FC = () => {
     return (
         <>
             <Navbar />
-            {movieListLoading && <Title name='Loading...' position='center'/>}
-            {movieListError && <Title name='Sorry, something went wrong :(' position='center'/>}
+            {movieListLoading && <Title name='Loading...' position='center' size='small' />}
+            {movieListError && <Title name='Sorry, something went wrong :(' position='center' size='small'/>}
             {!trendingMovieListLoading && !trendingMovieListError 
             && <Trending 
                 movieList={trendingMovieListData.slice(0,3)}

@@ -4,9 +4,9 @@ import "../../styles/_base/_typography.scss";
 import { ITitle } from './interfaces/ITitle';
 import PropTypes from 'prop-types';
 
-const Title: FC<ITitle> = ({name, position}) => {
+const Title: FC<ITitle> = ({name, position, size}) => {
     return (
-        <h1 className={`title u__mb--medium u__center-text--${position}`}>{name}</h1>
+        <h1 className={`title title--${size} u__mb--medium u__center-text--${position}`}>{name}</h1>
     )
 }
 
