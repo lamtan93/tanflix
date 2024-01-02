@@ -4,9 +4,16 @@ import "../../styles/_base/_typography.scss";
 import { ITitle } from './interfaces/ITitle';
 import PropTypes from 'prop-types';
 
-const Title: FC<ITitle> = ({name, position, size}) => {
+const Title: FC<ITitle> = ({name, position, size, hover=true}) => {
     return (
-        <h1 className={`title title--${size} u__mb--medium u__center-text--${position}`}>{name}</h1>
+        <h1 className={
+            `title title--${size} 
+            title--${hover ? 'hover' : null}
+            u__mb--medium 
+            u__center-text--${position}`
+        }>
+                {name}
+        </h1>
     )
 }
 

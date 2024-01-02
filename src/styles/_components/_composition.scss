@@ -1,0 +1,70 @@
+@import "../_abstracts/variables";
+@import "../_abstracts/mixins";
+
+.composition {
+    @include mobile(){
+        min-height: 15rem;
+    }
+    &__photo { 
+        position: absolute;
+        width: 55%;
+        height: 90%;
+        object-fit: cover;
+        object-position: 0 -8rem;
+
+        @include tab-port(){
+            width: 70%;
+            height: 75%;
+        };
+
+        @include mobile(){
+            width: 35%;
+            height: 70%;
+            object-position: 0 -3rem;
+        }
+        transition: all .5s ease-out;
+        border-radius: 2px;
+
+        &:hover {
+            transform: scale(1.05) translateY(-.5rem);
+            outline: .8rem solid $color-primary-light;
+            outline-offset: 1rem;
+            z-index: 10;
+            box-shadow: 0 .5rem 1rem rgba($color-primary-light, .5);
+            
+        }
+
+        &--1{
+            left: 0;
+            top: -2rem;
+            @include mobile(){
+                left: 10%;
+                top: 30%;
+            }
+        }
+
+        &--2{
+            right: 0;
+            top: 2rem;
+            @include mobile(){
+                right: 10%;
+                top: 30%;
+            }
+         
+        }
+        
+        &--3{
+            left: 20%;
+            top: 10rem;
+            @include mobile(){
+                left: 32%;
+                top: 70%;
+            }
+        }
+    }
+
+    &:hover &__photo:not(:hover) {
+        transform: scale(.9);
+    }
+    
+}

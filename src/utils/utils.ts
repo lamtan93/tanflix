@@ -53,7 +53,7 @@ export const truncateString = (str: string, num: number) => {
 }
 
 export const scrollToViewId = (id: string) => {
-    document.getElementById(`${id}`)?.scrollIntoView({ block: 'center',  behavior: 'smooth' });
+    document.getElementById(`${id}`)?.scrollIntoView({ block: 'nearest',  behavior: 'smooth' });
 }
 
 

@@ -9,8 +9,10 @@
     letter-spacing: 0.2rem;
     transition: all .4s ;
     
-    &:hover {
-        transform: scale(1.1) skew(15deg, 2deg);
+    &--hover {
+        &:hover {
+            transform: scale(1.1) skew(15deg, 2deg);
+        }
     }
 
     &--big {
@@ -28,4 +30,10 @@
     &--extra-small {
         font-size: 1rem;
     }
+}
+
+.title-secondary {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
 }

@@ -1,0 +1,49 @@
+@import "../_abstracts/variables";
+@import "../_abstracts/mixins";
+
+.about {
+    padding: 0 5rem;
+    &__content {
+        padding-top: 3rem;
+        padding-bottom: 10rem;
+        @include flex();
+        @include mobile(){
+            @include flex(column);
+        }
+        gap: 3rem;
+    }
+    &__introduce {
+        flex-basis: 50%;
+        & > h3 {
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
+        & > p:not(:last-child) {
+            margin-bottom: 5rem;
+        }
+
+        & > p{
+            font-size: 1.3rem;
+            font-weight: 300;
+        }
+    }
+
+    &__composition {
+        flex-basis: 50%;
+        position: relative;
+    }
+
+    @include mobile(){
+        min-height: 15rem;
+    }
+
+}
+
+
+
+
+
+
+
+
