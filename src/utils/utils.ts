@@ -69,4 +69,22 @@ export const stopVideo = () => {
         video.pause();
     }
 }
+
+export const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log({entry});
+        if(entry.isIntersecting){
+            entry.target.classList.add('scroll--show');
+        }else {
+            entry.target.classList.remove('scroll--show');
+            entry.target.classList.add('scroll--hidden');
+        }
+    })
+})
+
+export const scrollAnimation = () => {
+    const hiddenElements = document.querySelectorAll('.scroll--hidden');
+    hiddenElements.forEach((el) => observer.observe(el))
+}
+
 export default sendAPIRequest;

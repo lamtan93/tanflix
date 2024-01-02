@@ -10,6 +10,17 @@
 }
 
 
+@mixin scroll-effect-hidden-gen {
+    opacity: 0;
+    filter: blur(.1rem);
+}
+
+@mixin scroll-effect-show-gen {
+    transition: all .7s linear;
+    opacity: 1;
+    filter: blur(0);
+}
+
 // MEDIA QUERY MANAGER
 /*
 0-600px:        Phone

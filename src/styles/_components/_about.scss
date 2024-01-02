@@ -14,11 +14,22 @@
     }
     &__introduce {
         flex-basis: 50%;
+
         & > h3 {
+            // display: block;
             text-transform: uppercase;
             margin-bottom: 1rem;
             font-size: 1.6rem;
+            //scroll-animation
+            &:nth-child(1){
+                transition-delay: .3s;
+                
+            }
+            &:nth-child(3){
+                transition-delay: .8s;
+            }
         }
+
         & > p:not(:last-child) {
             margin-bottom: 5rem;
         }
@@ -26,6 +37,16 @@
         & > p{
             font-size: 1.3rem;
             font-weight: 300;
+
+            //scroll-animation
+            &:nth-child(2){
+                transition-delay: .5s;
+                
+            }
+
+            &:nth-child(4){
+                transition-delay: 1s;
+            }
         }
     }
 
@@ -40,6 +61,16 @@
 
 }
 
+.scroll--hidden {
+    @include scroll-effect-hidden-gen();
+    transform: translateX(-50%);
+}
+
+
+.scroll--show {
+    @include scroll-effect-show-gen();
+    transform: translateX(0);
+}
 
 
 

@@ -8,7 +8,7 @@ const Home: FC = () => {
         <>
             <Header />
             <About />
-
+            
             <section className='pricing'>
                
             </section>
