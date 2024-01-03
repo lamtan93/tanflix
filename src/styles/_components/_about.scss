@@ -63,13 +63,13 @@
 
 .scroll--hidden {
     @include scroll-effect-hidden-gen();
-    transform: translateX(-50%);
+    transform: translateY(-50%);
 }
 
 
 .scroll--show {
     @include scroll-effect-show-gen();
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
 

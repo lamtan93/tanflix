@@ -3,7 +3,7 @@
 
 .composition {
     @include mobile(){
-        min-height: 15rem;
+        min-height: 10rem;
     }
     &__photo { 
         position: absolute;
@@ -18,8 +18,8 @@
         };
 
         @include mobile(){
-            width: 35%;
-            height: 70%;
+            width: 45%;
+            height: 55%;
             object-position: 0 -3rem;
         }
         transition: all .5s ease-out;
@@ -38,7 +38,7 @@
             left: 0;
             top: -2rem;
             @include mobile(){
-                left: 10%;
+                left: 2%;
                 top: 30%;
             }
         }
@@ -47,7 +47,7 @@
             right: 0;
             top: 2rem;
             @include mobile(){
-                right: 10%;
+                right: 2%;
                 top: 30%;
             }
          
@@ -58,7 +58,7 @@
             top: 10rem;
             @include mobile(){
                 left: 32%;
-                top: 70%;
+                top: 60%;
             }
         }
     }

@@ -27,9 +27,9 @@ html {
         font-size: 50%; //1 rem = 8px, 8/16 = 50%
     }
 
-    @include mobile(){ // < 600px
-        font-size: 35%;
-    }
+    // @include mobile(){ // < 600px
+    //     font-size: 35%;
+    // }
 
     font-family: $font-default;
     color: white;

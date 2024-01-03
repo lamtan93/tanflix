@@ -26,10 +26,11 @@
         &--main {
             font-size: 7rem;
             @include mobile(){
-               font-size: 4.5rem;
+               font-size: 2.7rem;
+               letter-spacing: 2rem;
             }
             font-weight: 300;
-            letter-spacing: 3rem;
+            letter-spacing: 2.6rem;
             text-transform: uppercase;
             animation: moveRight 1s alternate ease-out;
         }
@@ -38,6 +39,8 @@
             font-size: 2.6rem;
             @include mobile(){
                 font-size: 2rem;
+                letter-spacing: 1rem;
+                
              }
             font-weight: 700;
             letter-spacing: 1.2rem;
