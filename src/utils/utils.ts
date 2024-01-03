@@ -72,7 +72,6 @@ export const stopVideo = () => {
 
 export const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-        console.log({entry});
         if(entry.isIntersecting){
             entry.target.classList.add('scroll--show');
         }else {
@@ -84,7 +83,9 @@ export const observer = new IntersectionObserver((entries) => {
 
 export const scrollAnimation = () => {
     const hiddenElements = document.querySelectorAll('.scroll--hidden');
-    hiddenElements.forEach((el) => observer.observe(el))
+    hiddenElements.forEach((el) => {
+        observer.observe(el);
+    })
 }
 
 export default sendAPIRequest;

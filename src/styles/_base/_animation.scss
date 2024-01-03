@@ -63,3 +63,13 @@
         transform: translateY(-2rem);
     }
 }
+
+@keyframes move-pricing-message {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}

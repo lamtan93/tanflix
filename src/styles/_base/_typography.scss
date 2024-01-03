@@ -9,11 +9,11 @@
     letter-spacing: 0.2rem;
     transition: all .4s ;
     
-    &--hover {
-        &:hover {
-            transform: scale(1.1) skew(15deg, 2deg);
-        }
-    }
+    // &--hover {
+    //     &:hover {
+    //         transform: scale(1.1) skew(15deg, 2deg);
+    //     }
+    // }
 
     &--big {
         font-size: 6rem;
