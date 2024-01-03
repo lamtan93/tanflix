@@ -19,7 +19,7 @@ const Pricing:FC = () => {
                             <span>Only 1 screen</span>
                             <span>Only mobile device</span>
                             <span>Download not allowed</span>
-                            <span>Support email</span>
+                            <span>Support by email</span>
                         </div>
                     </div>
                     <div className='pricing__item pricing__item--back'>
@@ -36,7 +36,7 @@ const Pricing:FC = () => {
                         <div className='pricing__header pricing__header--2'>
                             <div className='pricing__message'>
                                 <p>The price displayed for this best offer is guaranteed only until 02/01/2024 &nbsp;</p>
-                                <p>The price displayed for this best offer is guaranteed only until 02/01/2024 &nbsp;</p>
+                                {/* <p>The price displayed for this best offer is guaranteed only until 02/01/2024 &nbsp;</p> */}
                             </div>
                             <div className='pricing__title'>
                                 <Title name='FAMILY' position='right' size='med'/>

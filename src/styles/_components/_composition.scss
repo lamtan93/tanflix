@@ -19,7 +19,7 @@
 
         @include mobile(){
             width: 45%;
-            height: 55%;
+            height: 90%;
             object-position: 0 -3rem;
         }
         transition: all .5s ease-out;
@@ -57,8 +57,8 @@
             left: 20%;
             top: 10rem;
             @include mobile(){
-                left: 32%;
-                top: 60%;
+                left: 30%;
+                top: 65%;
             }
         }
     }
@@ -68,14 +68,3 @@
     }
     
 }
-
-// .scroll--hidden {
-//     @include scroll-effect-hidden-gen();
-//     // transform: translateY(-50%);
-// }
-
-
-// .scroll--show {
-//     @include scroll-effect-show-gen();
-//     // transform: translateY(0);
-// }

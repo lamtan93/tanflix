@@ -6,6 +6,9 @@
     color: $color-black;
     box-shadow: 0 10px 20px rgba($color-primary-light, .05);
     padding: 0 5rem;
+    @include mobile(){
+        padding: 0 1rem;
+    }
     margin-bottom: 5rem;
     &__container {
         @include flex(row, center);
@@ -15,6 +18,10 @@
     &__box {
         height: 40rem;
         width: 25rem;
+        @include mobile(){
+            height: 37rem;
+            width: 28rem;
+        }
         position: relative;
         perspective: 150rem;
         -moz-perspective: 150rem;
@@ -30,7 +37,7 @@
         transition: all .5s ease-out;
 
         &--front {
-            background: white;
+            background: $color-white-secondary;
         }
 
         &--back {
@@ -77,12 +84,12 @@
     }
 
     &__message {
-        @include flex(row, space-around, center);
         color: white;
-        font-weight: 300;
-        width: 300%;
+        font-weight: 500;
+        font-size: .7rem;
         background-color: $color-black;
-            & > p:nth-child(1){
+        overflow-x: hidden;
+            & > p{
                 animation: move-pricing-message 9s linear infinite;
             }
     }
@@ -105,8 +112,7 @@
     }
 
     &__body {
-        color: black;
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         font-weight: 300;
         height: 65%;
         text-align: center;
@@ -118,9 +124,9 @@
                 content: '';
                 width: 80%;
                 height: .01rem;
-                background-color: rgba($color-primary-dark, .8);
+                background-color: rgba($color-primary-dark, 1);
                 position: absolute;
-                top: 130%;
+                bottom: -100%;
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
