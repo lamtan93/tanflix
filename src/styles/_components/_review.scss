@@ -5,15 +5,13 @@
 .review {
     @include flex(column, center, center);
     min-height: 40rem;
-    background: linear-gradient(
-    to right bottom, rgba(rgb(37, 35, 35), .2),
-     rgba(rgb(30, 16, 6), .2));
+    background-color: rgba($color-black, .6);
+     //Video background
     &__bgvideo{
         width: 100%;
         height: 100%;
-        opacity: .5;
         position: absolute;
-        filter: blur(.2rem) brightness(50%);
+        filter: brightness(80%);
         z-index: -1;
         &__content{
             height: 100%;
@@ -23,9 +21,8 @@
 
     }
     position: relative;
-    top: 0%;
-    left: 0%;
-
+    top: 0;
+    left: 0;
     &__content {
         width: 50%;
         min-height: 20rem;
@@ -39,9 +36,8 @@
     }
 
     &__item{
-        transition: all .5s ease-out;
+        transition: all .7s ease-out;
         border-radius: 2%;
-        
         &:hover {
             background-color: rgba($color-black, .5);
             border: thin solid $color-primary-light;
@@ -50,18 +46,16 @@
     
     &__item:hover &__paragraph {
         display: inline-block;
-        height: 12rem;
-        width: 20rem;
         box-shadow: 0 10px 20px rgba($color-primary-dark, .2);
     }
 
     &__paragraph {
-        color: $color-white-secondary;
         display: none;
-        padding: 1rem 1rem;
+        width: 20rem;
+        color: $color-white-secondary;
+        padding: 1rem;
         text-align: center;
         font-size: 1.5rem;
-        font-weight: 300;
-        width: 100%;
+        font-weight: 400;
     }
 }
