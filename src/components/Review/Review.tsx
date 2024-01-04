@@ -12,7 +12,7 @@ const Review: FC = () => {
     return (
         <section className='review'>
             <div className="review__bgvideo">
-                <video className="review__bgvideo__content" autoPlay loop muted>
+                <video className="review__bgvideo__content" autoPlay loop muted playsInline>
                     <source src={videoAvisClient} type='video/mp4' />
                 </video>
             </div>

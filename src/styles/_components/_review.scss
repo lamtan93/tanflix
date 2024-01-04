@@ -30,12 +30,12 @@
         width: 50%;
         min-height: 20rem;
         @include mobile(){
-            width: 80%;
+            width: 60%;
             min-height: 25rem;
         }
         @include flex(row, center, center);
         overflow: auto;
-        gap: 1rem;
+        gap: 2rem;
     }
 
     &__item{
