@@ -4,8 +4,8 @@
 .actor {
     &__shape{
         position: relative;
-        width: 3rem;
-        height: 3rem;
+        width: 5rem;
+        height: 5rem;
         clip-path: circle(50% at 50% 50%);
         -webkit-clip-path: circle(50% at 50% 50%);
         cursor: pointer;

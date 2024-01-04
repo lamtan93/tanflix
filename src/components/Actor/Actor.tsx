@@ -4,11 +4,15 @@ import { IActor } from "./interfaces/IActor";
 import { CONFIG_API } from "../../utils/utils";
 import PropTypes from 'prop-types';
 
-const Actor: FC<IActor> = ({name, imgSrc}) => {
+const Actor: FC<IActor> = ({name, imgSrc, isImgSrcLocal=false}) => {
     return (
         <div className="actor">
             <figure className="actor__shape">
-                    <img className="actor__image" src={`${CONFIG_API.BASE_IMAGE_URL}/${imgSrc}`} alt={`actor-${name}`}/>
+                    <img 
+                        className="actor__image" 
+                        src={isImgSrcLocal ? imgSrc : `${CONFIG_API.BASE_IMAGE_URL}/${imgSrc}`} 
+                        alt={`actor-${name}`}
+                    />
                     <figcaption className="actor__caption">{name}</figcaption>
             </figure>
         </div> 

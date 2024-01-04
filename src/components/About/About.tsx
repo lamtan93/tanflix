@@ -3,6 +3,7 @@ import '../../styles/_components/_about.scss';
 import Title from '../Title/Title';
 import Composition from '../Composition/Composition';
 import { scrollAnimation } from '../../utils/utils';
+import Button from '../Button/Button';
 
 const About:FC = () => {
     useEffect(() => {
@@ -20,10 +21,12 @@ const About:FC = () => {
 
                     <h3 className='scroll--hidden'>live adventures like you never have before</h3>
                     <p className='scroll--hidden'>Indulge in a world of unforgettable stories and breathtaking visuals at our movie paradise.</p>
+                    <Button title='learn more' color='orange' animated={false} size='small'/>
                 </div>
-                <div className='about__composition scroll--hidden'>
+                <div className='about__composition'>
                     <Composition />
                 </div>
+                
             </div>
         </section>
     )

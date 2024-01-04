@@ -16,7 +16,7 @@
 }
 
 @mixin scroll-effect-show-gen {
-    transition: all .3s linear;
+    transition: all .2s linear;
     opacity: 1;
     filter: blur(0);
 }
