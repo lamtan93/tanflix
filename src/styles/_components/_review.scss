@@ -28,13 +28,13 @@
         width: 50%;
         min-height: 20rem;
         @include mobile(){
-            width: 60%;
+            width: 80%;
             min-height: 25rem;
         }
         @include flex(row, null, center);
         overflow: auto;
         gap: 2rem;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
     }
 
     &__item{
