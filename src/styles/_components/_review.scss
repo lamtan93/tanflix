@@ -34,20 +34,21 @@
         @include flex(row, null, center);
         overflow: auto;
         gap: 2rem;
+        margin-bottom: 4rem;
     }
 
     &__item{
         position: relative;
-        transition: all .7s ease-out;
+        transition: all .4s ease-out;
         border-radius: 2%;
         &:hover {
-            background-color: rgba($color-black, .5);
-            border: .5px solid $color-primary-light;
+            background-color: rgba($color-black, .3);
+            // border-right: .5px solid $color-primary-light;
         }
     }
     
     &__item:hover &__paragraph {
-        box-shadow: 0 10px 20px rgba($color-primary-dark, .2);
+        box-shadow: 0 10px 20px rgba($color-primary-dark, .3);
         opacity: .7;
     }
 
