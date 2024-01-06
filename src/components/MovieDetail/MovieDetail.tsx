@@ -77,7 +77,11 @@ const MovieDetail: FC<IMovieDetail> = ({
                         <div className="detailmovie__actors">
                             {companies.map(company => {
                                 if(company.logo_path)
-                                    return <Actor key={company.name} name={company.name} imgSrc={company.logo_path}/>
+                                    return <Actor 
+                                                key={company.name} 
+                                                name={company.name} 
+                                                imgSrc={`${CONFIG_API.BASE_IMAGE_URL}/${company.logo_path}`}
+                                            />
                                 return false;
                             })}
                         </div>
