@@ -3,6 +3,7 @@
 
 
 .review {
+    padding: 2rem;
     @include flex(column, center, center);
     min-height: 40rem;
     position: relative;

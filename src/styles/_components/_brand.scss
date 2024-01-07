@@ -1,0 +1,93 @@
+@import "../_abstracts/mixins";
+@import "../_abstracts/variables";
+@import "../_base/animation";
+
+.brand {
+    flex: 1;
+    font-family: $font-secondary;
+    font-weight: 700; 
+    & > span {
+        display: inline-block;
+        background: 
+        radial-gradient(circle, $color-primary-dark, $color-primary-light);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        background-size: 200%;
+        animation: brand-gradient 3s linear infinite alternate;
+        letter-spacing: -.3rem;
+        transition: all .5s ease-out;
+        &:hover {
+            color: white;
+        }
+    }
+    
+    & > span:nth-child(1){
+        transform: rotate(-15deg) translateY(-2rem);
+    }
+
+    & > span:nth-child(2){
+        transform: rotate(-10deg) translateY(-2.5rem); 
+    }
+
+    & > span:nth-child(3){
+        transform: rotate(-5deg) translateY(-2.5rem); 
+    }
+
+    & > span:nth-child(4){
+        transform: translateY(-2.7rem);
+    }
+
+    & > span:nth-child(5){
+        transform: rotate(5deg) translateY(-2.5rem);
+    }
+
+    & > span:nth-child(6){
+        transform: rotate(10deg) translateY(-2.5rem);
+    }
+    
+    & > span:nth-child(7){
+        transform: rotate(15deg) translateY(-2rem);
+    }
+
+    &--big {
+        font-size: 5rem;
+        & > span:nth-child(1){
+            transform: rotate(-30deg) translateY(1rem);
+            font-size: inherit;
+        }
+    
+        & > span:nth-child(2){
+            transform: translateY(-1rem); 
+        }
+    
+        & > span:nth-child(3){
+            transform: translateY(-2rem); 
+        }
+    
+        & > span:nth-child(4){
+            transform: translateY(-3rem);
+        }
+    
+        & > span:nth-child(5){
+            transform: translateY(-2rem);
+        }
+    
+        & > span:nth-child(6){
+            transform: translateY(-1rem);
+        }
+    
+        & > span:nth-child(7){
+            transform: rotate(30deg) translateY(1rem);
+            font-size: inherit;
+        }
+    }
+
+    &--med {
+        font-size: 3rem;
+    }
+
+    &--small {
+        font-size: 2rem;
+    }
+}

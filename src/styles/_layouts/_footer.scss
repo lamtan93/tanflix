@@ -2,24 +2,49 @@
 @import "../_abstracts/variables";
 
 .footer {
+    color: $color-white-secondary;
     height: 25vh;
-    &__container {
-        // padding: 2rem;
-        background-image: linear-gradient(to right bottom,
-        rgba(rgb(72, 70, 70), 0.9), rgba(rgb(30, 16, 6), 0.5)) 
-        ,url('../../assets/images/spiderman.jpeg');
-        background-size: cover;
-        background-position: center;
-    }
-    
     font-size: 1rem;
-    margin: 0;
+    // background: rgba($color-black, .2);
+    background: $color-black;
+    font-weight: 300;
+    text-transform: uppercase;
+    
+    h3 {
+        color: $color-grey;
+        font-weight: 300;
+    }
+
     &__container {
+        @include flex(row, space-between, center);
         height: 100%;
-        @include flex(column, space-around, center);
-        &> span > a {
-            font-size: 2rem;
-            color: $color-primary-light;
-        }
+        width: 100%;
+        padding: 2rem;
+    }
+
+    &__social{
+        @include flex(column, center, flex-start);
+        height: 100%;
+        gap: 2rem;
+    }
+
+    &__brand{
+        @include flex(column, null, center);
+    }
+
+    &__faq{
+        @include flex(column, center, flex-end);
+        height: 100%;
+        gap: 2rem;
+    }
+
+    &__url {
+        font-size: 1rem;
+        transition: all .5s ease-out;
+    }
+
+    &__url:hover {
+        text-decoration: underline $color-primary-light;
+
     }
 }
