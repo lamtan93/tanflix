@@ -9,7 +9,7 @@
     position: relative;
     top: 0;
     left: 0;
-    background-color: rgba($color-black, .5);
+    background: transparent;
      //Video background
     &__bgvideo{
         width: 100%;
@@ -26,7 +26,9 @@
     }
     
     &__content {
-        width: 50%;
+        color: $color-white-secondary;
+        border-top: .5px solid $color-white;
+        width: 70%;
         min-height: 20rem;
         @include mobile(){
             width: 80%;
@@ -55,7 +57,6 @@
 
     &__paragraph {
         width: 20rem;
-        color: $color-white-secondary;
         padding: 1rem;
         text-align: center;
         font-size: 1.5rem;
@@ -106,6 +107,19 @@
 
     &__item:hover &__star {
         opacity: .7;
+    }
+
+    &__date {
+        position: absolute;
+        top: .2rem;
+        right: 2rem;
+        opacity: 0;
+        transition: all .5s ease-out;
+    }
+
+    &__item:hover &__date {
+        opacity: .5;
+        right: .5rem;
     }
 
    

@@ -15,7 +15,7 @@ const MovieDetailHome:FC = () => {
         if(idMovie){fetchMovieDetail(Number(idMovie));}
         scrollToViewId('movie-detail-section');
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])  
+    }, [idMovie])  
     return (
         <>
             <Navbar />

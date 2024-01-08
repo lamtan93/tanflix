@@ -1,11 +1,14 @@
-interface IReview {
-    reviewerId: number,
-    reviewerName: string,
-    reviewerImg: string,
-    reviewerStars: number,
-    reviewerMessage: string,
+interface IReviewItem {
+    id: number,
+    name: string,
+    img: string,
+    stars: number,
+    message: string,
+    date?: string,
 }
 
-export interface IReviewerList {
-    reviewerList: IReview[];
+export interface IReviewer {
+    title: string,
+    withVideoBackground?: boolean,
+    reviewerList: IReviewItem[];
 };

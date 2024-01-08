@@ -3,7 +3,6 @@
 
 .card {
     flex-grow: 0;
-    
     &--trending {
         @include mobile(){
             padding: 1rem;
@@ -63,6 +62,7 @@
     }
 
     &--others { 
+        height: 25rem;
         @include mobile(){
             padding: 1.5rem;
             flex-basis: 25rem;
@@ -89,23 +89,20 @@
         }
        
     }
-
+    
     &__image {
         position: relative;
         width: 100%;
-        border-radius: 2rem;
-
+        border-radius: .3rem;
         &--others {
-            height: 300px;      
+            height: 50%;     
         }
 
         img {
             width: 100%;
             height: 100%;
-            background-size: cover;
-            background-position: center;
             object-fit: cover;
-            border-radius: 2rem;
+            border-radius: inherit;
         }
 
         transition: all .4s ease-out;
@@ -113,20 +110,20 @@
 
     &__name {
         padding: 1rem;
-        font-size: 1.3rem;
+        font-size: 1.6rem;
         display: block;
         text-align: right;
-        @include tab-land(){font-size: 1.5rem};
+        color: $color-white-secondary;
+        font-weight: 400;
     }
     
     &__description {
-        color: grey;
-        font-size: 1.2rem;
+        color: $color-grey;
+        font-size: 1.3rem;
         font-weight: 300;
     }
 
     &:hover &__name {
-        font-weight: 500;
         color: $color-primary-light;
     }
 

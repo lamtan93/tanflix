@@ -12,7 +12,11 @@ const Home: FC = () => {
             <Header />
             <About />
             <Pricing />
-            <Reviewer reviewerList={reviewerListData} />
+            <Reviewer
+                title='They talk about us'
+                withVideoBackground
+                reviewerList={reviewerListData} 
+            />
             
         </>
     )

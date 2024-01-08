@@ -10,6 +10,9 @@ import Popup from '../Popup/Popup';
 import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import Title from '../Title/Title';
+import { reviewerListData } from '../../fakedata/reviewerListData';
+import Reviewer from '../Reviewer/Reviewer';
+import MovieList from '../MovieList/MovieList';
 
 const MovieDetail: FC<IMovieDetail> = ({
     id,
@@ -27,6 +30,9 @@ const MovieDetail: FC<IMovieDetail> = ({
     const { fetchMovieVideo } = useActions();
     const { movieVideosLoading, movieVideosData, movieVideosError } 
     = useTypedSelector(state => state.movieVideos);
+
+    const { movieListData } 
+    = useTypedSelector(state => state.movieList);
     
 
     const showPopup = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -104,6 +110,22 @@ const MovieDetail: FC<IMovieDetail> = ({
                         <span className="detailmovie__date">Date: {date}</span>  
                     </div>
             </div>
+
+            
+                {/* <Title name='Reviews movies' size='med' position='right'/> */}
+                <Reviewer 
+                    title='Reviewers'
+                    reviewerList={reviewerListData}
+                />
+            
+            
+                {/* <Title name='Related movies' size='med' position='right'/> */}
+                <MovieList 
+                    movieList={movieListData} 
+                    onChange={() => {}} 
+                    searchValue={''}
+                />
+            
         </section>
     )
 }

@@ -20,7 +20,7 @@ const Card: FC<ICard> = ({type, id, name, description, imgSrc, liked}) => {
 
     return (
     <div className={`card card--${type}`} >
-        <div className="card__image">
+        <div className={`card__image card__image--${type}`}>
             <Star id={id} isLiked={liked ? liked : false} onClick={handleOnClickStar} />
             <img src={`${CONFIG_API.BASE_IMAGE_URL}/${imgSrc}`} alt={`img-${name}`} />
         </div>
