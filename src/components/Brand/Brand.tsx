@@ -3,7 +3,6 @@ import "../../styles/_components/_brand.scss";
 import { IBrand } from "./interfaces/IBrand";
 
 const Brand: FC<IBrand> = ({ size }) => {
-        console.log({size});
     return(
             <a className={`brand brand--${size}`} href="/">
                     <span>T</span>

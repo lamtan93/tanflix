@@ -9,7 +9,9 @@
     height: 60vh;
     position: absolute;
     z-index: 99999;
-
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     @include big-desktop(){ 
         width: 60vw;
         height: 60vh;
@@ -60,14 +62,11 @@
 
 @keyframes move-popup {
     0% {
-        
-        top: 10%;
         opacity: 0;
     };
 
     100%{
-        
-        top: 0;
         opacity: 100%;
+
     }
 }

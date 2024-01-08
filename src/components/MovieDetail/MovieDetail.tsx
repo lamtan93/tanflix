@@ -23,14 +23,17 @@ const MovieDetail: FC<IMovieDetail> = ({
     imgSrc,
 }) => {
     const [isOpenPopup, setIsOpenPopup] = useState(false);
+    const [oldIdMovieVideo, setOldIdMovieVideo] = useState(0);
     const { fetchMovieVideo } = useActions();
     const { movieVideosLoading, movieVideosData, movieVideosError } 
     = useTypedSelector(state => state.movieVideos);
     
+
     const showPopup = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         e.preventDefault();
-        if(!movieVideosData){
+        if(movieVideosError || oldIdMovieVideo !== id){
             fetchMovieVideo(id);
+            setOldIdMovieVideo(id);
         }
         setIsOpenPopup(true);
         scrollToViewId('movie-detail-section');
@@ -45,6 +48,7 @@ const MovieDetail: FC<IMovieDetail> = ({
     return (
         <section id='movie-detail-section' className="detailmovie-section">
             <div className="detailmovie">
+                    
                     <div className="detailmovie__preview">
                         <img src={`${CONFIG_API.BASE_IMAGE_URL}/${imgSrc}`} alt={`img-${name}`} />
                         {movieVideosError && <Title name='sorry, error loading video...' position='center' size='small' />}

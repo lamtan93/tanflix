@@ -10,7 +10,6 @@ import { IReviewerList } from './interfaces/IReviewer';
 const Reviewer: FC<IReviewerList> = ({
     reviewerList,
 }) => {
-    console.log({reviewerList});
     return (
         <section className='review'>
             <div className="review__bgvideo">
