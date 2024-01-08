@@ -45,7 +45,6 @@ const MovieDetail: FC<IMovieDetail> = ({
     return (
         <section id='movie-detail-section' className="detailmovie-section">
             <div className="detailmovie">
-                <div className="detailmovie__content">
                     <div className="detailmovie__preview">
                         <img src={`${CONFIG_API.BASE_IMAGE_URL}/${imgSrc}`} alt={`img-${name}`} />
                         {movieVideosError && <Title name='sorry, error loading video...' position='center' size='small' />}
@@ -62,16 +61,23 @@ const MovieDetail: FC<IMovieDetail> = ({
                                 />
                             </Popup>
                         )}
-                    </div>
-                    <div className="detailmovie__name">
-                        <h1>{name}</h1>
-                        <div>
-                        {genres.map(genre => (
-                            <span key={genre.id} className="detailmovie__tag">#{genre.name}</span>
-                        ))}
+                            <Button 
+                                title='Watch trailer' 
+                                animated={true} 
+                                color='orange' 
+                                size={'med'}
+                                loading={movieVideosLoading}
+                                onClick={(e) => showPopup(e)}
+                            />
+                    </div>    
+
+                    <div className="detailmovie__content">
+                        <Title name={name} size='med' position='left' />
+                        <div className='detailmovie__tags'>
+                            {genres.map(genre => (
+                                <span key={genre.id} className="detailmovie__tag">#{genre.name}</span>
+                            ))}
                         </div>
-                    </div>
-                    <div className="detailmovie__description">
                         <p className="detailmovie__resume">{description}</p>
                         <span className="detailmovie__companies">Production companies: </span>
                         <div className="detailmovie__actors">
@@ -89,22 +95,10 @@ const MovieDetail: FC<IMovieDetail> = ({
                         <span className="detailmovie__country">Country: {
                             countries.map(country => `${country.name} `)
                         } </span>
-                        <span className="detailmovie__imdb">Popularity: {popularity} </span>
+                        <span className="detailmovie__popularity">Popularity: {popularity} </span>
                         <span className="detailmovie__autor">Auteur: Jackie Chan</span>
-                        <span className="detailmovie__imdb">Date: {date}</span>
+                        <span className="detailmovie__date">Date: {date}</span>  
                     </div>
-                    <div className="detailmovie__play">
-                        <Button 
-                            title='Watch trailer' 
-                            animated={true} 
-                            color='orange' 
-                            size={'med'}
-                            loading={movieVideosLoading}
-                            onClick={(e) => showPopup(e)}
-                        />
-                    </div>
-                </div>
-                
             </div>
         </section>
     )

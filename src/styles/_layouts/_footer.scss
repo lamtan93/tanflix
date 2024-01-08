@@ -5,11 +5,9 @@
     color: $color-white-secondary;
     height: 25vh;
     font-size: 1rem;
-    // background: rgba($color-black, .2);
     background: $color-black;
     font-weight: 300;
     text-transform: uppercase;
-    
     h3 {
         color: $color-grey;
         font-weight: 300;
@@ -32,7 +30,7 @@
         @include flex(column, null, center);
     }
 
-    &__faq{
+    &__general{
         @include flex(column, center, flex-end);
         height: 100%;
         gap: 2rem;

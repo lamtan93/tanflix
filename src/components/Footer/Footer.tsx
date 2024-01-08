@@ -16,7 +16,7 @@ const Footer: FC = () => {
                 <Brand size="small" />
                 <h3>Made with <span>LOVE</span></h3>
             </div>
-            <div className="footer__faq">
+            <div className="footer__general">
                 <h3>general</h3>
                 <span className="footer__url" ><a href="/">About</a></span>
                 <span className="footer__url" ><a href="/">Contact us</a></span>
