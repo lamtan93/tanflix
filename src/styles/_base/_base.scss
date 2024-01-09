@@ -30,6 +30,9 @@ html {
     font-family: $font-default;
     color: white;
     scroll-behavior: smooth;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    font-synthesis: none;
 }
 
 body {
