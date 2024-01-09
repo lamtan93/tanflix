@@ -1,9 +1,9 @@
-import { FC, useState, useEffect } from 'react';
+import { FC, useState } from 'react';
 import Button from '../Button/Button';
 import "../../styles/_components/_movieDetail.scss";
 import Actor from '../Actor/Actor';
 import { IMovieDetail } from './interfaces/IMovieDetail';
-import { CONFIG_API, scrollToViewId, stopVideo } from "../../utils/utils";
+import { CONFIG_API, getMoviesByName, scrollToViewId, stopVideo } from "../../utils/utils";
 import PropTypes from 'prop-types';
 import PreviewVideo from '../Video/PreviewVideo';
 import Popup from '../Popup/Popup';
@@ -12,6 +12,7 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 import Title from '../Title/Title';
 import Reviewer from '../Reviewer/Reviewer';
 import MovieList from '../MovieList/MovieList';
+import { useSearchInput } from '../../hooks/useSearchInput';
 
 const MovieDetail: FC<IMovieDetail> = ({
     id,
@@ -26,22 +27,21 @@ const MovieDetail: FC<IMovieDetail> = ({
 }) => {
     const [isOpenPopup, setIsOpenPopup] = useState(false);
     const [oldIdMovieVideo, setOldIdMovieVideo] = useState(0);
-    const { fetchMovieVideo, fetchSimilarMovieList, fetchMovieReviewList } = useActions();
+    const {
+        searchValue,
+        handleOnChangeSearchValue,
+    } = useSearchInput();
+
+    const { fetchMovieVideo } = useActions();
 
     const { movieVideosLoading, movieVideosData, movieVideosError } 
     = useTypedSelector(state => state.movieVideos);
 
-    const { similarMovieListLoading, similarMovieListData, similarMovieListError } 
-    = useTypedSelector(state => state.similarMovieList);
-
     const { movieReviewListLoading, movieReviewListData, movieReviewListError } 
     = useTypedSelector(state => state.movieReviewList);
-    
-    useEffect(() => {
-        fetchMovieReviewList(Number(id));
-        fetchSimilarMovieList(Number(id));
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+
+    const { similarMovieListLoading, similarMovieListData, similarMovieListError } 
+    = useTypedSelector(state => state.similarMovieList);
 
     const showPopup = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         e.preventDefault();
@@ -58,7 +58,7 @@ const MovieDetail: FC<IMovieDetail> = ({
         setIsOpenPopup(false);
         stopVideo();
     }
-
+    
     return (
         <section id='movie-detail-section' className="detailmovie-section">
             <div className="detailmovie">
@@ -72,7 +72,7 @@ const MovieDetail: FC<IMovieDetail> = ({
                                 close={closePopup}
                                 open={isOpenPopup}>
                                 {movieVideosData.length > 0 ? (<PreviewVideo 
-                                    src={`https://www.youtube.com/embed/${movieVideosData[0].key}`} 
+                                    src={`${CONFIG_API.BASE_VIDEO_URL_YOUTUBE}/${movieVideosData[0].key}`} 
                                     title={name} 
                                     width='100%' 
                                     height='100%'
@@ -132,9 +132,9 @@ const MovieDetail: FC<IMovieDetail> = ({
                 {!similarMovieListLoading && !similarMovieListError &&
                 <MovieList 
                     categoryLabel='Similar movies'
-                    movieList={similarMovieListData} 
-                    onChange={() => {}} 
-                    searchValue={''}
+                    movieList={getMoviesByName(searchValue,similarMovieListData)} 
+                    onChange={handleOnChangeSearchValue} 
+                    searchValue={searchValue}
                 />}             
         </section>
     )

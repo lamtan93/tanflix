@@ -1,5 +1,5 @@
 export interface IStar {
     id: number;
     isLiked: boolean;
-    onClick: (id: number) => void;
+    onClick: (e: React.MouseEvent<HTMLDivElement, MouseEvent>,id: number) => void;
 }

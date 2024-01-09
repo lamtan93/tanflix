@@ -2,23 +2,9 @@ import { truncateString } from './../../utils/utils';
 import { MovieListActionType } from '../action-types.ts/MovieListActionType';
 import { Dispatch } from "redux"
 import { MovieListAction, SimilarMovieListAction, TrendingMovieListAction } from "../actions/MovieListAction";
-import sendAPIRequest from '../../utils/utils';
+import { sendAPIRequest } from "../../utils/utils";
 import { ICard } from '../../components/Card/interfaces/ICard';
 import { IRawMovieListDataFromAPI } from './interfaces';
-
-export const fetchMovieListGen = 
-<T extends MovieListAction 
-| TrendingMovieListAction
-| SimilarMovieListAction> () => {
-    return async (action: T) => {
-        if(action.type === MovieListActionType.FETCH_MOVIE_LIST_REQUEST ){
-            return async (dispatch: Dispatch<MovieListAction>) => {
-                //TO REFACTOR    
-            }
-        }
-    }
-}
-
 
 export const fetchMovieList = () => {
     return async (dispatch: Dispatch<MovieListAction>) => {

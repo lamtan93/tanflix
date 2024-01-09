@@ -7,7 +7,7 @@ const Star: FC<IStar> = ({id, isLiked, onClick}) => {
     return (
         <div 
             className={`star star--${isLiked ? 'liked' : 'disliked'}`}
-            onClick={() => onClick(id)}
+            onClick={(e) => onClick(e, id)}
         >
         </div>
     )

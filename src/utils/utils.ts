@@ -2,6 +2,8 @@ import { ICard } from './../components/Card/interfaces/ICard';
 export enum CONFIG_API {
     BASE_URL = 'https://api.themoviedb.org/3',
     BASE_IMAGE_URL= 'https://image.tmdb.org/t/p/w500',
+    BASE_IMAGE_URL_RANDOM= 'https://source.unsplash.com/random/?face,beautiful,top',
+    BASE_VIDEO_URL_YOUTUBE='https://www.youtube.com/embed'
 }
 const KEY = process.env.REACT_APP_API_KEY;
 
@@ -27,7 +29,7 @@ const returnCorrectRequest = (method: Method, data: unknown) => {
     }
 }
 
-const sendAPIRequest = async <T>(url: string, method: Method, data: unknown = {})
+export const sendAPIRequest = async <T>(url: string, method: Method, data: unknown = {})
 : Promise<T> => {
     const responseAPI = await fetch(`${CONFIG_API.BASE_URL}/${url}`, returnCorrectRequest(method, data))
     if(!responseAPI.ok){
@@ -81,11 +83,17 @@ export const observer = new IntersectionObserver((entries) => {
     })
 })
 
+export const scrollVertical = (event: React.WheelEvent<HTMLDivElement>, containerId: string) => {
+    const container = document.getElementById(containerId);
+    if(container){
+        container.scrollLeft += event.deltaY > 0 ? 20 : -20;
+        event.preventDefault();
+    }  
+}
+
 export const scrollAnimation = () => {
     const hiddenElements = document.querySelectorAll('.scroll--hidden');
     hiddenElements.forEach((el) => {
         observer.observe(el);
     })
-}
-
-export default sendAPIRequest;
+};

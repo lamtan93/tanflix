@@ -6,5 +6,6 @@ export interface IButton {
     title: string,
     size: IButtonSize,
     loading?: boolean,
+    disabled?: boolean,
     onClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void
 }

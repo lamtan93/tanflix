@@ -10,6 +10,7 @@
     top: 0;
     left: 0;
     background: transparent;
+    @include scrollbar-style;
      //Video background
     &__bgvideo{
         width: 100%;
@@ -27,7 +28,7 @@
     
     &__content {
         color: $color-white-secondary;
-        border-top: .5px solid $color-white;
+        // border-top: .5px solid $color-white;
         width: 70%;
         min-height: 20rem;
         @include mobile(){

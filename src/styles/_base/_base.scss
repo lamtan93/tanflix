@@ -13,26 +13,23 @@
 }
 
 html {
-    font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+    font-size: 62.5%;
 
-    @include big-desktop(){// < 1200px
-        font-size: 75%; //1rem = 12, 12/16
+    @include big-desktop(){
+        font-size: 75%; 
     }
 
-    @include tab-land(){// < 1200px
-        font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+    @include tab-land(){
+        font-size: 56.25%;
     }
 
-    @include tab-port(){ // < 900px
-        font-size: 50%; //1 rem = 8px, 8/16 = 50%
+    @include tab-port(){
+        font-size: 50%;
     }
 
     font-family: $font-default;
     color: white;
     scroll-behavior: smooth;
-    text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-    font-synthesis: none;
 }
 
 body {

@@ -53,6 +53,11 @@
         border: .3rem dashed $color-primary-dark;
     }
 
+    &--disabled {
+        pointer-events: none;
+        background-color: grey !important;
+    }
+
     &--white {
         background-color: $color-white;
         color: black;

@@ -10,12 +10,14 @@ const Button: FC<IButton> = ({
     title,
     size,
     loading = false,
+    disabled = false,
     onClick
 }) => {
     return (
         <a className={
             `btn ${animated ? 'btn--animated' : null}
             ${loading ? 'btn--loading' : null}
+            ${disabled ? 'btn--disabled' : null}
             btn--${color}
             btn--${size}`
         } 

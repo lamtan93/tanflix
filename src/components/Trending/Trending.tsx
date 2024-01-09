@@ -1,15 +1,16 @@
 import { FC } from 'react';
 import Title from '../Title/Title';
-import "../../styles/_components/_trending.scss";
+import "../../styles/_layouts/_moviesContainer.scss";
 import Card from '../Card/Card';
 import { IMovieList } from '../MovieList/interfaces/IMovieList';
 import PropTypes from 'prop-types';
 
 const Trending: FC<IMovieList> = ({movieList}) => {
     return (
-        <section className="trending-section">
+        <section className="movies-section">
             <Title name='Trending movies' position='right' size='med'/>
-            <div className="trending-section__movies">
+            <div className="movies-section__content">
+                <div className="movies-section__moviesList movies-section__moviesList--trending">
                     {movieList.map(movie => 
                         <Card
                             type='trending'
@@ -21,6 +22,7 @@ const Trending: FC<IMovieList> = ({movieList}) => {
                             liked={movie.liked}
                         />
                     )}
+                </div>
             </div>
         </section>
     )

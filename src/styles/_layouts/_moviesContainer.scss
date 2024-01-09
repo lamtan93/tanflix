@@ -1,13 +1,11 @@
-@import "./card";
+@import "../_components/card";
 @import "../_abstracts/mixins";
 
-.trending-section {
-    padding: 7rem 2rem;
-
+.movies-section {
+    padding: 3rem 2rem;
     @include mobile(){
-        padding: 0;
+        padding: 3rem 0;
     }
-
     &__header {
         @include flex();
         flex-wrap: wrap;
@@ -68,15 +66,26 @@
         }
         
     }
-    
-    &__movies {
+    &__content {
+        @include flex(column, null, center);
+    }
+    &__moviesList {
         @include flex();
-        border-radius: 1rem;
-        box-shadow: 0 10px 20px rgba($color-primary-dark, .1);
         flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: center;
-        padding-bottom: 3rem;
+        &--trending {
+            justify-content: center;
+        }
+        &--others {
+            justify-content: flex-start;
+            @include mobile(){
+                justify-content: center;
+            }
+        }
+    }
+
+    &__cta-loadmore {
+        width: 100%;
+        text-align: center;
     }
 
 }

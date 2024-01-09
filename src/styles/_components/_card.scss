@@ -115,6 +115,7 @@
         text-align: right;
         color: $color-white-secondary;
         font-weight: 400;
+        transition: all .4s ease-out;
     }
     
     &__description {

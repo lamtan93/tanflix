@@ -9,26 +9,30 @@ import PropTypes from 'prop-types';
 
 const Card: FC<ICard> = ({type, id, name, description, imgSrc, liked}) => {
     const navigate = useNavigate();
+    const { updateLikeMovieList } = useActions();
+
     const handleOnClick = (id: number) => {
         navigate(`/movie-detail/${id}`);
     }
 
-    const { updateLikeMovieList } = useActions();
-    const handleOnClickStar = (id: number) => {
+    const handleOnClickStar = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, id: number) => {
+        e.stopPropagation();
         updateLikeMovieList(id);
     }
 
     return (
-    <div className={`card card--${type}`} >
+    <div className={`card card--${type}`} onClick={() => handleOnClick(id)} style={{cursor: 'pointer'}}>
         <div className={`card__image card__image--${type}`}>
-            <Star id={id} isLiked={liked ? liked : false} onClick={handleOnClickStar} />
+            <Star id={id} isLiked={liked ? liked : false} onClick={(e) => handleOnClickStar(e,id)} />
             <img src={`${CONFIG_API.BASE_IMAGE_URL}/${imgSrc}`} alt={`img-${name}`} />
         </div>
-        <div className="card__infos" onClick={() => handleOnClick(id)} style={{cursor: 'pointer'}}>
+        <div className="card__infos">
             <span className="card__name" > {name} </span>
             <p className="card__description">{description}</p>
         </div>
     </div>
+   
+ 
     )
 }
 

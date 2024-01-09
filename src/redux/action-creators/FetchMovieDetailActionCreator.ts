@@ -1,9 +1,10 @@
 import { Dispatch } from "redux"
-import sendAPIRequest from '../../utils/utils';
+import { sendAPIRequest } from "../../utils/utils";
 import { IRawMovieDetailDataFromAPI } from './interfaces';
 import { IMovieDetail } from '../../components/MovieDetail/interfaces/IMovieDetail';
 import { MovieDetailActionType } from '../action-types.ts/MovieDetailActionType';
 import { MovieDetailAction } from '../actions/MovieDetailAction';
+
 
 export const fetchMovieDetail = (idMovie: number) => {
     return async (dispatch: Dispatch<MovieDetailAction>) => {
@@ -27,16 +28,16 @@ export const fetchMovieDetail = (idMovie: number) => {
                 production_countries
             } = rawMovieDetailDataFromAPI || {};
 
-            const movieDetail: IMovieDetail = {
-                    id,
-                    popularity,
-                    genres,
-                    name: title,
-                    description: overview,
-                    imgSrc: poster_path,
-                    date: new Date(release_date).toLocaleDateString(),
-                    companies: production_companies,
-                    countries: production_countries
+            const movieDetail: IMovieDetail = { 
+                id,
+                popularity,
+                genres,
+                name: title,
+                description: overview,
+                imgSrc: poster_path,
+                date: new Date(release_date).toLocaleDateString(),
+                companies: production_companies,
+                countries: production_countries
             }
 
             dispatch({

@@ -1,3 +1,4 @@
+import { IReviewItem } from '../../Reviewer/interfaces/IReviewer';
 import { ICard } from './../../Card/interfaces/ICard';
 interface IName {
     name: string,
@@ -14,10 +15,20 @@ interface ICompany extends IName{
 interface ICountry extends IName{}
 
 
-export interface IMovieDetail extends ICard {
+export interface IMovieDetail extends ICard{
     popularity: number,
     genres: IGenre[],
     date: string,
     companies: ICompany[],
     countries: ICountry[]
+
+    // detail: {
+    //     popularity: number,
+    //     genres: IGenre[],
+    //     date: string,
+    //     companies: ICompany[],
+    //     countries: ICountry[]
+    // } & ICard ,
+    // reviewList?: IReviewItem[],
+    // similarList?: ICard[],
 }

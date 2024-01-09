@@ -6,12 +6,20 @@ import Actor from '../Actor/Actor';
 import Button from '../Button/Button';
 import Star from '../Star/Star';
 import { IReviewer } from './interfaces/IReviewer';
+import { useLoadMore } from '../../hooks/useLoadMore';
+import { scrollVertical } from '../../utils/utils';
 
 const Reviewer: FC<IReviewer> = ({
     title,
     withVideoBackground=false,
     reviewerList,
 }) => {
+    const {
+        listDataFinal,
+        loadMore,
+        isDisabledLoadMore,
+    } = useLoadMore(reviewerList);
+
     return (
         <section className='review'>
             {withVideoBackground && (
@@ -29,8 +37,12 @@ const Reviewer: FC<IReviewer> = ({
                     size='med'
                     position='right'
             />
-            <div className='review__content'>
-                {reviewerList.map(r => 
+            <div 
+                id="review__content" 
+                className='review__content' 
+                onWheel={(e) => scrollVertical(e,'review__content')}
+            >
+                {listDataFinal.map(r => 
                     <div 
                         key={r.id}
                         className='review__item'
@@ -54,12 +66,14 @@ const Reviewer: FC<IReviewer> = ({
                         <span className='review__date' >{r.date}</span>
                     </div>    
                 )}
-            </div>
+            </div>     
             <Button 
                 title='more' 
                 size='small' 
                 animated={true} 
                 color='white'
+                onClick={loadMore}
+                disabled={isDisabledLoadMore}
             />
          </section>
     )

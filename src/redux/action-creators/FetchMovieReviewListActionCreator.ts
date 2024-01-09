@@ -1,5 +1,5 @@
 import { Dispatch } from "redux"
-import sendAPIRequest, { truncateString } from '../../utils/utils';
+import { sendAPIRequest, CONFIG_API, truncateString } from '../../utils/utils';
 import { IRawMovieReviewListDataFromAPI } from './interfaces';
 import { MovieReviewListAction } from "../actions/MovieReviewListAction";
 import { MovieReviewListActionType } from "../action-types.ts/MovieReviewActionType";
@@ -20,7 +20,7 @@ export const fetchMovieReviewList = (idMovie: number) => {
                 return {
                     id: r.id,
                     name: r.author || r.author_details.name || r.author_details.username,
-                    img: `https://source.unsplash.com/random/?face,beautiful,top${i}`,
+                    img: `${CONFIG_API.BASE_IMAGE_URL_RANDOM}${i}`,
                     stars: Math.round(r.author_details.rating/2),
                     message: truncateString(r.content, 150),
                     date: new Date(r.updated_at).toLocaleDateString(),

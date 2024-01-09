@@ -8,12 +8,16 @@ import Title from '../components/Title/Title';
 import Navbar from '../components/Navbar/Navbar';
 
 const MovieDetailHome:FC = () => {
-    const { fetchMovieDetail } = useActions();
-    const { movieDetailLoading, movieDetailData, movieDetailError } = useTypedSelector(state => state.movieDetail);
+    const { fetchMovieDetail, fetchSimilarMovieList, fetchMovieReviewList } = useActions();
+    const { movieDetailLoading, movieDetailData, movieDetailError } 
+    = useTypedSelector(state => state.movieDetail);
+
     const {id: idMovie} = useParams();
     useEffect(()=> {
         if(idMovie){
             fetchMovieDetail(Number(idMovie));
+            fetchMovieReviewList(Number(idMovie));
+            fetchSimilarMovieList(Number(idMovie));
         }
         scrollToViewId('movie-detail-section');
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -24,7 +28,7 @@ const MovieDetailHome:FC = () => {
             {movieDetailLoading && <Title name='Loading...' position='center' size='small'/>}
             {movieDetailError && <Title name='Sorry, something went wrong :(' position='center' size='small'/>}
             {!movieDetailLoading && !movieDetailError && movieDetailData && (
-                <MovieDetail {...movieDetailData}/>
+                <MovieDetail {...movieDetailData} />
             )}
             
         </>
