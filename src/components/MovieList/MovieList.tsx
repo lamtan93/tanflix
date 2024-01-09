@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import Button from '../Button/Button';
 
 const MovieList: FC<IMovieList> = ({
+    categoryLabel,
     movieList,
     onChange = () => {},
     searchValue,
@@ -30,7 +31,7 @@ const MovieList: FC<IMovieList> = ({
     return (
         <section className="trending-section">
             <div className='trending-section__header' id="movie-section">
-                <Title name='Other movies' position='left' size='med'/>
+                <Title name={categoryLabel} position='left' size='med'/>
                 <div className='trending-section__search'>
                     <input 
                         id='searchMovie'

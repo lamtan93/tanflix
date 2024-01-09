@@ -1,10 +1,10 @@
-interface IReviewItem {
-    id: number,
+export interface IReviewItem {
+    id: string,
     name: string,
     img: string,
     stars: number,
     message: string,
-    date?: string,
+    date: string,
 }
 
 export interface IReviewer {

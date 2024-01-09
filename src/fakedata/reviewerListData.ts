@@ -1,6 +1,6 @@
 export const reviewerListData = [
     {
-        id: 0,
+        id: "0",
         name: "Tan",
         stars: 4,
         message: "J’aime beaucoup l’application Tanflix qui propose beaucoup de choix en therme de séries/films/animés..",
@@ -9,7 +9,7 @@ export const reviewerListData = [
     },
 
     {
-        id: 1,
+        id: "1",
         name: "Corgi",
         stars: 5,
         message: "L’application Tanflix est une bonne application. On y retrouve des produits variés pour tous les goûts.",
@@ -18,7 +18,7 @@ export const reviewerListData = [
     },
 
     {
-        id: 2,
+        id: "2",
         name: "Nutella",
         stars: 3,
         message: "L'application est rodée, efficace et rapide . 4 étoiles pour la technique.",
@@ -27,7 +27,7 @@ export const reviewerListData = [
     },
 
     {
-        id: 3,
+        id: "3",
         name: "David",
         stars: 4,
         message: "Application au top, l'expérience est fluide, logique et super bien pensée.",
@@ -36,7 +36,7 @@ export const reviewerListData = [
     },
 
     {
-        id: 4,
+        id: "4",
         name: "Stephane",
         stars: 3,
         message: "J'ai un abonnement Tanflix pour 4 personnes et toute la fimille en profite. Vaut vraiment le coup.",
@@ -45,7 +45,7 @@ export const reviewerListData = [
     },
 
     {
-        id: 5,
+        id: "5",
         name: "Rose",
         stars: 2,
         message: "Beaucoup de choix, cette application est rapide et plusieurs langues sont accessibles. En revanche, je ne comprends pas pourquoi certaines séries ne sont pas complètes.",

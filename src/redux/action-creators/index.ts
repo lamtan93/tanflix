@@ -3,13 +3,17 @@ import { fetchMovieDetail } from "./FetchMovieDetailActionCreator";
 import { updateLikeMovieList } from "./UpdateLikeMovieListActionCreator";
 import { fetchTrendingMovieList } from "./FetchMovieListActionCreator";
 import { fetchMovieVideo } from "./FetchMovieVideoActionCreator";
+import { fetchSimilarMovieList } from "./FetchMovieListActionCreator";
+import { fetchMovieReviewList } from "./FetchMovieReviewListActionCreator";
 
 const actionCreators = {
     fetchMovieList,
     fetchTrendingMovieList,
+    fetchSimilarMovieList,
     fetchMovieVideo, 
     fetchMovieDetail,
-    updateLikeMovieList,  
+    updateLikeMovieList, 
+    fetchMovieReviewList 
 }
 
 export default actionCreators;

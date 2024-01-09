@@ -12,7 +12,9 @@ const MovieDetailHome:FC = () => {
     const { movieDetailLoading, movieDetailData, movieDetailError } = useTypedSelector(state => state.movieDetail);
     const {id: idMovie} = useParams();
     useEffect(()=> {
-        if(idMovie){fetchMovieDetail(Number(idMovie));}
+        if(idMovie){
+            fetchMovieDetail(Number(idMovie));
+        }
         scrollToViewId('movie-detail-section');
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [idMovie])  

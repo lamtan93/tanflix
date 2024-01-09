@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useState, useEffect } from 'react';
 import Button from '../Button/Button';
 import "../../styles/_components/_movieDetail.scss";
 import Actor from '../Actor/Actor';
@@ -10,7 +10,6 @@ import Popup from '../Popup/Popup';
 import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import Title from '../Title/Title';
-import { reviewerListData } from '../../fakedata/reviewerListData';
 import Reviewer from '../Reviewer/Reviewer';
 import MovieList from '../MovieList/MovieList';
 
@@ -27,13 +26,22 @@ const MovieDetail: FC<IMovieDetail> = ({
 }) => {
     const [isOpenPopup, setIsOpenPopup] = useState(false);
     const [oldIdMovieVideo, setOldIdMovieVideo] = useState(0);
-    const { fetchMovieVideo } = useActions();
+    const { fetchMovieVideo, fetchSimilarMovieList, fetchMovieReviewList } = useActions();
+
     const { movieVideosLoading, movieVideosData, movieVideosError } 
     = useTypedSelector(state => state.movieVideos);
 
-    const { movieListData } 
-    = useTypedSelector(state => state.movieList);
+    const { similarMovieListLoading, similarMovieListData, similarMovieListError } 
+    = useTypedSelector(state => state.similarMovieList);
+
+    const { movieReviewListLoading, movieReviewListData, movieReviewListError } 
+    = useTypedSelector(state => state.movieReviewList);
     
+    useEffect(() => {
+        fetchMovieReviewList(Number(id));
+        fetchSimilarMovieList(Number(id));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     const showPopup = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         e.preventDefault();
@@ -63,12 +71,12 @@ const MovieDetail: FC<IMovieDetail> = ({
                                 title={name}
                                 close={closePopup}
                                 open={isOpenPopup}>
-                                <PreviewVideo 
-                                    src={`https://www.youtube.com/embed/${movieVideosData?.[0].key}`} 
+                                {movieVideosData.length > 0 ? (<PreviewVideo 
+                                    src={`https://www.youtube.com/embed/${movieVideosData[0].key}`} 
                                     title={name} 
                                     width='100%' 
                                     height='100%'
-                                />
+                                />) : <Title name='sorry, trailer not available :(' size='small' position='center'/>}
                             </Popup>
                         )}
                             <Button 
@@ -111,21 +119,23 @@ const MovieDetail: FC<IMovieDetail> = ({
                     </div>
             </div>
 
-            
-                {/* <Title name='Reviews movies' size='med' position='right'/> */}
-                <Reviewer 
-                    title='Reviewers'
-                    reviewerList={reviewerListData}
-                />
-            
-            
-                {/* <Title name='Related movies' size='med' position='right'/> */}
+                {movieReviewListLoading && <Title name='Loading...' position='center' size='small'/>}
+                {movieReviewListError && <Title name='Sorry, something went wrong :(' position='center' size='small'/>}
+                {!movieReviewListError && movieReviewListData && movieReviewListData.length === 0 && <Title name='No reviews for this movie' position='center' size='small'/>}
+                {!movieReviewListLoading && !movieReviewListError && movieReviewListData && movieReviewListData.length > 0 && (
+                    <Reviewer 
+                        title='Reviewers'
+                        reviewerList={movieReviewListData}
+                    />
+                )}
+
+                {!similarMovieListLoading && !similarMovieListError &&
                 <MovieList 
-                    movieList={movieListData} 
+                    categoryLabel='Similar movies'
+                    movieList={similarMovieListData} 
                     onChange={() => {}} 
                     searchValue={''}
-                />
-            
+                />}             
         </section>
     )
 }

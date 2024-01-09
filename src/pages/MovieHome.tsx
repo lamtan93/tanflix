@@ -32,12 +32,14 @@ const MovieHome:FC = () => {
             {movieListError && <Title name='Sorry, something went wrong :(' position='center' size='small'/>}
             {!trendingMovieListLoading && !trendingMovieListError 
             && <Trending 
+                categoryLabel='Trending movies'
                 movieList={trendingMovieListData.slice(0,3)}
                 searchValue=''
             />}
 
             {!movieListLoading && !movieListError 
             && <MovieList 
+                categoryLabel='Other movies'
                 movieList={getMoviesByName(searchValue,movieListData)} 
                 onChange={handleOnChangeSearch} 
                 searchValue={searchValue}

@@ -34,7 +34,7 @@ export const fetchMovieDetail = (idMovie: number) => {
                     name: title,
                     description: overview,
                     imgSrc: poster_path,
-                    date: release_date,
+                    date: new Date(release_date).toLocaleDateString(),
                     companies: production_companies,
                     countries: production_countries
             }
