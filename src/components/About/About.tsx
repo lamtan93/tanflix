@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react';
 import { Title, Button } from '../UI';
 import Composition from '../Composition/Composition';
 import '../../styles/_components/_about.scss';
-import { scrollAnimation } from '../../utils/utils';
+import { CONFIG_API, scrollAnimation } from '../../utils/utils';
 
 const About:FC = () => {
     useEffect(() => {
@@ -23,7 +23,11 @@ const About:FC = () => {
                     <Button title='learn more' color='orange' animated={false} size='small'/>
                 </div>
                 <div className='about__composition'>
-                    <Composition />
+                    <Composition listSourceVideos={[
+                        CONFIG_API.BASE_VIDEO_URL_COMPOSITION_1,
+                        CONFIG_API.BASE_VIDEO_URL_COMPOSITION_2,
+                        CONFIG_API.BASE_VIDEO_URL_COMPOSITION_3
+                    ]}/>
                 </div>
                 
             </div>

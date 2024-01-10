@@ -1,1 +1,3 @@
-export interface Composition {}
+export interface IComposition {
+    listSourceVideos: [string, string, string];
+}
