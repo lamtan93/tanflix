@@ -50,7 +50,7 @@ const MovieDetail: FC<IMovieDetail> = ({
             setOldIdMovieVideo(id);
         }
         setIsOpenPopup(true);
-        scrollToViewId('movie-detail-section');
+        scrollToViewId('preview');
     }
 
     const closePopup = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -62,8 +62,7 @@ const MovieDetail: FC<IMovieDetail> = ({
     return (
         <section id='movie-detail-section' className="detailmovie-section">
             <div className="detailmovie">
-                    
-                    <div className="detailmovie__preview">
+                    <div id="preview" className="detailmovie__preview">
                         <img src={`${CONFIG_API.BASE_IMAGE_URL}/${imgSrc}`} alt={`img-${name}`} />
                         {movieVideosError && <Title name='sorry, error loading video...' position='center' size='small' />}
                         {!movieVideosLoading && !movieVideosError && movieVideosData && (
@@ -131,7 +130,7 @@ const MovieDetail: FC<IMovieDetail> = ({
 
                 {!similarMovieListLoading && !similarMovieListError &&
                 <MovieList 
-                    categoryLabel='Similar movies'
+                    categoryLabel='Similar'
                     movieList={getMoviesByName(searchValue,similarMovieListData)} 
                     onChange={handleOnChangeSearchValue} 
                     searchValue={searchValue}

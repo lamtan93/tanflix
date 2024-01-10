@@ -23,8 +23,8 @@ const MovieList: FC<IMovieList> = ({
 
     return (
         <section className="movies-section">
-            <div className='movies-section__header' id="movie-section">
-                <Title name={categoryLabel} position='left' size='med'/>
+            <div className='movies-section__header'>
+                <Title name={categoryLabel} position='left' size='big'/>
                 <div className='movies-section__search'>
                     <input 
                         id='searchMovie'

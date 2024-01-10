@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 const Trending: FC<IMovieList> = ({movieList}) => {
     return (
         <section className="movies-section">
-            <Title name='Trending movies' position='right' size='med'/>
+            <Title name='Trending' position='right' size='big'/>
             <div className="movies-section__content">
                 <div className="movies-section__moviesList movies-section__moviesList--trending">
                     {movieList.map(movie => 

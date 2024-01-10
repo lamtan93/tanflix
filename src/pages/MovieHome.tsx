@@ -21,7 +21,7 @@ const MovieHome:FC = () => {
     useEffect(() => {
         fetchMovieList();
         fetchTrendingMovieList();
-        scrollToViewId('movie-section');
+        scrollToViewId('navbar');
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
@@ -39,7 +39,7 @@ const MovieHome:FC = () => {
 
             {!movieListLoading && !movieListError 
             && <MovieList 
-                categoryLabel='Other movies'
+                categoryLabel='Popular'
                 movieList={getMoviesByName(searchValue,movieListData)} 
                 onChange={handleOnChangeSearchValue} 
                 searchValue={searchValue}

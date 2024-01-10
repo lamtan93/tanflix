@@ -29,10 +29,10 @@
     &__content {
         color: $color-white-secondary;
         // border-top: .5px solid $color-white;
-        width: 70%;
+        width: 80%;
         min-height: 20rem;
         @include mobile(){
-            width: 80%;
+            width: 90%;
             min-height: 25rem;
         }
         @include flex(row, null, center);
@@ -57,14 +57,14 @@
     }
 
     &__paragraph {
-        width: 20rem;
+        width: 30rem;
         padding: 1rem;
         text-align: center;
         font-size: 1.7rem;
         font-weight: 300;
         opacity: .3;
         @include mobile {
-            font-weight: 500;
+            font-weight: 400;
         }
         transition: all .5s ease;
     }

@@ -10,7 +10,7 @@ const Navbar: FC = () => {
     return (
         <nav className="nav">
                 <Brand size="big" />
-                <div className='nav__links'>
+                <div id="navbar" className='nav__links'>
                     <Link className={`${pathname === '/' ? 'nav__links--active' : null }`} to="/">Home</Link>
                     <Link className={`${pathname === '/movies' || pathname.includes('/movie-detail') ? 'nav__links--active' : null } `} to="/movies">Movies</Link>
                 </div>
