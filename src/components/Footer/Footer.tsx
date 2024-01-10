@@ -14,7 +14,7 @@ const Footer: FC = () => {
             </div>
             <div className="footer__brand">
                 <Brand size="small" />
-                <h3>Made with <span>LOVE</span></h3>
+                <h4>Made with <span>LOVE</span></h4>
             </div>
             <div className="footer__general">
                 <h3>general</h3>

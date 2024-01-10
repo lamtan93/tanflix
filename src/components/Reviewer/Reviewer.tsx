@@ -34,7 +34,7 @@ const Reviewer: FC<IReviewer> = ({
             
             <Title
                     name={title}
-                    size='med'
+                    size='big'
                     position='right'
             />
             <div 

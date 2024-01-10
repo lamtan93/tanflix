@@ -6,7 +6,7 @@ import Button from '../Button/Button';
 const Pricing:FC = () => {
     return (
         <section className='pricing'>
-            <Title name='Pricing' position='left' size='med'/>
+            <Title name='Pricing' position='left' size='big'/>
             <div className='pricing__container'>
                 <div className='pricing__box'>
                     <div className='pricing__item pricing__item--front'>

@@ -12,7 +12,7 @@ const About:FC = () => {
     return(
         <section className='about'>
             <div className='about__title'>
-                <Title name='Our best new movies just for you' position='center' size='med' hover={true} />
+                <Title name='Our best new movies just for you' position='center' size='big' hover={true} />
             </div>
             <div className='about__content'>
                 <div className='about__introduce'>

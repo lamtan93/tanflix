@@ -16,8 +16,8 @@
         flex-wrap: wrap;
     }
     &__box {
-        height: 40rem;
-        width: 25rem;
+        height: 45rem;
+        width: 30rem;
         @include mobile(){
             height: 37rem;
             width: 28rem;
@@ -85,11 +85,11 @@
 
     &__message {
         color: white;
-        font-weight: 500;
-        font-size: .7rem;
-        background-color: $color-black;
+        background: rgba(black, .4);
+        font-size: .8rem;
+        font-weight: 400;
         overflow-x: hidden;
-            & > p{
+            & > p {
                 animation: move-pricing-message 9s linear infinite;
             }
     }
@@ -112,7 +112,7 @@
     }
 
     &__body {
-        font-size: 1.7rem;
+        font-size: 1.9rem;
         font-weight: 300;
         height: 65%;
         text-align: center;
@@ -141,6 +141,7 @@
         @include flex(column, space-around, center);
         & > span:nth-child(1){
             font-size: 2rem;
+            text-transform: uppercase;
         }
         & > span:nth-child(2){
             font-size: 4rem;
