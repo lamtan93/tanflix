@@ -1,6 +1,7 @@
 import { FC } from "react";
+import { Brand } from "../UI";
 import "../../styles/_layouts/_footer.scss";
-import Brand from "../Brand/Brand";
+
 
 const Footer: FC = () => {
     return (

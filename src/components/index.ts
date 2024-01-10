@@ -1,0 +1,10 @@
+export { default as About } from './About/About';
+export { default as Composition } from './Composition/Composition';
+export { default as Footer } from './Footer/Footer';
+export { default as Header } from './Header/Header';
+export { default as MovieDetail } from './MovieDetail/MovieDetail';
+export { default as MovieList } from './MovieList/MovieList';
+export { default as PreviewVideo } from './PreviewVideo/PreviewVideo';
+export { default as Pricing } from './Pricing/Pricing';
+export { default as Reviewer } from './Reviewer/Reviewer';
+export { default as Trending } from './Trending/Trending';

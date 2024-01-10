@@ -1,7 +1,6 @@
 import { FC } from 'react';
+import { Title, Button } from '../UI';
 import '../../styles/_components/_pricing.scss';
-import Title from '../Title/Title';
-import Button from '../Button/Button';
 
 const Pricing:FC = () => {
     return (

@@ -1,13 +1,10 @@
 import { FC } from 'react';
-import "../../styles/_components/_review.scss";
-import Title from '../Title/Title';
-import videoAvisClient from '../../assets/video/avisclient.mp4';
-import Actor from '../Actor/Actor';
-import Button from '../Button/Button';
-import Star from '../Star/Star';
-import { IReviewer } from './interfaces/IReviewer';
 import { useLoadMore } from '../../hooks/useLoadMore';
+import { Title, Actor, Button, Star } from '../UI';
+import { IReviewer } from './interfaces/IReviewer';
 import { scrollVertical } from '../../utils/utils';
+import "../../styles/_components/_review.scss";
+import videoAvisClient from '../../assets/video/avisclient.mp4';
 
 const Reviewer: FC<IReviewer> = ({
     title,

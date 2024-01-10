@@ -1,4 +1,4 @@
-import { ICard } from "../../../components/Card/interfaces/ICard";
+import { ICard } from "../../../components/UI/Card/interfaces/ICard";
 import { MovieListActionType } from "../../action-types.ts/MovieListActionType";
 import { SimilarMovieListAction } from "../../actions/MovieListAction"
 

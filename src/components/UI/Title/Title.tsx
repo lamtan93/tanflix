@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import "../../styles/_base/_utility.scss";
-import "../../styles/_base/_typography.scss";
+import "../../../styles/_base/_utility.scss";
+import "../../../styles/_base/_typography.scss";
 import { ITitle } from './interfaces/ITitle';
 import PropTypes from 'prop-types';
 

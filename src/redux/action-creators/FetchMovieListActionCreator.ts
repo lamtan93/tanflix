@@ -3,7 +3,7 @@ import { MovieListActionType } from '../action-types.ts/MovieListActionType';
 import { Dispatch } from "redux"
 import { MovieListAction, SimilarMovieListAction, TrendingMovieListAction } from "../actions/MovieListAction";
 import { sendAPIRequest } from "../../utils/utils";
-import { ICard } from '../../components/Card/interfaces/ICard';
+import { ICard } from '../../components/UI/Card/interfaces/ICard';
 import { IRawMovieListDataFromAPI } from './interfaces';
 
 export const fetchMovieList = () => {

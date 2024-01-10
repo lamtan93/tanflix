@@ -1,9 +1,8 @@
 import { FC, useEffect } from 'react';
-import '../../styles/_components/_about.scss';
-import Title from '../Title/Title';
+import { Title, Button } from '../UI';
 import Composition from '../Composition/Composition';
+import '../../styles/_components/_about.scss';
 import { scrollAnimation } from '../../utils/utils';
-import Button from '../Button/Button';
 
 const About:FC = () => {
     useEffect(() => {

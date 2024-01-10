@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { IPreviewVideo } from './IPreviewVideo';
+import { IPreviewVideo } from './interfaces/IPreviewVideo';
 
 const PreviewVideo: FC<IPreviewVideo> = ({
     title ,

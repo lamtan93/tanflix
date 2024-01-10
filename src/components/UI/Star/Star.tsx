@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import "../../styles/_components/_star.scss";
+import "../../../styles/_components/_star.scss";
 import { IStar } from './interfaces/IStar';
 import PropTypes from 'prop-types';
 

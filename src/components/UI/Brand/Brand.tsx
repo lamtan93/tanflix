@@ -1,5 +1,5 @@
 import { FC } from "react";
-import "../../styles/_components/_brand.scss";
+import "../../../styles/_components/_brand.scss";
 import { IBrand } from "./interfaces/IBrand";
 
 const Brand: FC<IBrand> = ({ size }) => {

@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import "../../styles/_components/_button.scss";
-import "../../styles/_base/_utility.scss";
+import "../../../styles/_components/_button.scss";
+import "../../../styles/_base/_utility.scss";
 import { IButton } from './interfaces/IButton';
 import PropTypes from 'prop-types';
 

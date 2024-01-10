@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import Star from '../Star/Star'; 
-import "../../styles/_components/_card.scss";
+import "../../../styles/_components/_card.scss";
 import { ICard } from './interfaces/ICard';
 import { useNavigate } from 'react-router-dom';
-import { useActions } from '../../hooks/useActions';
-import { CONFIG_API } from '../../utils/utils';
+import { useActions } from '../../../hooks/useActions';
+import { CONFIG_API } from '../../../utils/utils';
 import PropTypes from 'prop-types';
 
 const Card: FC<ICard> = ({type, id, name, description, imgSrc, liked}) => {

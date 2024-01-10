@@ -1,13 +1,10 @@
 import { FC } from 'react';
-import Title from '../Title/Title';
-import Card from '../Card/Card';
-import "../../styles/_layouts/_moviesContainer.scss";
-import "../../styles/_components/_button.scss";
-import "../../styles/_base/_utility.scss";
-import { IMovieList } from './interfaces/IMovieList';
-import PropTypes from 'prop-types';
-import Button from '../Button/Button';
 import { useLoadMore } from '../../hooks/useLoadMore';
+import { Title, Card, Button } from '../UI';
+import { IMovieList } from './interfaces/IMovieList';
+import "../../styles/_layouts/_moviesContainer.scss";
+import "../../styles/_base/_utility.scss";
+import PropTypes from 'prop-types';
 
 const MovieList: FC<IMovieList> = ({
     categoryLabel,

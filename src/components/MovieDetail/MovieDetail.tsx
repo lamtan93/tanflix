@@ -1,18 +1,21 @@
 import { FC, useState } from 'react';
-import Button from '../Button/Button';
-import "../../styles/_components/_movieDetail.scss";
-import Actor from '../Actor/Actor';
-import { IMovieDetail } from './interfaces/IMovieDetail';
-import { CONFIG_API, getMoviesByName, scrollToViewId, stopVideo } from "../../utils/utils";
-import PropTypes from 'prop-types';
-import PreviewVideo from '../Video/PreviewVideo';
-import Popup from '../Popup/Popup';
 import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import Title from '../Title/Title';
+import { useSearchInput } from '../../hooks/useSearchInput';
+import { Button, Actor, Title, Popup } from '../UI';
 import Reviewer from '../Reviewer/Reviewer';
 import MovieList from '../MovieList/MovieList';
-import { useSearchInput } from '../../hooks/useSearchInput';
+import PreviewVideo from '../PreviewVideo/PreviewVideo';
+import "../../styles/_components/_movieDetail.scss";
+import { IMovieDetail } from './interfaces/IMovieDetail';
+import PropTypes from 'prop-types';
+
+import {
+    CONFIG_API,
+    getMoviesByName,
+    scrollToViewId,
+    stopVideo 
+} from "../../utils/utils";
 
 const MovieDetail: FC<IMovieDetail> = ({
     id,

@@ -1,4 +1,4 @@
-import { ICard } from './../components/Card/interfaces/ICard';
+import { ICard } from '../components/UI/Card/interfaces/ICard';
 export enum CONFIG_API {
     BASE_URL = 'https://api.themoviedb.org/3',
     BASE_IMAGE_URL= 'https://image.tmdb.org/t/p/w500',

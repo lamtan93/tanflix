@@ -1,8 +1,7 @@
 import { FC } from 'react';
-import Title from '../Title/Title';
-import "../../styles/_layouts/_moviesContainer.scss";
-import Card from '../Card/Card';
+import { Title, Card } from '../UI';
 import { IMovieList } from '../MovieList/interfaces/IMovieList';
+import "../../styles/_layouts/_moviesContainer.scss";
 import PropTypes from 'prop-types';
 
 const Trending: FC<IMovieList> = ({movieList}) => {

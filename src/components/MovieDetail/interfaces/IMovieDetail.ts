@@ -1,5 +1,5 @@
 import { IReviewItem } from '../../Reviewer/interfaces/IReviewer';
-import { ICard } from './../../Card/interfaces/ICard';
+import { ICard } from '../../UI/Card/interfaces/ICard';
 interface IName {
     name: string,
 }

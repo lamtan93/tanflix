@@ -1,12 +1,10 @@
 import { FC, useEffect } from 'react';
-import Trending from '../components/Trending/Trending';
-import MovieList from '../components/MovieList/MovieList';
 import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
-import { getMoviesByName, scrollToViewId } from '../utils/utils';
-import Title from '../components/Title/Title';
-import Navbar from '../components/Navbar/Navbar';
 import { useSearchInput } from '../hooks/useSearchInput';
+import { Trending, MovieList } from '../components';
+import { Title, Navbar } from '../components/UI';
+import { getMoviesByName, scrollToViewId } from '../utils/utils';
 
 const MovieHome:FC = () => {
     const {

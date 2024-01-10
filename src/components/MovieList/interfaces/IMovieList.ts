@@ -1,4 +1,4 @@
-import { ICard } from "../../Card/interfaces/ICard";
+import { ICard } from "../../UI/Card/interfaces/ICard";
 export interface IMovieList {
 categoryLabel: string,
 movieList: ICard[],

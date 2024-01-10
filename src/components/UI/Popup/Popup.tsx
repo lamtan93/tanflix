@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { IPopup } from './IPopup';
-import "../../styles/_components/_popup.scss";
+import "../../../styles/_components/_popup.scss";
 import Button from '../Button/Button';
 
 const Popup: FC<IPopup> = ({title, children, open, close}) => {

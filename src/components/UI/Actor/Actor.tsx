@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import "../../styles/_components/_actor.scss";
+import ".././../../styles/_components/_actor.scss";
 import { IActor } from "./interfaces/IActor";
 import PropTypes from 'prop-types';
 

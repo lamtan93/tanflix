@@ -1,7 +1,6 @@
 import { FC } from 'react';
-import Button from '../Button/Button';
+import { Button, Navbar } from '../UI';
 import "../../styles/_layouts/_header.scss";
-import Navbar from '../Navbar/Navbar';
 
 const Header: FC = () => {
     return (

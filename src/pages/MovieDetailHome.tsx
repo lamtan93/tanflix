@@ -1,11 +1,10 @@
 import { FC, useEffect } from 'react';
-import MovieDetail from '../components/MovieDetail/MovieDetail';
+import { useParams } from 'react-router-dom';
 import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
-import { useParams } from 'react-router-dom';
+import { MovieDetail } from '../components';
+import { Title, Navbar } from '../components/UI';
 import { scrollToViewId } from '../utils/utils';
-import Title from '../components/Title/Title';
-import Navbar from '../components/Navbar/Navbar';
 
 const MovieDetailHome:FC = () => {
     const { fetchMovieDetail, fetchSimilarMovieList, fetchMovieReviewList } = useActions();

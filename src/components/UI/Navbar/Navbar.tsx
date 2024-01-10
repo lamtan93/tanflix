@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import "../../styles/_components/_navbar.scss";
+import "../../../styles/_components/_navbar.scss";
 import { useLocation, Link } from 'react-router-dom';
 import Brand from '../Brand/Brand';
 
