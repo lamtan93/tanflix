@@ -19,7 +19,7 @@ const MovieHome:FC = () => {
     useEffect(() => {
         fetchMovieList();
         fetchTrendingMovieList();
-        scrollToViewId('navbar');
+        scrollToViewId('root');
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     

@@ -53,7 +53,7 @@ const MovieDetail: FC<IMovieDetail> = ({
             setOldIdMovieVideo(id);
         }
         setIsOpenPopup(true);
-        scrollToViewId('preview');
+        scrollToViewId('root');
     }
 
     const closePopup = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {

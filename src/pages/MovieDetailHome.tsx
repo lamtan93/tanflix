@@ -18,7 +18,7 @@ const MovieDetailHome:FC = () => {
             fetchMovieReviewList(Number(idMovie));
             fetchSimilarMovieList(Number(idMovie));
         }
-        scrollToViewId('navbar');
+        scrollToViewId('root');
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [idMovie])  
     return (
