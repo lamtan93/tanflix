@@ -8,7 +8,9 @@ const Composition:FC<IComposition> = ({
     return(
         <div className='composition '>
             {listSourceVideos.map((srcVideo, i) => (
-                <div className={`composition__item composition__item--${i + 1}`}>
+                <div
+                    key={`compositionItem-${i}`} 
+                    className={`composition__item composition__item--${i + 1}`}>
                 <video  
                     autoPlay  
                     loop 

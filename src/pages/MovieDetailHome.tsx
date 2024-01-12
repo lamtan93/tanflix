@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import { MovieDetail } from '../components';
-import { Title, Navbar } from '../components/UI';
+import { Title } from '../components/UI';
 import { scrollToViewId } from '../utils/utils';
 
 const MovieDetailHome:FC = () => {
@@ -23,7 +23,6 @@ const MovieDetailHome:FC = () => {
     }, [idMovie])  
     return (
         <>
-            <Navbar />
             {movieDetailLoading && <Title name='Loading...' position='center' size='small'/>}
             {movieDetailError && <Title name='Sorry, something went wrong :(' position='center' size='small'/>}
             {!movieDetailLoading && !movieDetailError && movieDetailData && (

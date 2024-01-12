@@ -1,12 +1,10 @@
 import { FC } from 'react';
-import { Header, About, Pricing, Reviewer } from '../components';
-import "../styles/_components/_about.scss";
+import { About, Pricing, Reviewer } from '../components';
 import { reviewerListData } from '../fakedata/reviewerListData';
 
 const Home: FC = () => {
     return (
         <>
-            <Header />
             <About />
             <Pricing />
             <Reviewer

@@ -3,20 +3,77 @@
 @import "../_base/animation";
 
 .nav {
-    @include flex(row, space-between, center);
-    @include mobile(){
-        @include flex(column);
-        margin-bottom: 5rem;
-    }
+    text-align: right;
     padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+
+    &__ctaNavigation-button {
+        display: none;
+    }
+
+    &__ctaNavigation-label {
+        display: none;
+    }
+
+    @include mobile(){
+        padding: 0; 
+        &__ctaNavigation {
+            &-button {
+                display: none;
+                transition: all 2s ease-out;
+            }
+            &-label {
+                display: inline-block;
+                position: fixed;
+                bottom: 10%;
+                right: 3%;
+                z-index: 10;
+                font-family: $font-secondary;
+                font-size: 4rem;
+                font-weight: 500;
+                background: radial-gradient(circle, $color-primary-dark, $color-primary-light);
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                cursor: pointer;
+                transition: all .5s ease-out;
+            }
+
+            &-button:checked + &-label{
+                transform: rotate(-90deg);
+            }
+        }
+
+
+        &__ctaNavigation-button:not(:checked)  ~ &__links{
+            display: none;
+        }
+
+        &__ctaNavigation-button:checked ~ &__links{
+            @include flex(column, center, flex-end);
+            background: radial-gradient(circle, rgba($color-black, 1), rgba($color-primary-light, .2));
+            width: 100vw;
+            height: 100vh;
+            padding: 2rem;
+        }
+    }
+
     &__links {
-        // flex: 2;
-        display: flex;
-        justify-content: flex-end;
-        gap: 3rem;
         font-size: 4rem;
         font-family: $font-secondary;
-        
+        @include mobile(){
+            @include flex(column, center, center);
+            width: 100vw;
+            height: 100vh;
+        }
+
+        & > a:not(:last-child){
+            margin-right: 3rem;
+        }
+
         & > a {
             position: relative;
             &::after {
@@ -45,7 +102,4 @@
             }
         }
     }
-    position: sticky;
-    top: 0;
-    z-index: 99;
 }

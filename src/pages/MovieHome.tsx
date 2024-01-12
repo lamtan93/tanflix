@@ -3,7 +3,7 @@ import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import { useSearchInput } from '../hooks/useSearchInput';
 import { Trending, MovieList } from '../components';
-import { Title, Navbar } from '../components/UI';
+import { Title } from '../components/UI';
 import { getMoviesByName, scrollToViewId } from '../utils/utils';
 
 const MovieHome:FC = () => {
@@ -25,7 +25,6 @@ const MovieHome:FC = () => {
     
     return (
         <>
-            <Navbar />
             {movieListLoading && <Title name='Loading...' position='center' size='small' />}
             {movieListError && <Title name='Sorry, something went wrong :(' position='center' size='small'/>}
             {!trendingMovieListLoading && !trendingMovieListError 
