@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useLoadMore } from '../../hooks/useLoadMore';
 import { Title, Actor, Button, Star } from '../UI';
 import { IReviewer } from './interfaces/IReviewer';
-import { scrollVertical } from '../../utils/utils';
+import { scrollBody, scrollVertical } from '../../utils/utils';
 import "../../styles/_components/_review.scss";
 import videoAvisClient from '../../assets/video/avisclient.mp4';
 
@@ -38,6 +38,8 @@ const Reviewer: FC<IReviewer> = ({
                 id="review__content" 
                 className='review__content' 
                 onWheel={(e) => scrollVertical(e,'review__content')}
+                onMouseOver={() => scrollBody(false)}
+                onMouseLeave={() => scrollBody(true)}
             >
                 {listDataFinal.map(r => 
                     <div 

@@ -90,8 +90,12 @@ export const scrollVertical = (event: React.WheelEvent<HTMLDivElement>, containe
     const container = document.getElementById(containerId);
     if(container){
         container.scrollLeft += event.deltaY > 0 ? 20 : -20;
-        event.preventDefault();
+        // event.preventDefault();
     }  
+}
+
+export const scrollBody = (isScroll: boolean) => {
+    document.body.style.cssText = `overflow: ${isScroll  ? 'auto' : 'hidden'}`;
 }
 
 export const scrollAnimation = () => {

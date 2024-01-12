@@ -20,7 +20,6 @@ const [isChecked, setIsChecked] = useState(false);
                     className='nav__ctaNavigation-label' 
                     htmlFor="nav__ctaNavigation-button">T
                 </label>
-                <div className="nav__ctaNavigation-background"></div>
 
             <div className='nav__links' id="navbar">
                 <Link onClick={() => setIsChecked(false)} className={`${pathname === '/' ? 'nav__links--active' : null }`} to="/">Home</Link>
