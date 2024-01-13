@@ -2,7 +2,8 @@ import { FC, useEffect } from 'react';
 import { Title, Button } from '../UI';
 import Composition from '../Composition/Composition';
 import '../../styles/_components/_about.scss';
-import { CONFIG_API, scrollAnimation } from '../../utils/utils';
+import { scrollAnimation } from '../../utils/utils';
+import { CONFIG_API } from '../../utils/api';
 
 const About:FC = () => {
     useEffect(() => {

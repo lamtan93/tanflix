@@ -2,19 +2,30 @@ import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 import "../../../styles/_components/_navbar.scss";
 import { INavbar } from './interfaces/INavbar';
+import { useIsCurrentPathActive } from '../../../hooks/useIsCurrentPathActive';
+import { APPLICATION_PATHS } from '../../../utils/paths';
 
-const Navbar: FC<INavbar> = ({ pathname }) => {
+const Navbar: FC<INavbar> = () => {
 
-const [isChecked, setIsChecked] = useState(false);
+const [isCheckedButtonNav, setIsCheckedButtonNav] = useState(false);
+
+const {isCurrentPathActive : isHomePage} 
+    = useIsCurrentPathActive(APPLICATION_PATHS.HOME);
+
+const {isCurrentPathActive : isMoviesPage} 
+    = useIsCurrentPathActive(APPLICATION_PATHS.MOVIE_LIST);
+
+const {isCurrentPathActive : isMoviesDetailPage} 
+    = useIsCurrentPathActive(APPLICATION_PATHS.MOVIE_DETAIL);
 
     return (  
         <nav className="nav">
                 <input 
-                    checked={isChecked}
+                    checked={isCheckedButtonNav}
                     type="checkbox" 
                     id="nav__ctaNavigation-button" 
                     className='nav__ctaNavigation-button'
-                    onChange={(e) => setIsChecked(e.currentTarget.checked)} 
+                    onChange={(e) => setIsCheckedButtonNav(e.currentTarget.checked)} 
                 />
                 <label 
                     className='nav__ctaNavigation-label' 
@@ -22,8 +33,20 @@ const [isChecked, setIsChecked] = useState(false);
                 </label>
 
             <div className='nav__links' id="navbar">
-                <Link onClick={() => setIsChecked(false)} className={`${pathname === '/' ? 'nav__links--active' : null }`} to="/">Home</Link>
-                <Link onClick={() => setIsChecked(false)} className={`${pathname === '/movies' || pathname.includes('/movie-detail') ? 'nav__links--active' : null } `} to="/movies">Movies</Link>
+                <Link 
+                    className={`${isHomePage && 'nav__links--active' }`}
+                    to="/"
+                    onClick={() => setIsCheckedButtonNav(false)} 
+                >
+                        Home
+                </Link>
+                <Link 
+                    className={`${(isMoviesPage || isMoviesDetailPage) && 'nav__links--active'  } `}
+                    to="/movies" 
+                    onClick={() => setIsCheckedButtonNav(false)} 
+                >
+                        Movies
+                </Link>
             </div>
         </nav> 
     )

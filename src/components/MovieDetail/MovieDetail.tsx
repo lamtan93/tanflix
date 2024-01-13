@@ -9,9 +9,8 @@ import PreviewVideo from '../PreviewVideo/PreviewVideo';
 import "../../styles/_components/_movieDetail.scss";
 import { IMovieDetail } from './interfaces/IMovieDetail';
 import PropTypes from 'prop-types';
-
+import { CONFIG_API } from '../../utils/api';
 import {
-    CONFIG_API,
     getMoviesByName,
     scrollToViewId,
     stopVideo 

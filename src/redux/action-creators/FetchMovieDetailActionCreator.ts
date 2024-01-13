@@ -1,5 +1,5 @@
 import { Dispatch } from "redux"
-import { sendAPIRequest } from "../../utils/utils";
+import { sendAPIRequest } from "../../utils/api";
 import { IRawMovieDetailDataFromAPI } from './interfaces';
 import { IMovieDetail } from '../../components/MovieDetail/interfaces/IMovieDetail';
 import { MovieDetailActionType } from '../action-types.ts/MovieDetailActionType';

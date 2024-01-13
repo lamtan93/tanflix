@@ -1,5 +1,6 @@
 import { Dispatch } from "redux"
-import { sendAPIRequest, CONFIG_API, truncateString } from '../../utils/utils';
+import { sendAPIRequest, CONFIG_API } from "../../utils/api";
+import { truncateString } from '../../utils/utils';
 import { IRawMovieReviewListDataFromAPI } from './interfaces';
 import { MovieReviewListAction } from "../actions/MovieReviewListAction";
 import { MovieReviewListActionType } from "../action-types.ts/MovieReviewActionType";

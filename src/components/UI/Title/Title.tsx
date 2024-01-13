@@ -8,7 +8,7 @@ const Title: FC<ITitle> = ({name, position, size, hover=true}) => {
     return (
         <h1 className={
             `title title--${size} 
-            title--${hover ? 'hover' : null}
+            title--${hover && 'hover'}
             u__mb--medium 
             u__center-text--${position}`
         }>

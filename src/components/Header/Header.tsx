@@ -1,17 +1,19 @@
 import { FC } from 'react';
-import { useLocation } from 'react-router-dom';
 import { Brand, Button, Navbar } from '../UI';
 import "../../styles/_layouts/_header.scss";
+import { APPLICATION_PATHS } from '../../utils/paths';
+import { useIsCurrentPathActive } from '../../hooks/useIsCurrentPathActive';
 
 const Header: FC = () => {
-    const location = useLocation();
-    const { pathname } = location;
-    
-    const isHomePage = pathname === '/';
+    const {
+        isCurrentPathActive: isHomePage
+    } = useIsCurrentPathActive(APPLICATION_PATHS.HOME);
+
     return (
+        <>
+        <Navbar /> 
         <header className={`header ${isHomePage && 'header--homePage'}`}>
             <Brand size="big" />
-            <Navbar pathname={pathname} /> 
             {isHomePage && (
                 <div className="header__container-slogan">
                     <h1>
@@ -27,6 +29,7 @@ const Header: FC = () => {
                 </div>
             )}
         </header>
+        </>
     );
   }
 

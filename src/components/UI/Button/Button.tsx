@@ -16,9 +16,9 @@ const Button: FC<IButton> = ({
 }) => {
     return (
         <Link className={
-            `btn ${animated ? 'btn--animated' : null}
-            ${loading ? 'btn--loading' : null}
-            ${disabled ? 'btn--disabled' : null}
+            `btn ${animated && 'btn--animated'}
+            ${loading && 'btn--loading'}
+            ${disabled && 'btn--disabled'}
             btn--${color}
             btn--${size}`
         } 

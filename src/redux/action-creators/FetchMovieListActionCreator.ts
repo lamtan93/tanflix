@@ -2,7 +2,7 @@ import { truncateString } from './../../utils/utils';
 import { MovieListActionType } from '../action-types.ts/MovieListActionType';
 import { Dispatch } from "redux"
 import { MovieListAction, SimilarMovieListAction, TrendingMovieListAction } from "../actions/MovieListAction";
-import { sendAPIRequest } from "../../utils/utils";
+import { sendAPIRequest } from '../../utils/api';
 import { ICard } from '../../components/UI/Card/interfaces/ICard';
 import { IRawMovieListDataFromAPI } from './interfaces';
 

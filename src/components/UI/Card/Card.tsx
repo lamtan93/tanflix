@@ -4,7 +4,7 @@ import "../../../styles/_components/_card.scss";
 import { ICard } from './interfaces/ICard';
 import { useNavigate } from 'react-router-dom';
 import { useActions } from '../../../hooks/useActions';
-import { CONFIG_API } from '../../../utils/utils';
+import { CONFIG_API } from '../../../utils/api';
 import PropTypes from 'prop-types';
 
 const Card: FC<ICard> = ({type, id, name, description, imgSrc, liked}) => {
@@ -12,7 +12,7 @@ const Card: FC<ICard> = ({type, id, name, description, imgSrc, liked}) => {
     const { updateLikeMovieList } = useActions();
 
     const handleOnClick = (id: number) => {
-        navigate(`/movie-detail/${id}`);
+        navigate(`/movies/detail/${id}`);
     }
 
     const handleOnClickStar = (e: React.MouseEvent<HTMLDivElement, MouseEvent>, id: number) => {
