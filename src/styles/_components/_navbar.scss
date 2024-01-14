@@ -28,11 +28,11 @@
             &-label {
                 display: inline-block;
                 position: fixed;
-                bottom: 10%;
-                right: 3%;
+                top: 1%;
+                right: 5%;
                 z-index: 10;
                 font-family: $font-secondary;
-                font-size: 5rem;
+                font-size: 4rem;
                 font-weight: 500;
                 background: radial-gradient(circle, $color-primary-dark, $color-primary-light);
                 background-clip: text;
@@ -40,21 +40,46 @@
                 color: transparent;
                 cursor: pointer;
                 transition: all .5s ease-out;
+                transform: rotate(-90deg);
+                outline: .01rem solid $color-primary-light;
+                outline-offset: .5rem;
+
+                &:before {
+                    content: 'F';
+                    position: absolute;
+                    top: 25%;
+                    right: 10%;
+                    opacity: .7;
+                    z-index: -1;
+                    border-radius: 10%;
+                    transition: all .7s ease-out;
+                    transform: rotate(90deg);   
+                    color: $color-primary-dark;
+                }
             }
 
             &-button:checked + &-label{
-                transform: rotate(-90deg);
+                transform: rotate(90deg);
+                color: white;
+            }
+
+            &-button:checked + &-label::before{
+                transform: rotate(-90deg) scale(-1, 1);
+                top: 20%;
+                left: 20%;
+                color: white;
             }
         }
 
-
-        &__ctaNavigation-button:not(:checked)  ~ &__links{
+        &__ctaNavigation-button:not(:checked) ~ &__links{
             display: none;
         }
 
         &__ctaNavigation-button:checked ~ &__links{
             @include flex(column, center, flex-end);
-            background: radial-gradient(circle, rgba($color-black, 1), rgba($color-primary-light, .2));
+            background: radial-gradient(circle,
+            rgba($color-black, .9),
+            rgba($color-primary-light, .2));
             width: 100vw;
             height: 100vh;
             padding: 2rem;

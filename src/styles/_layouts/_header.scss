@@ -3,9 +3,9 @@
 @import "../_base//animation";
 
 .header {
-    padding: 1rem;
+    padding: 3rem;
     @include mobile {
-        text-align: center;
+        text-align: left;
     }
     &--homePage {
         height: 95vh;

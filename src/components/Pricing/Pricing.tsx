@@ -24,7 +24,7 @@ const Pricing:FC = () => {
                     <div className='pricing__item pricing__item--back'>
                         <div className='pricing__register'>
                             <span>Only</span>
-                            <span>20$/month</span>
+                            <span>9.99$/month</span>
                             <Button title='Join now' color='white' size='med' animated={true} />
                         </div>
                     </div>
@@ -34,8 +34,7 @@ const Pricing:FC = () => {
                     <div className='pricing__item pricing__item--front'>
                         <div className='pricing__header pricing__header--2'>
                             <div className='pricing__message'>
-                                <p>The price displayed for this best offer is guaranteed only until 02/01/2024 &nbsp;</p>
-                                {/* <p>The price displayed for this best offer is guaranteed only until 02/01/2024 &nbsp;</p> */}
+                                <p>The price displayed for this best offer is guaranteed only until 02/03/2024 &nbsp;</p>
                             </div>
                             <div className='pricing__title'>
                                 <Title name='FAMILY' position='right' size='med'/>
@@ -51,7 +50,7 @@ const Pricing:FC = () => {
                     <div className='pricing__item pricing__item--back'>
                         <div className='pricing__register'>
                             <span>Only</span>
-                            <span>30$/month</span>
+                            <span>19.99$/month</span>
                             <Button title='Join now' color='white' size='med' animated={true} />
                         </div>
                     </div>
@@ -74,7 +73,7 @@ const Pricing:FC = () => {
                     <div className='pricing__item pricing__item--back'>
                         <div className='pricing__register'>
                             <span>Only</span>
-                            <span>50$/month</span>
+                            <span>29.99$/month</span>
                             <Button title='Join now' color='white' size='med' animated={true} />
                         </div>
                     </div>
