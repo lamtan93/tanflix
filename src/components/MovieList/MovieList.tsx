@@ -57,7 +57,7 @@ const MovieList: FC<IMovieList> = ({
                         && !searchValue
                         && (
                             <Button 
-                                title='loadmore' 
+                                name='loadmore' 
                                 color='orange' 
                                 animated={true} 
                                 onClick={loadMore} 

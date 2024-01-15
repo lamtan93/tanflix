@@ -6,8 +6,8 @@ import MovieDetailHome from './pages/MovieDetailHome';
 import MovieHome from './pages/MovieHome';
 import Home from './pages/Home';
 import { Header } from './components';
-import { Title } from './components/UI';
 import { APPLICATION_PATHS } from './utils/paths';
+import NotFound from './components/Utils/NotFound';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <Header />
       <main className='main'>
         <Routes>
-          <Route path={APPLICATION_PATHS.NOT_FOUND} element={<Title name='Sorry, page not found'size='med' position='center' />} />
+          <Route path={APPLICATION_PATHS.NOT_FOUND} element={<NotFound />} />
           <Route path={APPLICATION_PATHS.HOME} element={<Home />} />
           <Route path={APPLICATION_PATHS.MOVIE_LIST} element={<MovieHome />} />
           <Route path={APPLICATION_PATHS.MOVIE_DETAIL} element={<MovieDetailHome />} />

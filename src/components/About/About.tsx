@@ -12,7 +12,11 @@ const About:FC = () => {
     return(
         <section className='about'>
             <div className='about__title'>
-                <Title name='Our best new movies just for you' position='center' size='big' hover={true} />
+                <Title 
+                    name='Our best new movies just for you' 
+                    position='center' 
+                    size='big' 
+                    hover={true} />
             </div>
             <div className='about__content'>
                 <div className='about__introduce'>
@@ -21,7 +25,7 @@ const About:FC = () => {
 
                     <h3 className='scroll--hidden'>live adventures like you never have before</h3>
                     <p className='scroll--hidden'>Indulge in a world of unforgettable stories and breathtaking visuals at our movie paradise.</p>
-                    <Button title='learn more' color='orange' animated={false} size='small'/>
+                    <Button name='learn more' color='orange' animated={false} size='small'/>
                 </div>
                 <div className='about__composition'>
                     <Composition listSourceVideos={[

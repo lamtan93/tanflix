@@ -1,10 +1,10 @@
-type IButtonColor = 'white' | 'orange';
-type IButtonSize = 'big' | 'med' | 'small' | 'extra-small';
+import { IComponentUIColor, IComponentUISize } from "../../interfacesUI";
+
 export interface IButton {
     animated: boolean,
-    color: IButtonColor,
-    title: string,
-    size: IButtonSize,
+    color: IComponentUIColor,
+    name: string,
+    size: IComponentUISize,
     loading?: boolean,
     disabled?: boolean,
     onClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void

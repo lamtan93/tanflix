@@ -5,9 +5,7 @@ import { APPLICATION_PATHS } from '../../utils/paths';
 import { useIsCurrentPathActive } from '../../hooks/useIsCurrentPathActive';
 
 const Header: FC = () => {
-    const {
-        isCurrentPathActive: isHomePage
-    } = useIsCurrentPathActive(APPLICATION_PATHS.HOME);
+    const isHomePage = useIsCurrentPathActive(APPLICATION_PATHS.HOME);
 
     return (
         <>
@@ -21,7 +19,7 @@ const Header: FC = () => {
                         <span className="header__slogan header__slogan--sub">let's make memories</span>
                     </h1>
                     <Button 
-                        title='Discover Movies' 
+                        name='Discover Movies' 
                         animated={true} 
                         color='white'
                         size={'big'}

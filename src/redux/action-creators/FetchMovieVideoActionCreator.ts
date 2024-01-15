@@ -3,6 +3,7 @@ import { sendAPIRequest } from "../../utils/api";
 import { IRawMovieVideoDataFromAPI, IRawMovieVideoListDataFromAPI } from './interfaces';
 import { MovieVideoActionType } from "../action-types.ts/MovieVideoActionType";
 import { MovieVideoAction } from "../actions/MovieVideoAction";
+import { Dico } from "../../utils/dico";
 
 export const fetchMovieVideo = (idMovie: number) => {
     return async (dispatch: Dispatch<MovieVideoAction>) => {
@@ -25,7 +26,7 @@ export const fetchMovieVideo = (idMovie: number) => {
             });
             
         } catch (error: unknown) {
-            let errorMsg = 'sorry but something went wrong :(';
+            let errorMsg = Dico.DISCLAIMER.ERROR_GLOBAL_MSG;
             if(typeof error === 'string'){
                 errorMsg = error
             }else if(error instanceof Error){

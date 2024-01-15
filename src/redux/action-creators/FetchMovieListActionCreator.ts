@@ -5,6 +5,7 @@ import { MovieListAction, SimilarMovieListAction, TrendingMovieListAction } from
 import { sendAPIRequest } from '../../utils/api';
 import { ICard } from '../../components/UI/Card/interfaces/ICard';
 import { IRawMovieListDataFromAPI } from './interfaces';
+import { Dico } from '../../utils/dico';
 
 export const fetchMovieList = () => {
     return async (dispatch: Dispatch<MovieListAction>) => {
@@ -28,7 +29,7 @@ export const fetchMovieList = () => {
                 payload: movieList
             });
         } catch (error: unknown) {
-            let errorMsg = 'sorry but something went wrong :(';
+            let errorMsg = Dico.DISCLAIMER.ERROR_GLOBAL_MSG;
             if(typeof error === 'string'){
                 errorMsg = error
             }else if(error instanceof Error){
@@ -65,7 +66,7 @@ export const fetchTrendingMovieList = () => {
                 payload: movieList
             });
         } catch (error: unknown) {
-            let errorMsg = 'sorry but something went wrong :(';
+            let errorMsg = Dico.DISCLAIMER.ERROR_GLOBAL_MSG;
             if(typeof error === 'string'){
                 errorMsg = error
             }else if(error instanceof Error){
@@ -103,7 +104,7 @@ export const fetchSimilarMovieList = (id: number) => {
                 payload: movieList
             });
         } catch (error: unknown) {
-            let errorMsg = 'sorry but something went wrong :(';
+            let errorMsg = Dico.DISCLAIMER.ERROR_GLOBAL_MSG;
             if(typeof error === 'string'){
                 errorMsg = error
             }else if(error instanceof Error){

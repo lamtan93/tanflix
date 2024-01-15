@@ -77,23 +77,16 @@
 
         &__ctaNavigation-button:checked ~ &__links{
             @include flex(column, center, flex-end);
-            background: radial-gradient(circle,
-            rgba($color-black, .9),
-            rgba($color-primary-light, .2));
+            padding: 2rem;
             width: 100vw;
             height: 100vh;
-            padding: 2rem;
+            background: rgba($color-black, .5);
         }
     }
 
     &__links {
         font-size: 4rem;
         font-family: $font-secondary;
-        @include mobile(){
-            @include flex(column, center, center);
-            width: 100vw;
-            height: 100vh;
-        }
 
         & > a:not(:last-child){
             margin-right: 3rem;

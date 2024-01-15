@@ -3,8 +3,8 @@ import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import { useSearchInput } from '../hooks/useSearchInput';
 import { Trending, MovieList } from '../components';
-import { Title } from '../components/UI';
 import { getMoviesByName, scrollToViewId } from '../utils/utils';
+import Disclaimer from '../components/Utils/Disclaimer';
 
 const MovieHome:FC = () => {
     const {
@@ -25,8 +25,9 @@ const MovieHome:FC = () => {
     
     return (
         <>
-            {movieListLoading && <Title name='Loading...' position='center' size='small' />}
-            {movieListError && <Title name='Sorry, something went wrong :(' position='center' size='small'/>}
+            
+            {trendingMovieListLoading && <Disclaimer type='loading' />}
+            {trendingMovieListError && <Disclaimer type='error' msgDetail={trendingMovieListError}/>}
             {!trendingMovieListLoading && !trendingMovieListError 
             && <Trending 
                 categoryLabel='Trending movies'
@@ -34,6 +35,8 @@ const MovieHome:FC = () => {
                 searchValue=''
             />}
 
+            {movieListLoading && <Disclaimer type='loading' />}
+            {movieListError && <Disclaimer type='error' msgDetail={movieListError}/>}
             {!movieListLoading && !movieListError 
             && <MovieList 
                 categoryLabel='Popular'

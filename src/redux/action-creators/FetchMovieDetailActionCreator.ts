@@ -4,6 +4,7 @@ import { IRawMovieDetailDataFromAPI } from './interfaces';
 import { IMovieDetail } from '../../components/MovieDetail/interfaces/IMovieDetail';
 import { MovieDetailActionType } from '../action-types.ts/MovieDetailActionType';
 import { MovieDetailAction } from '../actions/MovieDetailAction';
+import { Dico } from "../../utils/dico";
 
 
 export const fetchMovieDetail = (idMovie: number) => {
@@ -45,7 +46,7 @@ export const fetchMovieDetail = (idMovie: number) => {
                 payload: movieDetail
             });
         } catch (error: unknown) {
-            let errorMsg = 'sorry but something went wrong :(';
+            let errorMsg = Dico.DISCLAIMER.ERROR_GLOBAL_MSG;
             if(typeof error === 'string'){
                 errorMsg = error
             }else if(error instanceof Error){

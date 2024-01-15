@@ -9,14 +9,9 @@ const Navbar: FC<INavbar> = () => {
 
 const [isCheckedButtonNav, setIsCheckedButtonNav] = useState(false);
 
-const {isCurrentPathActive : isHomePage} 
-    = useIsCurrentPathActive(APPLICATION_PATHS.HOME);
-
-const {isCurrentPathActive : isMoviesPage} 
-    = useIsCurrentPathActive(APPLICATION_PATHS.MOVIE_LIST);
-
-const {isCurrentPathActive : isMoviesDetailPage} 
-    = useIsCurrentPathActive(APPLICATION_PATHS.MOVIE_DETAIL);
+const isHomePage = useIsCurrentPathActive(APPLICATION_PATHS.HOME);
+const isMoviesPage = useIsCurrentPathActive(APPLICATION_PATHS.MOVIE_LIST);
+const isMoviesDetailPage = useIsCurrentPathActive(APPLICATION_PATHS.MOVIE_DETAIL);
 
     return (  
         <nav className="nav">
@@ -35,14 +30,14 @@ const {isCurrentPathActive : isMoviesDetailPage}
             <div className='nav__links' id="navbar">
                 <Link 
                     className={`${isHomePage && 'nav__links--active' }`}
-                    to="/"
+                    to={APPLICATION_PATHS.HOME}
                     onClick={() => setIsCheckedButtonNav(false)} 
                 >
                         Home
                 </Link>
                 <Link 
                     className={`${(isMoviesPage || isMoviesDetailPage) && 'nav__links--active'  } `}
-                    to="/movies" 
+                    to={APPLICATION_PATHS.MOVIE_LIST} 
                     onClick={() => setIsCheckedButtonNav(false)} 
                 >
                         Movies

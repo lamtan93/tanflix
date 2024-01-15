@@ -25,7 +25,7 @@ const Pricing:FC = () => {
                         <div className='pricing__register'>
                             <span>Only</span>
                             <span>9.99$/month</span>
-                            <Button title='Join now' color='white' size='med' animated={true} />
+                            <Button name='Join now' color='white' size='med' animated={true} />
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ const Pricing:FC = () => {
                         <div className='pricing__register'>
                             <span>Only</span>
                             <span>19.99$/month</span>
-                            <Button title='Join now' color='white' size='med' animated={true} />
+                            <Button name='Join now' color='white' size='med' animated={true} />
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@ const Pricing:FC = () => {
                         <div className='pricing__register'>
                             <span>Only</span>
                             <span>29.99$/month</span>
-                            <Button title='Join now' color='white' size='med' animated={true} />
+                            <Button name='Join now' color='white' size='med' animated={true} />
                         </div>
                     </div>
                 </div>

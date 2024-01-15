@@ -3,13 +3,13 @@ import { IPopup } from './IPopup';
 import "../../../styles/_components/_popup.scss";
 import Button from '../Button/Button';
 
-const Popup: FC<IPopup> = ({title, children, open, close}) => {
+const Popup: FC<IPopup> = ({name, children, open, close}) => {
     return (
             <div className={`popup popup${open ? '--open' : '--close'}`}>
                 <div className='popup__header'>
-                    <h4 className='popup__title'>{title}</h4>
+                    <h4 className='popup__title'>{name}</h4>
                     <Button 
-                        title='close' 
+                        name='close' 
                         color='white' 
                         animated={false} 
                         size='extra-small'

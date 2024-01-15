@@ -67,7 +67,7 @@ const Reviewer: FC<IReviewer> = ({
                 )}
             </div>     
             <Button 
-                title='more' 
+                name='more' 
                 size='small' 
                 animated={true} 
                 color='white'

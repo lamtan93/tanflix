@@ -1,3 +1,5 @@
+import { IComponentUISize } from "../../interfacesUI";
+
 export interface IBrand {
-    size: "big" | "med" | "small"
+    size: IComponentUISize
 }

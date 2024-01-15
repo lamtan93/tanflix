@@ -16,7 +16,7 @@ const Composition:FC<IComposition> = ({
                     loop 
                     muted 
                     playsInline
-                    >
+                >
                     <source 
                         src={srcVideo} 
                         type='video/mp4' 

@@ -5,6 +5,7 @@ import { IRawMovieReviewListDataFromAPI } from './interfaces';
 import { MovieReviewListAction } from "../actions/MovieReviewListAction";
 import { MovieReviewListActionType } from "../action-types.ts/MovieReviewActionType";
 import { IReviewItem } from "../../components/Reviewer/interfaces/IReviewer";
+import { Dico } from "../../utils/dico";
 
 export const fetchMovieReviewList = (idMovie: number) => {
     return async (dispatch: Dispatch<MovieReviewListAction>) => {
@@ -33,7 +34,7 @@ export const fetchMovieReviewList = (idMovie: number) => {
                 payload: movieReviewList
             });
         } catch (error: unknown) {
-            let errorMsg = 'sorry but something went wrong :(';
+            let errorMsg = Dico.DISCLAIMER.ERROR_GLOBAL_MSG;
             if(typeof error === 'string'){
                 errorMsg = error
             }else if(error instanceof Error){

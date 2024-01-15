@@ -10,6 +10,8 @@ import "../../styles/_components/_movieDetail.scss";
 import { IMovieDetail } from './interfaces/IMovieDetail';
 import PropTypes from 'prop-types';
 import { CONFIG_API } from '../../utils/api';
+import Disclaimer from '../Utils/Disclaimer';
+import { Dico } from '../../utils/dico';
 import {
     getMoviesByName,
     scrollToViewId,
@@ -69,7 +71,7 @@ const MovieDetail: FC<IMovieDetail> = ({
                         {movieVideosError && <Title name='sorry, error loading video...' position='center' size='small' />}
                         {!movieVideosLoading && !movieVideosError && movieVideosData && (
                             <Popup
-                                title={name}
+                                name={name}
                                 close={closePopup}
                                 open={isOpenPopup}>
                                 {movieVideosData.length > 0 ? (<PreviewVideo 
@@ -81,7 +83,7 @@ const MovieDetail: FC<IMovieDetail> = ({
                             </Popup>
                         )}
                             <Button 
-                                title='Watch trailer' 
+                                name='Watch trailer' 
                                 animated={true} 
                                 color='orange' 
                                 size={'med'}
@@ -120,16 +122,17 @@ const MovieDetail: FC<IMovieDetail> = ({
                     </div>
             </div>
 
-                {movieReviewListLoading && <Title name='Loading...' position='center' size='small'/>}
-                {movieReviewListError && <Title name='Sorry, something went wrong :(' position='center' size='small'/>}
-                {!movieReviewListError && movieReviewListData && movieReviewListData.length === 0 && <Title name='No reviews for this movie' position='center' size='small'/>}
+                {movieReviewListLoading && <Disclaimer type='loading' />}
+                {movieReviewListError && <Disclaimer type='error' msgDetail={movieReviewListError}/>}
+                {!movieReviewListError && movieReviewListData && movieReviewListData.length === 0 && <Disclaimer type='infos' msg={Dico.REVIEWER.NO_REVIEWER_MSG} />}
                 {!movieReviewListLoading && !movieReviewListError && movieReviewListData && movieReviewListData.length > 0 && (
                     <Reviewer 
                         title='Reviewers'
                         reviewerList={movieReviewListData}
                     />
-                )}
-
+                )}                  
+                {similarMovieListLoading && <Disclaimer type='loading' />}
+                {similarMovieListError && <Disclaimer type='error' msgDetail={similarMovieListError}/>}
                 {!similarMovieListLoading && !similarMovieListError &&
                 <MovieList 
                     categoryLabel='Similar'

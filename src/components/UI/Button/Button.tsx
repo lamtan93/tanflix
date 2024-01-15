@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const Button: FC<IButton> = ({
     animated,
     color,
-    title,
+    name,
     size,
     loading = false,
     disabled = false,
@@ -25,7 +25,7 @@ const Button: FC<IButton> = ({
             to="/movies"
             onClick={onClick}
         >
-                {title}
+                {name}
         </Link>
     )
 }
