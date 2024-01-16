@@ -19,9 +19,10 @@ const Composition:FC<IComposition> = ({
                     onMouseLeave={(e) => e.currentTarget.pause()}
                 >
                     <source 
-                        src={srcVideo} 
+                        src={`${srcVideo}#t=1`} 
                         type='video/mp4' 
                     />
+                    Your browser does not support the video tag.
                 </video>
             </div>
             ))}
