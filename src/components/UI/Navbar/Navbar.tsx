@@ -4,6 +4,7 @@ import "../../../styles/_components/_navbar.scss";
 import { INavbar } from './interfaces/INavbar';
 import { useIsCurrentPathActive } from '../../../hooks/useIsCurrentPathActive';
 import { APPLICATION_PATHS } from '../../../utils/paths';
+import { Dico } from '../../../utils/dico';
 
 const Navbar: FC<INavbar> = () => {
 
@@ -33,14 +34,14 @@ const isMoviesDetailPage = useIsCurrentPathActive(APPLICATION_PATHS.MOVIE_DETAIL
                     to={APPLICATION_PATHS.HOME}
                     onClick={() => setIsCheckedButtonNav(false)} 
                 >
-                        Home
+                        {Dico.NAVBAR.MENU_HOME}
                 </Link>
                 <Link 
                     className={`${(isMoviesPage || isMoviesDetailPage) && 'nav__links--active'  } `}
                     to={APPLICATION_PATHS.MOVIE_LIST} 
                     onClick={() => setIsCheckedButtonNav(false)} 
                 >
-                        Movies
+                        {Dico.NAVBAR.MENU_MOVIES}
                 </Link>
             </div>
         </nav> 

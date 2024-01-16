@@ -1,9 +1,11 @@
 import { FC, useEffect } from 'react';
-import { Title, Button } from '../UI';
+import { Title, ButtonLink } from '../UI';
 import Composition from '../Composition/Composition';
 import '../../styles/_components/_about.scss';
 import { scrollAnimation } from '../../utils/utils';
 import { CONFIG_API } from '../../utils/api';
+import { APPLICATION_PATHS } from '../../utils/paths';
+import { Dico } from '../../utils/dico';
 
 const About:FC = () => {
     useEffect(() => {
@@ -13,19 +15,25 @@ const About:FC = () => {
         <section className='about'>
             <div className='about__title'>
                 <Title 
-                    name='Our best new movies just for you' 
+                    name={Dico.SECTION_ABOUT.TITLE_PRESENTATION_GENERAL}
                     position='center' 
                     size='big' 
                     hover={true} />
             </div>
             <div className='about__content'>
                 <div className='about__introduce'>
-                    <h3 className='scroll--hidden'>you are going fall in love with our movies</h3>
-                    <p className='scroll--hidden'>Experience love at first sight with our curated collection of must-watch films and get ready to be enchanted as you explore the magic of cinema on our site.</p>
+                    <h3 className='scroll--hidden'>{Dico.SECTION_ABOUT.TITLE_PRESENTATION_1}</h3>
+                    <p className='scroll--hidden'>{Dico.SECTION_ABOUT.PARAGRAPH_PRESENTATION_1}</p>
 
-                    <h3 className='scroll--hidden'>live adventures like you never have before</h3>
-                    <p className='scroll--hidden'>Indulge in a world of unforgettable stories and breathtaking visuals at our movie paradise.</p>
-                    <Button name='learn more' color='orange' animated={false} size='small'/>
+                    <h3 className='scroll--hidden'>{Dico.SECTION_ABOUT.TITLE_PRESENTATION_2}</h3>
+                    <p className='scroll--hidden'>{Dico.SECTION_ABOUT.PARAGRAPH_PRESENTATION_2}</p>
+                    <ButtonLink 
+                        name={Dico.SECTION_ABOUT.BUTTONLINK_LEARN_MORE} 
+                        color='orange' 
+                        animated={false} 
+                        size='small'
+                        href={APPLICATION_PATHS.MOVIE_LIST}
+                    />
                 </div>
                 <div className='about__composition'>
                     <Composition listSourceVideos={[

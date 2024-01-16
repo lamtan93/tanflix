@@ -11,7 +11,6 @@ import NotFound from './components/Utils/NotFound';
 
 function App() {
   return (
-    <>
     <Provider store={store}>
       <Header />
       <main className='main'>
@@ -24,7 +23,6 @@ function App() {
       </main>
       <Footer />
       </Provider>
-    </>
   );
 }
 

@@ -1,10 +1,11 @@
 import { FC } from 'react';
 import { useLoadMore } from '../../hooks/useLoadMore';
-import { Title, Actor, Button, Star } from '../UI';
+import { Title, Actor, ButtonLink, Star } from '../UI';
 import { IReviewer } from './interfaces/IReviewer';
 import { scrollBody, scrollVertical } from '../../utils/utils';
-import "../../styles/_components/_review.scss";
 import videoAvisClient from '../../assets/video/avisclient.mp4';
+import "../../styles/_components/_review.scss";
+import { Dico } from '../../utils/dico';
 
 const Reviewer: FC<IReviewer> = ({
     title,
@@ -66,8 +67,8 @@ const Reviewer: FC<IReviewer> = ({
                     </div>    
                 )}
             </div>     
-            <Button 
-                name='more' 
+            <ButtonLink 
+                name={Dico.SECTION_REVIEWER.BUTTONLINK_MORE}
                 size='small' 
                 animated={true} 
                 color='white'

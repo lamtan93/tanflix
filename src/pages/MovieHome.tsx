@@ -5,6 +5,7 @@ import { useSearchInput } from '../hooks/useSearchInput';
 import { Trending, MovieList } from '../components';
 import { getMoviesByName, scrollToViewId } from '../utils/utils';
 import Disclaimer from '../components/Utils/Disclaimer';
+import { Dico } from '../utils/dico';
 
 const MovieHome:FC = () => {
     const {
@@ -39,7 +40,7 @@ const MovieHome:FC = () => {
             {movieListError && <Disclaimer type='error' msgDetail={movieListError}/>}
             {!movieListLoading && !movieListError 
             && <MovieList 
-                categoryLabel='Popular'
+                categoryLabel={Dico.SECTION_MOVIES_LIST.OTHERS.POPULAR.TITLE_POPULAR}
                 movieList={getMoviesByName(searchValue,movieListData)} 
                 onChange={handleOnChangeSearchValue} 
                 searchValue={searchValue}

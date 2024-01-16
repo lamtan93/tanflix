@@ -2,8 +2,6 @@
 @import "../_abstracts/mixins";
 @import "../_abstracts/variables";
 
-@import "../_abstracts/mixins";
-
 *,
 *::before,
 *::after {
@@ -34,9 +32,10 @@ html {
 
 body {
     height: 100%;
-    background-color: #1a1a1a;
-    @include mobile(){
-        padding: 0;
+    background: $color-background;
+
+    &::-webkit-scrollbar{
+        width: 0;
     }
 }
 
@@ -47,6 +46,14 @@ body {
 .main {
     flex-grow: 1;
     min-height: 60rem;
+    & > * {
+        background: #1a1a1a;
+    }
+    @include mobile(){
+        & > *:not(:last-child){
+            padding-bottom: 12rem;
+        }
+    }
 }
 
 a {

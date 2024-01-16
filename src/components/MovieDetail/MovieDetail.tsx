@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { useSearchInput } from '../../hooks/useSearchInput';
-import { Button, Actor, Title, Popup } from '../UI';
+import { ButtonLink, Actor, Title, Popup } from '../UI';
 import Reviewer from '../Reviewer/Reviewer';
 import MovieList from '../MovieList/MovieList';
 import PreviewVideo from '../PreviewVideo/PreviewVideo';
@@ -82,7 +82,7 @@ const MovieDetail: FC<IMovieDetail> = ({
                                 />) : <Title name='sorry, trailer not available :(' size='small' position='center'/>}
                             </Popup>
                         )}
-                            <Button 
+                            <ButtonLink
                                 name='Watch trailer' 
                                 animated={true} 
                                 color='orange' 
@@ -124,7 +124,7 @@ const MovieDetail: FC<IMovieDetail> = ({
 
                 {movieReviewListLoading && <Disclaimer type='loading' />}
                 {movieReviewListError && <Disclaimer type='error' msgDetail={movieReviewListError}/>}
-                {!movieReviewListError && movieReviewListData && movieReviewListData.length === 0 && <Disclaimer type='infos' msg={Dico.REVIEWER.NO_REVIEWER_MSG} />}
+                {!movieReviewListError && movieReviewListData && movieReviewListData.length === 0 && <Disclaimer type='infos' msg={Dico.SECTION_REVIEWER.NO_REVIEWER_MSG} />}
                 {!movieReviewListLoading && !movieReviewListError && movieReviewListData && movieReviewListData.length > 0 && (
                     <Reviewer 
                         title='Reviewers'
@@ -135,7 +135,7 @@ const MovieDetail: FC<IMovieDetail> = ({
                 {similarMovieListError && <Disclaimer type='error' msgDetail={similarMovieListError}/>}
                 {!similarMovieListLoading && !similarMovieListError &&
                 <MovieList 
-                    categoryLabel='Similar'
+                    categoryLabel={Dico.SECTION_MOVIES_LIST.OTHERS.SIMILAR.TITLE_SIMILAR}
                     movieList={getMoviesByName(searchValue,similarMovieListData)} 
                     onChange={handleOnChangeSearchValue} 
                     searchValue={searchValue}

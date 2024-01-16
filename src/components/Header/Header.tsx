@@ -1,8 +1,9 @@
 import { FC } from 'react';
-import { Brand, Button, Navbar } from '../UI';
+import { Brand, ButtonLink, Navbar } from '../UI';
 import "../../styles/_layouts/_header.scss";
 import { APPLICATION_PATHS } from '../../utils/paths';
 import { useIsCurrentPathActive } from '../../hooks/useIsCurrentPathActive';
+import { Dico } from '../../utils/dico';
 
 const Header: FC = () => {
     const isHomePage = useIsCurrentPathActive(APPLICATION_PATHS.HOME);
@@ -15,14 +16,15 @@ const Header: FC = () => {
             {isHomePage && (
                 <div className="header__container-slogan">
                     <h1>
-                        <span className="header__slogan header__slogan--main">together</span>
-                        <span className="header__slogan header__slogan--sub">let's make memories</span>
+                        <span className="header__slogan header__slogan--main">{Dico.HEADER.SLOGAN.MAIN}</span>
+                        <span className="header__slogan header__slogan--sub">{Dico.HEADER.SLOGAN.SUB}</span>
                     </h1>
-                    <Button 
-                        name='Discover Movies' 
+                    <ButtonLink 
+                        name={Dico.HEADER.BUTTONLINK_DISCOVER_MOVIES}
                         animated={true} 
                         color='white'
                         size={'big'}
+                        href={APPLICATION_PATHS.MOVIE_LIST}
                     />
                 </div>
             )}

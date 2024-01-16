@@ -1,17 +1,19 @@
 import { FC } from 'react';
 import "../../../styles/_components/_button.scss";
 import "../../../styles/_base/_utility.scss";
-import { IButton } from './interfaces/IButton';
+import { IButtonLink } from './interfaces/IButtonLink';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { APPLICATION_PATHS } from '../../../utils/paths';
 
-const Button: FC<IButton> = ({
+const ButtonLink: FC<IButtonLink> = ({
     animated,
     color,
     name,
     size,
     loading = false,
     disabled = false,
+    href = APPLICATION_PATHS.HOME,
     onClick
 }) => {
     return (
@@ -22,7 +24,7 @@ const Button: FC<IButton> = ({
             btn--${color}
             btn--${size}`
         } 
-            to="/movies"
+            to={href}
             onClick={onClick}
         >
                 {name}
@@ -31,9 +33,9 @@ const Button: FC<IButton> = ({
 }
 
 
-export default Button;
+export default ButtonLink;
 
-Button.propTypes = {
+ButtonLink.propTypes = {
     animated: PropTypes.bool.isRequired,
     color: PropTypes.oneOf([
         "white",

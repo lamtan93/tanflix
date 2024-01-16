@@ -1,14 +1,15 @@
 import { FC } from 'react';
 import { IPopup } from './IPopup';
+import ButtonLink from '../ButtonLink/ButtonLink';
 import "../../../styles/_components/_popup.scss";
-import Button from '../Button/Button';
+
 
 const Popup: FC<IPopup> = ({name, children, open, close}) => {
     return (
             <div className={`popup popup${open ? '--open' : '--close'}`}>
                 <div className='popup__header'>
                     <h4 className='popup__title'>{name}</h4>
-                    <Button 
+                    <ButtonLink 
                         name='close' 
                         color='white' 
                         animated={false} 

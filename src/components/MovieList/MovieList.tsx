@@ -1,10 +1,11 @@
 import { FC } from 'react';
 import { useLoadMore } from '../../hooks/useLoadMore';
-import { Title, Card, Button } from '../UI';
+import { Title, Card, ButtonLink } from '../UI';
 import { IMovieList } from './interfaces/IMovieList';
 import "../../styles/_layouts/_moviesContainer.scss";
 import "../../styles/_base/_utility.scss";
 import PropTypes from 'prop-types';
+import Input from '../UI/Input/Input';
 
 const MovieList: FC<IMovieList> = ({
     categoryLabel,
@@ -22,17 +23,12 @@ const MovieList: FC<IMovieList> = ({
         <section className="movies-section">
             <div className='movies-section__header'>
                 <Title name={categoryLabel} position='left' size='big'/>
-                <div className='movies-section__search'>
-                    <input 
-                        id='searchMovie'
-                        className="movies-section__search-input" 
-                        name='searchMovie'
-                        type='text' 
-                        placeholder="search your movie"
-                        onChange={(e) => onChange(e)}>
-                    </input>
-                    <label htmlFor='searchMovie' className='movies-section__search-label'>search your movie</label>
-                </div>
+                <Input 
+                    type='text' 
+                    placeholder="search your movie"
+                    onChange={(e) => onChange(e)}
+                    labelName='search your movie'
+                />
             </div>
             <div className="movies-section__content">
                 <div className="movies-section__moviesList movies-section__moviesList--others">
@@ -56,7 +52,7 @@ const MovieList: FC<IMovieList> = ({
                         && listDataFinal.length > 0 
                         && !searchValue
                         && (
-                            <Button 
+                            <ButtonLink
                                 name='loadmore' 
                                 color='orange' 
                                 animated={true} 

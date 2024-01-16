@@ -3,11 +3,12 @@ import { Title, Card } from '../UI';
 import { IMovieList } from '../MovieList/interfaces/IMovieList';
 import "../../styles/_layouts/_moviesContainer.scss";
 import PropTypes from 'prop-types';
+import { Dico } from '../../utils/dico';
 
 const Trending: FC<IMovieList> = ({movieList}) => {
     return (
         <section className="movies-section">
-            <Title name='Trending' position='right' size='big'/>
+            <Title name={Dico.SECTION_MOVIES_LIST.TRENDING.TITLE_TRENDING} position='right' size='big'/>
             <div className="movies-section__content">
                 <div className="movies-section__moviesList movies-section__moviesList--trending">
                     {movieList.map(movie => 
