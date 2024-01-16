@@ -27,7 +27,7 @@ const Disclaimer: FC<IDisclaimer> = (props) => {
             {props.type === 'infos' && <Title name={props.msg} position='center' size='small'/>}
             {props.type === 'error' && (
                 <>
-                    <Title name={Dico.DISCLAIMER.ERROR_GLOBAL_MSG} position='center' size='small'/>
+                    <Title name={props.msgGlobal || Dico.DISCLAIMER.ERROR_GLOBAL_MSG} position='center' size='small'/>
                     <Title name={props.msgDetail} position='center' size='small'/>
                 </>
             )}

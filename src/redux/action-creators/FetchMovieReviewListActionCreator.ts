@@ -22,7 +22,7 @@ export const fetchMovieReviewList = (idMovie: number) => {
                 return {
                     id: r.id,
                     name: r.author || r.author_details.name || r.author_details.username,
-                    img: `${CONFIG_API.BASE_IMAGE_URL_RANDOM}${i}`,
+                    img: `${CONFIG_API.BASE_IMAGE_URL_RANDOM},${i}`,
                     stars: Math.round(r.author_details.rating/2),
                     message: truncateString(r.content, 150),
                     date: new Date(r.updated_at).toLocaleDateString(),

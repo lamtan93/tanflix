@@ -79,7 +79,7 @@ const MovieDetail: FC<IMovieDetail> = ({
                                     title={name} 
                                     width='100%' 
                                     height='100%'
-                                />) : <Title name='sorry, trailer not available :(' size='small' position='center'/>}
+                                />) : <Disclaimer type='error' msgGlobal='Sorry' msgDetail='trailer not available :('/>}
                             </Popup>
                         )}
                             <ButtonLink

@@ -10,11 +10,11 @@ const Home: FC = () => {
         <>
             <About />
             <Pricing />
-            <Reviewer
-                title={Dico.SECTION_REVIEWER.TITLE_REVIEWER_HOME}
-                withVideoBackground
-                reviewerList={reviewerListData} 
-            />
+                <Reviewer
+                    title={Dico.SECTION_REVIEWER.TITLE_REVIEWER_HOME}
+                    withVideoBackground
+                    reviewerList={reviewerListData} 
+                />
         </>
     )
 }

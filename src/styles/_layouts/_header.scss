@@ -11,7 +11,16 @@
         height: 95vh;
         background-image: linear-gradient(to right bottom,
         rgba(rgb(37, 35, 35), .7), rgba(rgb(30, 16, 6), .7)) 
-        ,url('../../assets/images/header-batman.jpeg');
+        ,url('../../assets/images/header-batman-small.jpeg');
+
+        @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+            only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+            only screen and (min-width: 125em) {
+            background-image: linear-gradient(to right bottom,
+            rgba(rgb(37, 35, 35), .7), rgba(rgb(30, 16, 6), .7)) 
+            ,url('../../assets/images/header-batman.jpeg');
+    }
+
         background-size: cover;
         background-position: center;
         position: relative;

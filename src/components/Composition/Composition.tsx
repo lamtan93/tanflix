@@ -12,10 +12,11 @@ const Composition:FC<IComposition> = ({
                     key={`compositionItem-${i}`} 
                     className={`composition__item composition__item--${i + 1}`}>
                 <video  
-                    autoPlay  
-                    loop 
-                    muted 
+                    preload='metadata'
+                    muted
                     playsInline
+                    onMouseOver={(e) => e.currentTarget.play()}
+                    onMouseLeave={(e) => e.currentTarget.pause()}
                 >
                     <source 
                         src={srcVideo} 

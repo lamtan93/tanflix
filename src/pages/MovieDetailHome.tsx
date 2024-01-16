@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import { MovieDetail } from '../components';
-import { Title } from '../components/UI';
 import { scrollToViewId } from '../utils/utils';
+import Disclaimer from '../components/Utils/Disclaimer';
 
 const MovieDetailHome:FC = () => {
     const { fetchMovieDetail, fetchSimilarMovieList, fetchMovieReviewList } = useActions();
@@ -23,8 +23,8 @@ const MovieDetailHome:FC = () => {
     }, [idMovie])  
     return (
         <>
-            {movieDetailLoading && <Title name='Loading...' position='center' size='small'/>}
-            {movieDetailError && <Title name='Sorry, something went wrong :(' position='center' size='small'/>}
+            {movieDetailLoading && <Disclaimer type='loading' />}
+            {movieDetailError && <Disclaimer type='error' msgDetail={movieDetailError}/>}
             {!movieDetailLoading && !movieDetailError && movieDetailData && (
                 <MovieDetail {...movieDetailData} />
             )}
