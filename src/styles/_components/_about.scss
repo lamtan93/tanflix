@@ -63,14 +63,14 @@
 
 }
 
-.scroll--hidden {
+.scroll--hidden-about {
     @include scroll-effect-hidden-gen();
     transform: translateY(-50%);
 }
 
 
-.scroll--show {
-    @include scroll-effect-show-gen();
+.scroll--show-about {
+    @include scroll-effect-show-gen(.5s);
     transform: translateY(0);
 }
 

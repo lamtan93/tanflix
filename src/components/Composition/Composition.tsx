@@ -6,7 +6,7 @@ const Composition:FC<IComposition> = ({
     listSourceVideos,
 }) => {
     return(
-        <div className='composition '>
+        <div className='composition'>
             {listSourceVideos.map((srcVideo, i) => (
                 <div
                     key={`compositionItem-${i}`} 

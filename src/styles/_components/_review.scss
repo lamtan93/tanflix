@@ -125,3 +125,14 @@
 
    
 }
+
+.scroll--hidden-reviewer {
+    @include scroll-effect-hidden-gen();
+    transform: translateX(-100%);
+}
+
+
+.scroll--show-reviewer {
+    @include scroll-effect-show-gen();
+    transform: translateX(0);
+}

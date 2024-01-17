@@ -6,6 +6,7 @@ import { scrollBody, scrollVertical } from '../../utils/utils';
 import videoAvisClient from '../../assets/video/avisclient.mp4';
 import "../../styles/_components/_review.scss";
 import { Dico } from '../../utils/dico';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const Reviewer: FC<IReviewer> = ({
     title,
@@ -18,6 +19,8 @@ const Reviewer: FC<IReviewer> = ({
         isDisabledLoadMore,
     } = useLoadMore(reviewerList);
 
+    useScrollAnimation('reviewer');
+
     return (
         <section className='review'>
             {withVideoBackground && (
@@ -29,12 +32,13 @@ const Reviewer: FC<IReviewer> = ({
                 </video>
             </div>
             )}
-            
-            <Title
-                    name={title}
-                    size='big'
-                    position='right'
-            />
+            <div className="scroll--hidden-reviewer">
+                <Title
+                        name={title}
+                        size='big'
+                        position='right'
+                />
+            </div>
             <div 
                 id="review__content" 
                 className='review__content' 

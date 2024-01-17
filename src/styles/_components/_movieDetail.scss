@@ -2,6 +2,12 @@
 @import "../_abstracts/mixins";
 
 .detailmovie {
+    &-section {
+        & > *:not(:last-child){
+            padding-bottom: 8rem;
+        } 
+    }
+
     position: relative;
     @include flex(row);
     @include mobile(){
@@ -54,4 +60,15 @@
         @include flex(row, flex-start);
         gap: 2rem;
     }
+}
+
+.scroll--hidden-moviedetail {
+    @include scroll-effect-hidden-gen();
+    transform: translateY(-5rem);
+}
+
+
+.scroll--show-moviedetail {
+    @include scroll-effect-show-gen(.5s);
+    transform: translateX(0);
 }

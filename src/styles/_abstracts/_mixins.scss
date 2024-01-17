@@ -15,8 +15,8 @@
     filter: blur(.1rem);
 }
 
-@mixin scroll-effect-show-gen {
-    transition: all .5s linear;
+@mixin scroll-effect-show-gen($duration: 1s) {
+    transition: all $duration linear;
     opacity: 1;
     filter: blur(0);
 }

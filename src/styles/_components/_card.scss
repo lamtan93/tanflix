@@ -133,3 +133,14 @@
         box-shadow: 0 10px 20px rgba($color-primary-light, .5);
     }
 }
+
+.scroll--hidden-card {
+    @include scroll-effect-hidden-gen();
+    transform: translateY(2rem);
+}
+
+
+.scroll--show-card {
+    @include scroll-effect-show-gen(.2s);
+    transform: translateY(0);
+}

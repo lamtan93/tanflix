@@ -31,16 +31,28 @@ export const stopVideo = () => {
     }
 }
 
-export const observer = new IntersectionObserver((entries) => {
+export const observer = (section: string) => new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if(entry.isIntersecting){
-            entry.target.classList.add('scroll--show');
+            entry.target.classList.add(`scroll--show-${section}`);
         }else {
-            entry.target.classList.remove('scroll--show');
-            entry.target.classList.add('scroll--hidden');
+            entry.target.classList.remove(`scroll--show-${section}`);
+            entry.target.classList.add(`scroll--hidden-${section}`);
         }
     })
 })
+
+export const scrollAnimation = (section: string) => {
+    const hiddenElements = document.querySelectorAll(`.scroll--hidden-${section}`);
+    return {
+        start: () => hiddenElements.forEach((el) => {
+            observer(section).observe(el);
+        }),
+        stop: () => hiddenElements.forEach((el) => {
+            observer(section).disconnect();
+        })
+    }
+};
 
 export const scrollVertical = (event: React.WheelEvent<HTMLDivElement>, containerId: string) => {
     const container = document.getElementById(containerId);
@@ -53,10 +65,3 @@ export const scrollVertical = (event: React.WheelEvent<HTMLDivElement>, containe
 export const scrollBody = (isScroll: boolean) => {
     document.body.style.cssText = `overflow: ${isScroll  ? 'auto' : 'hidden'}`;
 }
-
-export const scrollAnimation = () => {
-    const hiddenElements = document.querySelectorAll('.scroll--hidden');
-    hiddenElements.forEach((el) => {
-        observer.observe(el);
-    })
-};

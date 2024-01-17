@@ -17,6 +17,7 @@ import {
     scrollToViewId,
     stopVideo 
 } from "../../utils/utils";
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const MovieDetail: FC<IMovieDetail> = ({
     id,
@@ -47,6 +48,8 @@ const MovieDetail: FC<IMovieDetail> = ({
     const { similarMovieListLoading, similarMovieListData, similarMovieListError } 
     = useTypedSelector(state => state.similarMovieList);
 
+    useScrollAnimation('moviedetail');
+    
     const showPopup = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         e.preventDefault();
         if(movieVideosError || oldIdMovieVideo !== id){
@@ -93,7 +96,9 @@ const MovieDetail: FC<IMovieDetail> = ({
                     </div>    
 
                     <div className="detailmovie__content">
-                        <Title name={name} size='med' position='left' />
+                        <div className="scroll--hidden-moviedetail">
+                            <Title name={name} size='med' position='left' />
+                        </div>
                         <div className='detailmovie__tags'>
                             {genres.map(genre => (
                                 <span key={genre.id} className="detailmovie__tag">#{genre.name}</span>
@@ -117,7 +122,7 @@ const MovieDetail: FC<IMovieDetail> = ({
                             countries.map(country => `${country.name} `)
                         } </span>
                         <span className="detailmovie__popularity">Popularity: {popularity} </span>
-                        <span className="detailmovie__autor">Auteur: Jackie Chan</span>
+                        <span className="detailmovie__autor">Author: updated in progress</span>
                         <span className="detailmovie__date">Date: {date}</span>  
                     </div>
             </div>

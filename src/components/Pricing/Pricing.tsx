@@ -3,13 +3,15 @@ import { Title, ButtonLink } from '../UI';
 import '../../styles/_components/_pricing.scss';
 import { APPLICATION_PATHS } from '../../utils/paths';
 import { Dico } from '../../utils/dico';
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const Pricing:FC = () => {
+    useScrollAnimation('pricing');
     return (
         <section className='pricing'>
             <Title name={Dico.SECTION_PRICING.TITLE_PRICING} position='left' size='big'/>
             <div className='pricing__container'>
-                <div className='pricing__box'>
+                <div className='pricing__box scroll--hidden-pricing'>
                     <div className='pricing__item pricing__item--front'>
                         <div className='pricing__header pricing__header--1'>
                             <div className='pricing__title'>
@@ -37,7 +39,7 @@ const Pricing:FC = () => {
                     </div>
                 </div>
 
-                <div className='pricing__box'>
+                <div className='pricing__box scroll--hidden-pricing'>
                     <div className='pricing__item pricing__item--front'>
                         <div className='pricing__header pricing__header--2'>
                             <div className='pricing__message'>
@@ -69,7 +71,7 @@ const Pricing:FC = () => {
                     </div>
                 </div>
 
-                <div className='pricing__box'>
+                <div className='pricing__box scroll--hidden-pricing'>
                     <div className='pricing__item pricing__item--front'>
                         <div className='pricing__header pricing__header--3'>
                             <div className='pricing__title'>

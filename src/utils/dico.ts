@@ -13,7 +13,7 @@ export const Dico = {
     },
 
     SECTION_ABOUT: {
-        TITLE_PRESENTATION_GENERAL: 'out best new movies just for you',
+        TITLE_PRESENTATION_GENERAL: 'Our best new movies just for you',
         
         TITLE_PRESENTATION_1: 'you are going fall in love with our movies',
         PARAGRAPH_PRESENTATION_1: 'Experience love at first sight with our curated collection of must-watch films and get ready to be enchanted as you explore the magic of cinema on our site.',
@@ -39,7 +39,7 @@ export const Dico = {
 
             FORMULA_FAMILY: {
                 TITLE: 'FAMILY',
-                SCREEN: ',Up to 5 screens',
+                SCREEN: 'Up to 5 screens',
                 DEVICE: 'Mobile and tablet',
                 DOWNLOAD: 'Download 3 movies/week',
                 SUPPORT: 'Support by email/tel',
