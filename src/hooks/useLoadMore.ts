@@ -1,21 +1,21 @@
 import { useEffect, useState, } from 'react';
 
-export const useLoadMore = <T> (listData: T[], limitedNumberMovies_ = 4) => {
-    const [limitedNumberMovies, setLimitedNumberMovies] = useState(limitedNumberMovies_);
+export const useLoadMore = <T> (listData: T[], limitedNumberData_ = 4) => {
+    const [limitedNumberData, setLimitedNumberData] = useState(limitedNumberData_);
     const [isLoadMoreCompleted, setIsLoadMoreCompleted] = useState(false);
     const [isDisabledLoadMore, setIsDisabledLoadMore] = useState(false);
-    const listDataFinal = listData.slice(0 ,limitedNumberMovies);
+    const listDataFinal = listData.slice(0 ,limitedNumberData);
 
     useEffect(() => {
-        if(listData?.length <= limitedNumberMovies_){
+        if(listData?.length <= limitedNumberData_){
             setIsDisabledLoadMore(true);
         };
-    }, [listData?.length, limitedNumberMovies_])
+    }, [listData?.length, limitedNumberData_])
     
     const loadMore = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         e.preventDefault();
-        setLimitedNumberMovies(limitedNumberMovies + 4);
-        if(limitedNumberMovies >= listData.length){
+        setLimitedNumberData(limitedNumberData + 4);
+        if(limitedNumberData >= listData.length){
             setIsLoadMoreCompleted(true);
             setIsDisabledLoadMore(true);
         }else {
@@ -28,5 +28,6 @@ export const useLoadMore = <T> (listData: T[], limitedNumberMovies_ = 4) => {
         loadMore,
         isLoadMoreCompleted,
         isDisabledLoadMore,
+        limitedNumberData,
     }
 }

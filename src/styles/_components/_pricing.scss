@@ -170,6 +170,6 @@
 
 
 .scroll--show-pricing {
-    @include scroll-effect-show-gen(.7s);
+    @include scroll-effect-show-gen(.5s);
     transform: translateY(0);
 }

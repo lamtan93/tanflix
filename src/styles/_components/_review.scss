@@ -27,6 +27,9 @@
     }
     
     &__content {
+        &--newReviewAdded {
+            animation: newReviewAdded 2s linear infinite;
+        }
         color: $color-white-secondary;
         // border-top: .5px solid $color-white;
         width: 80%;

@@ -73,3 +73,10 @@
         transform: translateX(-100%);
     }
 }
+
+@keyframes newReviewAdded {
+    0%{box-shadow: 0 5px 10px rgba($color-primary-light, .5)};
+    25%{box-shadow: 0 5px 10px rgba($color-primary-dark, .3);};
+    50%{box-shadow: 0 5px 10px rgba($color-primary-light, 5)};
+    100%{box-shadow: 0 5px 10px rgba($color-primary-dark, .3)};
+}

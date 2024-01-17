@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import { useLoadMore } from '../../hooks/useLoadMore';
 import { Title, Actor, ButtonLink, Star } from '../UI';
 import { IReviewer } from './interfaces/IReviewer';
@@ -13,13 +13,30 @@ const Reviewer: FC<IReviewer> = ({
     withVideoBackground=false,
     reviewerList,
 }) => {
+    useScrollAnimation('reviewer');
+    const reviewerContentRef = useRef<HTMLDivElement>(null);
     const {
         listDataFinal,
         loadMore,
         isDisabledLoadMore,
+        limitedNumberData,
+        isLoadMoreCompleted
     } = useLoadMore(reviewerList);
 
-    useScrollAnimation('reviewer');
+    useEffect(() => {
+        const reviewContent = reviewerContentRef.current;
+        if(!isLoadMoreCompleted ){
+            reviewContent?.classList.add('review__content--newReviewAdded');
+        }
+        
+        const myTimeout = setTimeout(() => {
+            reviewContent?.classList.remove('review__content--newReviewAdded');
+        }, 500)
+
+        return () => {
+            clearInterval(myTimeout);
+        }
+    }, [limitedNumberData, isLoadMoreCompleted])
 
     return (
         <section className='review'>
@@ -40,8 +57,9 @@ const Reviewer: FC<IReviewer> = ({
                 />
             </div>
             <div 
+                ref={reviewerContentRef}
                 id="review__content" 
-                className='review__content' 
+                className={`review__content`} 
                 onWheel={(e) => scrollVertical(e,'review__content')}
                 onMouseOver={() => scrollBody(false)}
                 onMouseLeave={() => scrollBody(true)}

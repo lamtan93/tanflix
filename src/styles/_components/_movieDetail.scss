@@ -61,14 +61,3 @@
         gap: 2rem;
     }
 }
-
-.scroll--hidden-moviedetail {
-    @include scroll-effect-hidden-gen();
-    transform: translateY(-5rem);
-}
-
-
-.scroll--show-moviedetail {
-    @include scroll-effect-show-gen(.5s);
-    transform: translateX(0);
-}
