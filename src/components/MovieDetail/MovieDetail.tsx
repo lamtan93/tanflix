@@ -11,12 +11,13 @@ import { IMovieDetail } from './interfaces/IMovieDetail';
 import PropTypes from 'prop-types';
 import { CONFIG_API } from '../../utils/api';
 import Disclaimer from '../Utils/Disclaimer';
-import { Dico } from '../../utils/dico';
+import { getMoviesByName } from '../../utils/mapping';
 import {
-    getMoviesByName,
     scrollToViewId,
     stopVideo 
 } from "../../utils/utils";
+import { Dico } from '../../utils/dico';
+
 
 const MovieDetail: FC<IMovieDetail> = ({
     id,

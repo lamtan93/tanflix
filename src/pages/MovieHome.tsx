@@ -3,7 +3,8 @@ import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import { useSearchInput } from '../hooks/useSearchInput';
 import { Trending, MovieList } from '../components';
-import { getMoviesByName, scrollToViewId } from '../utils/utils';
+import { getMoviesByName } from '../utils/mapping';
+import { scrollToViewId } from '../utils/utils';
 import Disclaimer from '../components/Utils/Disclaimer';
 import { Dico } from '../utils/dico';
 

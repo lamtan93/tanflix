@@ -1,11 +1,3 @@
-import { ICard } from '../components/UI/Card/interfaces/ICard';
-
-export const getMoviesByName = (movieName: string, movieList: Array<ICard>) => {
-    return movieList.filter(movie => {
-        return movie.name.toLowerCase().includes(movieName.toLocaleLowerCase());
-    });
-}
-
 export const truncateString = (str: string, num: number) => {
     if (str.length <= num) {
       return str

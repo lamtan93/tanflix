@@ -1,10 +1,9 @@
 import { Dispatch } from "redux";
-import { truncateString } from './../../utils/utils';
 import { MovieListActionType } from '../action-types.ts/MovieListActionType';
 import { MovieListAction, SimilarMovieListAction, TrendingMovieListAction } from "../actions/MovieListAction";
 import { getErrorMsgAPI, sendAPIRequest } from '../../utils/api';
-import { ICard } from '../../components/UI/Card/interfaces/ICard';
 import { IRawMovieListDataFromAPI } from './interfaces';
+import { getMappingMovieListData } from "../../utils/mapping";
 
 export const fetchMovieList = () => {
     return async (dispatch: Dispatch<MovieListAction>) => {
@@ -16,7 +15,7 @@ export const fetchMovieList = () => {
             await sendAPIRequest<IRawMovieListDataFromAPI>('movie/popular', 'GET')
             .then(data => data);
 
-            const movieList = mappingMovieListData(rawDataFromAPI);
+            const movieList = getMappingMovieListData(rawDataFromAPI);
 
             dispatch({
                 type: MovieListActionType.FETCH_MOVIE_LIST_REQUEST_SUCCESS,
@@ -41,7 +40,7 @@ export const fetchTrendingMovieList = () => {
             await sendAPIRequest<IRawMovieListDataFromAPI>('trending/movie/day', 'GET')
             .then(data => data);
 
-            const movieList = mappingMovieListData(rawDataFromAPI);
+            const movieList = getMappingMovieListData(rawDataFromAPI);
 
             dispatch({
                 type: MovieListActionType.FETCH_TRENDING_MOVIE_LIST_REQUEST_SUCCESS,
@@ -66,7 +65,7 @@ export const fetchSimilarMovieList = (id: number) => {
             await sendAPIRequest<IRawMovieListDataFromAPI>(`movie/${id}/similar`, 'GET')
             .then(data => data);
 
-            const movieList = mappingMovieListData(rawDataFromAPI).filter(m => m.imgSrc !== null);
+            const movieList = getMappingMovieListData(rawDataFromAPI).filter(m => m.imgSrc !== null);
 
             dispatch({
                 type: MovieListActionType.FETCH_SIMILAR_MOVIE_LIST_REQUEST_SUCCESS,
@@ -79,17 +78,4 @@ export const fetchSimilarMovieList = (id: number) => {
             })
         }
     }
-}
-
-
-const mappingMovieListData = (rawDataFromAPI: IRawMovieListDataFromAPI): ICard[] => {
-    return rawDataFromAPI.results.map(data => {
-        return {
-            id: data.id,
-            name: data.title,
-            description: truncateString(data.overview, 55),
-            imgSrc: data.poster_path,
-            liked: false
-        }
-    });
 }

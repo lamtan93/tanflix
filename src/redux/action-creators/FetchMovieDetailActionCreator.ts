@@ -1,11 +1,9 @@
 import { Dispatch } from "redux"
-import { sendAPIRequest } from "../../utils/api";
+import { getErrorMsgAPI, sendAPIRequest } from "../../utils/api";
 import { IRawMovieDetailDataFromAPI } from './interfaces';
-import { IMovieDetail } from '../../components/MovieDetail/interfaces/IMovieDetail';
 import { MovieDetailActionType } from '../action-types.ts/MovieDetailActionType';
 import { MovieDetailAction } from '../actions/MovieDetailAction';
-import { Dico } from "../../utils/dico";
-
+import { getMappingMovieDetailData } from "../../utils/mapping";
 
 export const fetchMovieDetail = (idMovie: number) => {
     return async (dispatch: Dispatch<MovieDetailAction>) => {
@@ -17,44 +15,16 @@ export const fetchMovieDetail = (idMovie: number) => {
             await sendAPIRequest<IRawMovieDetailDataFromAPI>(`movie/${idMovie}`, 'GET')
             .then(data => data);
 
-            const {
-                id,
-                title,
-                overview,
-                poster_path,
-                popularity,
-                genres,
-                release_date,
-                production_companies,
-                production_countries
-            } = rawMovieDetailDataFromAPI || {};
-
-            const movieDetail: IMovieDetail = { 
-                id,
-                popularity,
-                genres,
-                name: title,
-                description: overview,
-                imgSrc: poster_path,
-                date: new Date(release_date).toLocaleDateString(),
-                companies: production_companies,
-                countries: production_countries
-            }
+            const movieDetail = getMappingMovieDetailData(rawMovieDetailDataFromAPI);
 
             dispatch({
                 type: MovieDetailActionType.FETCH_MOVIE_DETAIL_REQUEST_SUCCESS,
                 payload: movieDetail
             });
         } catch (error: unknown) {
-            let errorMsg = Dico.DISCLAIMER.ERROR_GLOBAL_MSG;
-            if(typeof error === 'string'){
-                errorMsg = error
-            }else if(error instanceof Error){
-                errorMsg = error.message
-            }
             dispatch({
                 type: MovieDetailActionType.FETCH_MOVIE_DETAIL_REQUEST_ERROR,
-                payload: errorMsg
+                payload: getErrorMsgAPI(error)
             })
         }
     }

@@ -1,9 +1,9 @@
+import { getMappingMovieVideoListData } from './../../utils/mapping';
 import { Dispatch } from "redux"
-import { sendAPIRequest } from "../../utils/api";
+import { getErrorMsgAPI, sendAPIRequest } from "../../utils/api";
 import { IRawMovieVideoDataFromAPI, IRawMovieVideoListDataFromAPI } from './interfaces';
 import { MovieVideoActionType } from "../action-types.ts/MovieVideoActionType";
 import { MovieVideoAction } from "../actions/MovieVideoAction";
-import { Dico } from "../../utils/dico";
 
 export const fetchMovieVideo = (idMovie: number) => {
     return async (dispatch: Dispatch<MovieVideoAction>) => {
@@ -15,10 +15,7 @@ export const fetchMovieVideo = (idMovie: number) => {
             = await sendAPIRequest<IRawMovieVideoListDataFromAPI>(`movie/${idMovie}/videos`, 'GET')
             .then(data => data.results);
 
-            const moviesVideos = rawMovieVideoData.filter(video => {
-                return video.site.toLocaleLowerCase() === 'youtube'
-                && video.type.toLocaleLowerCase() === 'trailer'
-            })
+            const moviesVideos = getMappingMovieVideoListData(rawMovieVideoData);
 
             dispatch({
                 type: MovieVideoActionType.FETCH_MOVIE_VIDEO_REQUEST_SUCCESS,
@@ -26,15 +23,9 @@ export const fetchMovieVideo = (idMovie: number) => {
             });
             
         } catch (error: unknown) {
-            let errorMsg = Dico.DISCLAIMER.ERROR_GLOBAL_MSG;
-            if(typeof error === 'string'){
-                errorMsg = error
-            }else if(error instanceof Error){
-                errorMsg = error.message
-            }
             dispatch({
                 type: MovieVideoActionType.FETCH_MOVIE_VIDEO_REQUEST_ERROR,
-                payload: errorMsg
+                payload: getErrorMsgAPI(error)
             })
         }
     }
