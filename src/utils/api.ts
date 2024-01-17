@@ -1,3 +1,5 @@
+import { Dico } from "./dico";
+
 export enum CONFIG_API {
     BASE_URL = 'https://api.themoviedb.org/3',
     BASE_IMAGE_URL= 'https://image.tmdb.org/t/p/w500',
@@ -41,4 +43,15 @@ export const sendAPIRequest = async <T>(url: string, method: Method, data: unkno
     }
     
     return await (responseAPI.json()) as T;
+}
+
+export const getErrorMsgAPI = (error: unknown) => {
+    let errorMsg = Dico.DISCLAIMER.ERROR_GLOBAL_MSG;
+    if(typeof error === 'string'){
+        errorMsg = error
+    }else if(error instanceof Error){
+        errorMsg = error.message
+    }
+
+    return errorMsg;
 }

@@ -1,11 +1,10 @@
+import { Dispatch } from "redux";
 import { truncateString } from './../../utils/utils';
 import { MovieListActionType } from '../action-types.ts/MovieListActionType';
-import { Dispatch } from "redux"
 import { MovieListAction, SimilarMovieListAction, TrendingMovieListAction } from "../actions/MovieListAction";
-import { sendAPIRequest } from '../../utils/api';
+import { getErrorMsgAPI, sendAPIRequest } from '../../utils/api';
 import { ICard } from '../../components/UI/Card/interfaces/ICard';
 import { IRawMovieListDataFromAPI } from './interfaces';
-import { Dico } from '../../utils/dico';
 
 export const fetchMovieList = () => {
     return async (dispatch: Dispatch<MovieListAction>) => {
@@ -13,31 +12,20 @@ export const fetchMovieList = () => {
             type: MovieListActionType.FETCH_MOVIE_LIST_REQUEST,
         })
         try {
-            const rawDataFromAPI: IRawMovieListDataFromAPI = await sendAPIRequest<IRawMovieListDataFromAPI>('movie/popular', 'GET')
+            const rawDataFromAPI: IRawMovieListDataFromAPI =
+            await sendAPIRequest<IRawMovieListDataFromAPI>('movie/popular', 'GET')
             .then(data => data);
-            const movieList: ICard[] = rawDataFromAPI.results.map(data => {
-                return {
-                    id: data.id,
-                    name: data.title,
-                    description: truncateString(data.overview, 55),
-                    imgSrc: data.poster_path,
-                    liked: false
-                }
-            });
+
+            const movieList = mappingMovieListData(rawDataFromAPI);
+
             dispatch({
                 type: MovieListActionType.FETCH_MOVIE_LIST_REQUEST_SUCCESS,
                 payload: movieList
             });
         } catch (error: unknown) {
-            let errorMsg = Dico.DISCLAIMER.ERROR_GLOBAL_MSG;
-            if(typeof error === 'string'){
-                errorMsg = error
-            }else if(error instanceof Error){
-                errorMsg = error.message
-            }
             dispatch({
                 type: MovieListActionType.FETCH_MOVIE_LIST_REQUEST_ERROR,
-                payload: errorMsg
+                payload: getErrorMsgAPI(error)
             })
         }
     }
@@ -49,32 +37,20 @@ export const fetchTrendingMovieList = () => {
             type: MovieListActionType.FETCH_TRENDING_MOVIE_LIST_REQUEST,
         })
         try {
-            const rawDataFromAPI: IRawMovieListDataFromAPI = await sendAPIRequest<IRawMovieListDataFromAPI>('trending/movie/day', 'GET')
+            const rawDataFromAPI: IRawMovieListDataFromAPI =
+            await sendAPIRequest<IRawMovieListDataFromAPI>('trending/movie/day', 'GET')
             .then(data => data);
 
-            const movieList: ICard[] = rawDataFromAPI.results.map(data => {
-                return {
-                    id: data.id,
-                    name: data.title,
-                    description: truncateString(data.overview, 55),
-                    imgSrc: data.poster_path,
-                    liked: false
-                }
-            });
+            const movieList = mappingMovieListData(rawDataFromAPI);
+
             dispatch({
                 type: MovieListActionType.FETCH_TRENDING_MOVIE_LIST_REQUEST_SUCCESS,
                 payload: movieList
             });
         } catch (error: unknown) {
-            let errorMsg = Dico.DISCLAIMER.ERROR_GLOBAL_MSG;
-            if(typeof error === 'string'){
-                errorMsg = error
-            }else if(error instanceof Error){
-                errorMsg = error.message
-            }
             dispatch({
                 type: MovieListActionType.FETCH_TRENDING_MOVIE_LIST_REQUEST_ERROR,
-                payload: errorMsg
+                payload: getErrorMsgAPI(error)
             })
         }
     }
@@ -86,34 +62,34 @@ export const fetchSimilarMovieList = (id: number) => {
             type: MovieListActionType.FETCH_SIMILAR_MOVIE_LIST_REQUEST,
         })
         try {                                                                                                   
-            const rawDataFromAPI: IRawMovieListDataFromAPI = await sendAPIRequest<IRawMovieListDataFromAPI>(`movie/${id}/similar`, 'GET')
+            const rawDataFromAPI: IRawMovieListDataFromAPI =
+            await sendAPIRequest<IRawMovieListDataFromAPI>(`movie/${id}/similar`, 'GET')
             .then(data => data);
-            const movieList: ICard[] = rawDataFromAPI.results
-            .filter(m => m.poster_path !== null)
-            .map(data => {
-                return {
-                    id: data.id,
-                    name: data.title,
-                    description: truncateString(data.overview, 55),
-                    imgSrc: data.poster_path,
-                    liked: false
-                }
-            });
+
+            const movieList = mappingMovieListData(rawDataFromAPI).filter(m => m.imgSrc !== null);
+
             dispatch({
                 type: MovieListActionType.FETCH_SIMILAR_MOVIE_LIST_REQUEST_SUCCESS,
                 payload: movieList
             });
         } catch (error: unknown) {
-            let errorMsg = Dico.DISCLAIMER.ERROR_GLOBAL_MSG;
-            if(typeof error === 'string'){
-                errorMsg = error
-            }else if(error instanceof Error){
-                errorMsg = error.message
-            }
             dispatch({
                 type: MovieListActionType.FETCH_SIMILAR_MOVIE_LIST_REQUEST_ERROR,
-                payload: errorMsg
+                payload: getErrorMsgAPI(error)
             })
         }
     }
+}
+
+
+const mappingMovieListData = (rawDataFromAPI: IRawMovieListDataFromAPI): ICard[] => {
+    return rawDataFromAPI.results.map(data => {
+        return {
+            id: data.id,
+            name: data.title,
+            description: truncateString(data.overview, 55),
+            imgSrc: data.poster_path,
+            liked: false
+        }
+    });
 }
