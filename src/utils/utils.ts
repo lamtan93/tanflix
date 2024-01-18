@@ -54,7 +54,11 @@ export const scrollVertical = (event: React.WheelEvent<HTMLDivElement>, containe
 }
 
 export const scrollBody = (isScroll: boolean) => {
-    document.body.style.cssText = `overflow: ${isScroll  ? 'auto' : 'hidden'}`;
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (!isMobile) {
+        document.body.style.cssText = `overflow: ${isScroll  ? 'auto' : 'hidden'}`;
+    }
+    return;
 }
 
 export const playOrPauseVideoById = (idVideo: string, actionType: 'play' | 'pause') => {
