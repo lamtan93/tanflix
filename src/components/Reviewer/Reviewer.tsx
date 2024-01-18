@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef } from 'react';
-import { useLoadMore } from '../../hooks/useLoadMore';
+import { LIMITED_NUMBER_DATA_DEFAULT, useLoadMore } from '../../hooks/useLoadMore';
 import { Title, Actor, ButtonLink, Star } from '../UI';
 import { IReviewer } from './interfaces/IReviewer';
 import { scrollBody, scrollVertical } from '../../utils/utils';
@@ -25,16 +25,15 @@ const Reviewer: FC<IReviewer> = ({
 
     useEffect(() => {
         const reviewContent = reviewerContentRef.current;
-        if(!isLoadMoreCompleted ){
+        let timeout: ReturnType<typeof setTimeout>;
+        if(!isLoadMoreCompleted && limitedNumberData && limitedNumberData !== LIMITED_NUMBER_DATA_DEFAULT){
             reviewContent?.classList.add('review__content--newReviewAdded');
+            timeout = setTimeout(() => {
+                reviewContent?.classList.remove('review__content--newReviewAdded');
+            }, 500) 
         }
-        
-        const myTimeout = setTimeout(() => {
-            reviewContent?.classList.remove('review__content--newReviewAdded');
-        }, 500)
-
         return () => {
-            clearInterval(myTimeout);
+            timeout && clearTimeout(timeout);
         }
     }, [limitedNumberData, isLoadMoreCompleted])
 
