@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import '../../styles/_components/_composition.scss';
 import { IComposition } from './interfaces/IComposition';
+import { playOrPauseVideoById } from '../../utils/utils';
 
 const Composition:FC<IComposition> = ({
     listSourceVideos,
@@ -12,11 +13,12 @@ const Composition:FC<IComposition> = ({
                     key={`compositionItem-${i}`} 
                     className={`composition__item composition__item--${i + 1}`}>
                 <video  
+                    id={`composition_video--${i}`}
                     preload='metadata'
                     muted
                     playsInline
-                    onMouseOver={(e) => e.currentTarget.play()}
-                    onMouseLeave={(e) => e.currentTarget.pause()}
+                    onMouseOver={(e) => {playOrPauseVideoById(`composition_video--${i}`, 'play')}}
+                    onMouseLeave={(e) => {playOrPauseVideoById(`composition_video--${i}`, 'pause')}}
                 >
                     <source 
                         src={`${srcVideo}#t=1`} 

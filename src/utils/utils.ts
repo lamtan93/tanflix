@@ -50,10 +50,17 @@ export const scrollVertical = (event: React.WheelEvent<HTMLDivElement>, containe
     const container = document.getElementById(containerId);
     if(container){
         container.scrollLeft += event.deltaY > 0 ? 20 : -20;
-        // event.preventDefault();
     }  
 }
 
 export const scrollBody = (isScroll: boolean) => {
     document.body.style.cssText = `overflow: ${isScroll  ? 'auto' : 'hidden'}`;
+}
+
+export const playOrPauseVideoById = (idVideo: string, actionType: 'play' | 'pause') => {
+    const currentVideo: HTMLVideoElement = document.getElementById(idVideo) as HTMLVideoElement;
+    const playPromise = currentVideo.play();
+        playPromise && playPromise.then(_ => {
+            actionType === 'pause' && currentVideo.pause();
+        })
 }

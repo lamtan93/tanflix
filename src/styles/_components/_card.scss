@@ -129,7 +129,7 @@
     }
 
     &:hover &__image {
-        transform: translateY(-1.5rem) scaleX(1.1);
+        transform: translateY(-1.5rem) ;
         box-shadow: 0 10px 20px rgba($color-primary-light, .5);
     }
 }
