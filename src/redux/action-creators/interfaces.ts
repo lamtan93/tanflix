@@ -1,3 +1,5 @@
+import { IGenre } from './../../components/UI/Genre/interfaces/IGenre';
+
 interface IResultsListDataFromAPI<T> {
     results: T
 }
@@ -7,6 +9,7 @@ interface IRawMovieDataFromAPI {
     title: string,
     overview: string,
     poster_path: string,
+    genre_ids: number[]
 }
 
 export interface IRawMovieVideoDataFromAPI {
@@ -19,7 +22,7 @@ export interface IRawMovieVideoDataFromAPI {
 
 export interface IRawMovieDetailDataFromAPI extends IRawMovieDataFromAPI{
     popularity: number,
-    genres: [{id: number, name: string}],
+    genres: IGenre[],
     release_date: string,
     production_companies: [{name: string, logo_path: string}],
     production_countries: [{name: string}]
@@ -38,6 +41,10 @@ export interface IRawMovieReviewDataFromAPI {
     content: string,
     updated_at: string,
 }
+
+export interface IRawMovieGenreListDataFromAPI {
+    genres: IGenre[];
+};
 
 export type IRawMovieListDataFromAPI = IResultsListDataFromAPI<IRawMovieDataFromAPI[]>;
 export type IRawMovieVideoListDataFromAPI = IResultsListDataFromAPI<IRawMovieVideoDataFromAPI[]>;

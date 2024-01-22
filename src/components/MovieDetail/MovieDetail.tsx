@@ -17,6 +17,7 @@ import {
     stopVideo 
 } from "../../utils/utils";
 import { Dico } from '../../utils/dico';
+import Genre from '../UI/Genre/Genre';
 
 
 const MovieDetail: FC<IMovieDetail> = ({
@@ -97,7 +98,14 @@ const MovieDetail: FC<IMovieDetail> = ({
                             <Title name={name} size='med' position='left' />
                         <div className='detailmovie__tags'>
                             {genres.map(genre => (
-                                <span key={genre.id} className="detailmovie__tag">#{genre.name}</span>
+                                <Genre 
+                                    key={genre.id}
+                                    genre={genre}
+                                    color='white'
+                                    withSharp
+                                    disabled
+                                    onClickGenre={() => {}}
+                                />
                             ))}
                         </div>
                         <p className="detailmovie__resume">{description}</p>

@@ -80,3 +80,15 @@
     50%{box-shadow: 0 5px 10px rgba($color-primary-light, 5)};
     100%{box-shadow: 0 5px 10px rgba($color-primary-dark, .3)};
 }
+
+@keyframes moveGenre {
+    0%{
+        transform: translateX(-50%);
+        box-shadow: 0 10px 20px rgba($color-primary-light, .5);
+        filter: blur(.1rem);
+    };
+
+    100%{
+        transform: translateX(0);
+    }
+}

@@ -14,13 +14,18 @@ const MovieHome:FC = () => {
         handleOnChangeSearchValue,
     } = useSearchInput();
 
-    const { fetchMovieList, fetchTrendingMovieList } = useActions();
-    const { movieListLoading ,movieListData, movieListError } = useTypedSelector(state => state.movieList);
-    const { trendingMovieListLoading, trendingMovieListData,trendingMovieListError} = useTypedSelector(state => state.trendingMovieList);
+    const { fetchMovieList, fetchTrendingMovieList, fetchMovieGenreList } = useActions();
+
+    const { movieListLoading ,movieListData, movieListError } 
+    = useTypedSelector(state => state.movieList);
+
+    const { trendingMovieListLoading, trendingMovieListData,trendingMovieListError} 
+    = useTypedSelector(state => state.trendingMovieList);
 
     useEffect(() => {
         fetchMovieList();
         fetchTrendingMovieList();
+        fetchMovieGenreList();
         scrollToViewId('root');
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])

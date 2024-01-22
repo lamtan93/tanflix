@@ -1,18 +1,31 @@
 @import "../_components/card";
 @import "../_abstracts/mixins";
+@import "../_base/animation";
 
 .movies-section {
     padding: 3rem 2rem;
+    @include scrollbar-style;
     @include mobile(){
         padding: 3rem 0;
     }
     &__header {
-        @include flex(row, space-between, center);
-        flex-wrap: wrap;
-        @include mobile(){
-            @include flex(column);
-            justify-content: center;
+        &--main {
+            @include flex(row, space-between, center);
+            flex-wrap: wrap;
+            @include mobile(){
+                @include flex(column);
+                justify-content: center;
+            }
         }
+       &--sub {
+            padding-bottom: 4rem; 
+            @include flex(row, space-between, flex-start);
+            @include mobile(){
+                @include flex(column);
+                gap: 2rem;
+                padding: 4rem 2rem;
+            }
+       }
     }
 
     &__content {

@@ -90,6 +90,10 @@ export const Dico = {
         BUTTONLINK_WATCH_TRAILER: 'watch trailer',
     },
 
+    SECTION_GENRE: {
+        GENRE_LIST_TITLE: '#Genres:',
+    },
+
     FOOTER: {
         PARAGRAPH_MADE_WITH_LOVE: 'made with love',
         LIST_FOLLOW: {

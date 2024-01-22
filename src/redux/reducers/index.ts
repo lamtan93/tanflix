@@ -5,6 +5,7 @@ import TrendingMovieListReducer from './movies/TrendingMovieListReducer';
 import MovieVideoReducer from './movievideo/MovieVideoReducer';
 import SimilarMovieListReducer from './movies/SimilarMovieListReducer';
 import MovieReviewListReducer from './reviews/MovieReviewListReducer';
+import MovieGenreListReducer from './moviegenre/MovieGenreReducer';
 
 const reducers = combineReducers({
     movieList: MovieListReducer,
@@ -13,6 +14,7 @@ const reducers = combineReducers({
     movieDetail: MovieDetailReducer,
     movieVideos: MovieVideoReducer,
     movieReviewList: MovieReviewListReducer,
+    movieGenreList: MovieGenreListReducer,
 })
 
 export default reducers;

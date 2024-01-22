@@ -1,3 +1,4 @@
+import { IGenre } from './../components/UI/Genre/interfaces/IGenre';
 import { IMovieDetail } from '../components/MovieDetail/interfaces/IMovieDetail';
 import { IReviewItem } from '../components/Reviewer/interfaces/IReviewer';
 import { ICard } from '../components/UI/Card/interfaces/ICard';
@@ -12,6 +13,7 @@ export const getMappingMovieListData = (rawDataFromAPI: IRawMovieListDataFromAPI
             name: data.title,
             description: truncateString(data.overview, 55),
             imgSrc: data.poster_path,
+            genre_ids: data.genre_ids,
             liked: false
         }
     });
@@ -67,8 +69,26 @@ export const getMappingMovieVideoListData = (rawDataFromAPI: IRawMovieVideoDataF
     })
 }
 
+// export const getMappingMovieGenreListData = (rawDataFromAPI: IRawMovieGenreListDataFromAPI): IGenre[]  => {
+//     return rawDataFromAPI.genres.map(genre => {
+//         return {
+//             id: genre.id,
+//             name: truncateString(genre.name.split('').join(''), 15)
+//             // name: genre.name
+//         }
+//     });
+// }
+
 export const getMoviesByName = (movieName: string, movieList: Array<ICard>) => {
     return movieList.filter(movie => {
         return movie.name.toLowerCase().includes(movieName.toLocaleLowerCase());
     });
 }
+
+export const getMoviesByGenres = (movieList: ICard[], selectedGenres: IGenre[]) => {
+    if(selectedGenres.length === 0) return movieList;
+    
+    return movieList.filter((movie,i) => selectedGenres.some(selectedGenre => {
+        return movie.genre_ids.includes(selectedGenre.id);
+    }))  
+};

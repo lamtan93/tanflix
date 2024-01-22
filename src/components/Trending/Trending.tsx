@@ -19,6 +19,7 @@ const Trending: FC<IMovieList> = ({movieList}) => {
                             name={movie.name}
                             description={movie.description}
                             imgSrc={movie.imgSrc}
+                            genre_ids={movie.genre_ids}
                             liked={movie.liked}
                         />
                     )}
