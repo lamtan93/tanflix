@@ -48,12 +48,13 @@ const Reviewer: FC<IReviewer> = ({
                 </video>
             </div>
             )}
-            <div className="scroll--hidden-reviewer">
+            <div className="review__header scroll--hidden-reviewer">
                 <Title
                         name={title}
                         size='big'
                         position='right'
                 />
+                <span className='review__header-compteur'>{`${listDataFinal.length}/${reviewerList.length}`}</span>
             </div>
             <div 
                 ref={reviewerContentRef}

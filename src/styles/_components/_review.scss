@@ -25,13 +25,19 @@
         }
 
     }
-    
+    &__header {
+        @include flex();
+        &-compteur {
+            font-size: 1.7rem;
+            color: $color-grey;
+            font-weight: 300;
+        }
+    }
     &__content {
         &--newReviewAdded {
             animation: newReviewAdded 2s linear infinite;
         }
         color: $color-white-secondary;
-        // border-top: .5px solid $color-white;
         width: 80%;
         min-height: 20rem;
         @include mobile(){
