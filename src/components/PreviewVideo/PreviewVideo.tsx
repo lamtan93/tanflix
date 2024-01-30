@@ -1,12 +1,7 @@
-import React from 'react';
-import { IPreviewVideo } from './interfaces/IPreviewVideo';
+import React from 'react'
+import { IPreviewVideo } from './interfaces/IPreviewVideo'
 
-function PreviewVideo({
-  title,
-  src,
-  width,
-  height,
-}: IPreviewVideo) {
+function PreviewVideo({ title, src, width, height }: IPreviewVideo) {
   return (
     <iframe
       width={width}
@@ -18,7 +13,7 @@ function PreviewVideo({
       encrypted-media; gyroscope; picture-in-picture; web-share"
       allowFullScreen
     />
-  );
+  )
 }
 
-export default PreviewVideo;
+export default PreviewVideo

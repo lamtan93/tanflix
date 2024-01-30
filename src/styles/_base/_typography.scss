@@ -1,39 +1,43 @@
-@import "../_abstracts/variables";
+@import '../_abstracts/variables';
 
 /*--------------------Title--------------------*/
 .title {
-    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    letter-spacing: 0.2rem;
-    transition: all .4s ;
-    
-    // &--hover {
-    //     &:hover {
-    //         transform: scale(1.1) skew(15deg, 2deg);
-    //     }
-    // }
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.4s;
 
-    &--big {
-        font-size: 6rem;
-    }
+  // &--hover {
+  //     &:hover {
+  //         transform: scale(1.1) skew(15deg, 2deg);
+  //     }
+  // }
 
-    &--med {
-        font-size: 4rem;
-    }
+  &--big {
+    font-size: 6rem;
+  }
 
-    &--small {
-        font-size: 2rem;
-    }
+  &--med {
+    font-size: 4rem;
+  }
 
-    &--extra-small {
-        font-size: 1rem;
-    }
+  &--small {
+    font-size: 2rem;
+  }
+
+  &--extra-small {
+    font-size: 1rem;
+  }
 }
 
 .title-secondary {
-    font-size: 2rem;
-    font-weight: 700;
-    text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }

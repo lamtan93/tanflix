@@ -1,82 +1,71 @@
-@import "../_abstracts/variables";
-@import "../_abstracts/mixins";
+@import '../_abstracts/variables';
+@import '../_abstracts/mixins';
 
 .about {
-    padding: 0 5rem;
-    &__content {
-        padding-top: 3rem;
-        padding-bottom: 10rem;
-        @include flex();
-        @include mobile(){
-            @include flex(column);
-        }
-        gap: 3rem;
+  padding: 0 5rem;
+  &__content {
+    padding-top: 3rem;
+    padding-bottom: 10rem;
+    @include flex();
+    @include mobile() {
+      @include flex(column);
     }
-    &__introduce {
-        flex-basis: 50%;
+    gap: 3rem;
+  }
+  &__introduce {
+    flex-basis: 50%;
 
-        & > h3 {
-            // display: block;
-            color: $color-white-secondary;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            font-size: 2.3rem;
-            //scroll-animation
-            &:nth-child(1){
-                transition-delay: .2s;
-                
-            }
-            &:nth-child(3){
-                transition-delay: .6s;
-            }
-        }
-
-        & > p:not(:last-child) {
-            margin-bottom: 5rem;
-        }
-
-        & > p{
-            font-size: 2rem;
-            color: $color-grey;
-            font-weight: 300;
-
-            //scroll-animation
-            &:nth-child(2){
-                transition-delay: .4s;
-                
-            }
-
-            &:nth-child(4){
-                transition-delay: .8s;
-            }
-        }
+    & > h3 {
+      // display: block;
+      color: $color-white-secondary;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      font-size: 2.3rem;
+      //scroll-animation
+      &:nth-child(1) {
+        transition-delay: 0.2s;
+      }
+      &:nth-child(3) {
+        transition-delay: 0.6s;
+      }
     }
 
-    &__composition {
-        flex-basis: 50%;
-        position: relative;
+    & > p:not(:last-child) {
+      margin-bottom: 5rem;
     }
 
-    @include mobile(){
-        min-height: 15rem;
-    }
+    & > p {
+      font-size: 2rem;
+      color: $color-grey;
+      font-weight: 300;
 
+      //scroll-animation
+      &:nth-child(2) {
+        transition-delay: 0.4s;
+      }
+
+      &:nth-child(4) {
+        transition-delay: 0.8s;
+      }
+    }
+  }
+
+  &__composition {
+    flex-basis: 50%;
+    position: relative;
+  }
+
+  @include mobile() {
+    min-height: 15rem;
+  }
 }
 
 .scroll--hidden-about {
-    @include scroll-effect-hidden-gen();
-    transform: translateY(-50%);
+  @include scroll-effect-hidden-gen();
+  transform: translateY(-50%);
 }
-
 
 .scroll--show-about {
-    @include scroll-effect-show-gen(.5s);
-    transform: translateY(0);
+  @include scroll-effect-show-gen(0.5s);
+  transform: translateY(0);
 }
-
-
-
-
-
-
-

@@ -1,11 +1,11 @@
-import React from 'react';
-import { About, Pricing, Reviewer } from '../components';
-import reviewerListData from '../fakedata/reviewerListData';
-import { scrollToViewId } from '../utils/utils';
-import Dico from '../utils/dico';
+import React from 'react'
+import { About, Pricing, Reviewer } from '../components'
+import reviewerListData from '../fakedata/reviewerListData'
+import { scrollToViewId } from '../utils/utils'
+import Dico from '../utils/dico'
 
 function Home() {
-  scrollToViewId('root');
+  scrollToViewId('root')
   return (
     <>
       <About />
@@ -16,7 +16,7 @@ function Home() {
         reviewerList={reviewerListData}
       />
     </>
-  );
+  )
 }
 
-export default Home;
+export default Home

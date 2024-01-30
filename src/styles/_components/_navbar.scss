@@ -1,123 +1,127 @@
-@import "../_abstracts/mixins";
-@import "../_abstracts/variables";
-@import "../_base/animation";
+@import '../_abstracts/mixins';
+@import '../_abstracts/variables';
+@import '../_base/animation';
 
 .nav {
-    text-align: right;
-    padding: 1rem 2rem;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 9;
+  text-align: right;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9;
 
-    &__ctaNavigation-button {
+  &__ctaNavigation-button {
+    display: none;
+  }
+
+  &__ctaNavigation-label {
+    display: none;
+  }
+
+  @include mobile() {
+    padding: 0;
+    &__ctaNavigation {
+      &-button {
         display: none;
-    }
-
-    &__ctaNavigation-label {
-        display: none;
-    }
-
-    @include mobile(){
-        padding: 0; 
-        &__ctaNavigation {
-            &-button {
-                display: none;
-                transition: all 2s ease-out;
-            }
-            &-label {
-                display: inline-block;
-                position: fixed;
-                top: 1%;
-                right: 5%;
-                z-index: 10;
-                font-family: $font-secondary;
-                font-size: 4rem;
-                font-weight: 500;
-                background: radial-gradient(circle, $color-primary-dark, $color-primary-light);
-                background-clip: text;
-                -webkit-background-clip: text;
-                color: transparent;
-                cursor: pointer;
-                transition: all .5s ease-out;
-                transform: rotate(-90deg);
-                outline: .01rem solid $color-primary-light;
-                outline-offset: .5rem;
-
-                &:before {
-                    content: 'F';
-                    position: absolute;
-                    top: 25%;
-                    right: 10%;
-                    opacity: .7;
-                    z-index: -1;
-                    border-radius: 10%;
-                    transition: all .7s ease-out;
-                    transform: rotate(90deg);   
-                    color: $color-primary-dark;
-                }
-            }
-
-            &-button:checked + &-label{
-                transform: rotate(90deg);
-                color: white;
-            }
-
-            &-button:checked + &-label::before{
-                transform: rotate(-90deg) scale(-1, 1);
-                top: 20%;
-                left: 20%;
-                color: white;
-            }
-        }
-
-        &__ctaNavigation-button:not(:checked) ~ &__links{
-            display: none;
-        }
-
-        &__ctaNavigation-button:checked ~ &__links{
-            @include flex(column, center, flex-end);
-            padding: 2rem;
-            width: 100vw;
-            height: 100vh;
-            background: rgba($color-black, .5);
-        }
-    }
-
-    &__links {
-        font-size: 4rem;
+        transition: all 2s ease-out;
+      }
+      &-label {
+        display: inline-block;
+        position: fixed;
+        top: 1%;
+        right: 5%;
+        z-index: 10;
         font-family: $font-secondary;
+        font-size: 4rem;
+        font-weight: 500;
+        background: radial-gradient(
+          circle,
+          $color-primary-dark,
+          $color-primary-light
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        cursor: pointer;
+        transition: all 0.5s ease-out;
+        transform: rotate(-90deg);
+        outline: 0.01rem solid $color-primary-light;
+        outline-offset: 0.5rem;
 
-        & > a:not(:last-child){
-            margin-right: 3rem;
+        &:before {
+          content: 'F';
+          position: absolute;
+          top: 25%;
+          right: 10%;
+          opacity: 0.7;
+          z-index: -1;
+          border-radius: 10%;
+          transition: all 0.7s ease-out;
+          transform: rotate(90deg);
+          color: $color-primary-dark;
         }
+      }
 
-        & > a {
-            position: relative;
-            &::after {
-                content: '';
-                position: absolute;
-                display: block;
-                width: 6rem;
-                height: .3rem;
-                transition: all .3s ease-out;
-                top: 90%;
-                left: -3rem;
-            }
-            transition: all .3s ease-out;
-        }
-        & > a:hover {
-            &::after {
-                background-color: $color-primary-light;
-                transform: translateX(3.5rem);
-            }
-        }
+      &-button:checked + &-label {
+        transform: rotate(90deg);
+        color: white;
+      }
 
-        &--active{
-            &::after {
-                background-color: $color-primary-light;
-                transform: translateX(3.5rem);
-            }
-        }
+      &-button:checked + &-label::before {
+        transform: rotate(-90deg) scale(-1, 1);
+        top: 20%;
+        left: 20%;
+        color: white;
+      }
     }
+
+    &__ctaNavigation-button:not(:checked) ~ &__links {
+      display: none;
+    }
+
+    &__ctaNavigation-button:checked ~ &__links {
+      @include flex(column, center, flex-end);
+      padding: 2rem;
+      width: 100vw;
+      height: 100vh;
+      background: rgba($color-black, 0.5);
+    }
+  }
+
+  &__links {
+    font-size: 4rem;
+    font-family: $font-secondary;
+
+    & > a:not(:last-child) {
+      margin-right: 3rem;
+    }
+
+    & > a {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 6rem;
+        height: 0.3rem;
+        transition: all 0.3s ease-out;
+        top: 90%;
+        left: -3rem;
+      }
+      transition: all 0.3s ease-out;
+    }
+    & > a:hover {
+      &::after {
+        background-color: $color-primary-light;
+        transform: translateX(3.5rem);
+      }
+    }
+
+    &--active {
+      &::after {
+        background-color: $color-primary-light;
+        transform: translateX(3.5rem);
+      }
+    }
+  }
 }

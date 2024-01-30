@@ -1,11 +1,9 @@
-import React from 'react';
-import { IPopup } from './IPopup';
-import ButtonLink from '../ButtonLink/ButtonLink';
-import '../../../styles/_components/_popup.scss';
+import React from 'react'
+import { IPopup } from './IPopup'
+import ButtonLink from '../ButtonLink/ButtonLink'
+import '../../../styles/_components/_popup.scss'
 
-function Popup({
-  name, children, open, close,
-}: IPopup) {
+function Popup({ name, children, open, close }: IPopup) {
   return (
     <div className={`popup popup${open ? '--open' : '--close'}`}>
       <div className="popup__header">
@@ -18,12 +16,10 @@ function Popup({
           onClick={(e) => close(e)}
         />
       </div>
-      <div className="popup__content">
-        {children}
-      </div>
+      <div className="popup__content">{children}</div>
       <div className="popup__footer" />
     </div>
-  );
+  )
 }
 
-export default Popup;
+export default Popup

@@ -1,38 +1,38 @@
-import React from 'react';
-import { Title } from '../UI';
-import '../../styles/_base/_utility.scss';
-import Dico from '../../utils/dico';
+import React from 'react'
+import { Title } from '../UI'
+import '../../styles/_base/_utility.scss'
+import Dico from '../../utils/dico'
 
 interface ILoading {
-    type: 'loading'
+  type: 'loading'
 }
 
 interface IInfos {
-    type: 'infos',
-    msg: string,
+  type: 'infos'
+  msg: string
 }
 
 interface IError {
-    type: 'error',
-    msgGlobal?: string,
-    msgDetail: string,
+  type: 'error'
+  msgGlobal?: string
+  msgDetail: string
 }
 
-type IDisclaimer = ILoading | IInfos | IError;
+type IDisclaimer = ILoading | IInfos | IError
 
 function Disclaimer(props: IDisclaimer) {
-  const { type } = props;
+  const { type } = props
   if (type === 'loading') {
-    return (<Title name="loading..." position="center" size="small" />);
+    return <Title name="loading..." position="center" size="small" />
   }
 
   if (type === 'infos') {
-    const { msg } = props || {};
-    return (<Title name={msg} position="center" size="small" />);
+    const { msg } = props || {}
+    return <Title name={msg} position="center" size="small" />
   }
 
   if (type === 'error') {
-    const { msgGlobal, msgDetail } = props || {};
+    const { msgGlobal, msgDetail } = props || {}
     return (
       <>
         <Title
@@ -40,17 +40,12 @@ function Disclaimer(props: IDisclaimer) {
           position="center"
           size="small"
         />
-        <Title
-          name={msgDetail}
-          position="center"
-          size="small"
-        />
-        ;
+        <Title name={msgDetail} position="center" size="small" />;
       </>
-    );
+    )
   }
 
-  return null;
+  return null
 }
 
-export default Disclaimer;
+export default Disclaimer

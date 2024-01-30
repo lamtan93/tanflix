@@ -1,46 +1,45 @@
-@import "../_abstracts/variables";
+@import '../_abstracts/variables';
 
 .genre {
-    &__item {
-        font-size: 1.2rem;
-        padding: .6rem;
-        background: $color-primary-light;
-        color: $color-black;
-        text-transform: uppercase;
-        border-radius: .2rem;
-        font-weight: 300;
-        cursor: pointer;
-        position: relative;
-        transition: all .3s ease-out;
-        animation: moveGenre .3s ease-out;
-        border: none;
+  &__item {
+    font-size: 1.2rem;
+    padding: 0.6rem;
+    background: $color-primary-light;
+    color: $color-black;
+    text-transform: uppercase;
+    border-radius: 0.2rem;
+    font-weight: 300;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease-out;
+    animation: moveGenre 0.3s ease-out;
+    border: none;
 
-        &--orange {
-            background: $color-primary-light;
-        }
-
-        &--white {
-            background: $color-white;
-        }
-
-        &--lineThrough {
-            text-decoration: line-through;
-        }
-
-        &--lineThrough-hover {
-            &:hover {
-                text-decoration: line-through;
-            }
-        }
-        
-        &:hover {
-            transform: translateY(-.5rem);
-            box-shadow: 0 5px 10px rgba($color-primary-light, .5);
-        }
-
-        &--disabled {
-            pointer-events: none;
-        }
-
+    &--orange {
+      background: $color-primary-light;
     }
+
+    &--white {
+      background: $color-white;
+    }
+
+    &--lineThrough {
+      text-decoration: line-through;
+    }
+
+    &--lineThrough-hover {
+      &:hover {
+        text-decoration: line-through;
+      }
+    }
+
+    &:hover {
+      transform: translateY(-0.5rem);
+      box-shadow: 0 5px 10px rgba($color-primary-light, 0.5);
+    }
+
+    &--disabled {
+      pointer-events: none;
+    }
+  }
 }

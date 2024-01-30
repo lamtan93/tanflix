@@ -1,94 +1,101 @@
 /*------------------ANIMATIONS------------------*/
 @keyframes moveRight {
-    0% {
-        opacity: 0;
-        transform: translateX(-10rem);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes moveToLeft {
-    0%{
-        opacity: 0;
-        transform: translateX(10rem);
-    }
-    100%{
-        opacity: 1;
-        transform: translateX(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes moveToTop {
-    0%{
-        transform: translateY(5rem);
-        opacity: 0;
-    }
+  0% {
+    transform: translateY(5rem);
+    opacity: 0;
+  }
 
-    100%{
-        transform: translateY(0);
-        opacity: 1;
-    }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes loading {
-    0% {
-        border-left: .1rem dashed $color-black;
-        box-shadow: 0 10px 20px rgba($color-primary-dark, .5);
-    };
+  0% {
+    border-left: 0.1rem dashed $color-black;
+    box-shadow: 0 10px 20px rgba($color-primary-dark, 0.5);
+  }
 
-    25%{
-        border-bottom: .2rem dashed $color-black;
-    };
+  25% {
+    border-bottom: 0.2rem dashed $color-black;
+  }
 
-    50%{
-        border-right: .1rem dashed $color-black;
-    };
+  50% {
+    border-right: 0.1rem dashed $color-black;
+  }
 
-    100% {
-        border-top: .2rem dashed $color-black;
-    }
+  100% {
+    border-top: 0.2rem dashed $color-black;
+  }
 }
 
-
 @keyframes brand-gradient {
-    0%{
-        background-position: 0%; 
-    };
-    100%{
-        background-position: 100%; 
-        transform: translateY(-2rem);
-    }
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+    transform: translateY(-2rem);
+  }
 }
 
 @keyframes move-pricing-message {
-    0% {
-        transform: translateX(100%);
-    }
+  0% {
+    transform: translateX(100%);
+  }
 
-    100% {
-        transform: translateX(-100%);
-    }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes newReviewAdded {
-    0%{box-shadow: 0 5px 10px rgba($color-primary-light, .5)};
-    25%{box-shadow: 0 5px 10px rgba($color-primary-dark, .3);};
-    50%{box-shadow: 0 5px 10px rgba($color-primary-light, 5)};
-    100%{box-shadow: 0 5px 10px rgba($color-primary-dark, .3)};
+  0% {
+    box-shadow: 0 5px 10px rgba($color-primary-light, 0.5);
+  }
+  25% {
+    box-shadow: 0 5px 10px rgba($color-primary-dark, 0.3);
+  }
+  50% {
+    box-shadow: 0 5px 10px rgba($color-primary-light, 5);
+  }
+  100% {
+    box-shadow: 0 5px 10px rgba($color-primary-dark, 0.3);
+  }
 }
 
 @keyframes moveGenre {
-    0%{
-        transform: translateX(-50%);
-        box-shadow: 0 10px 20px rgba($color-primary-light, .5);
-        filter: blur(.1rem);
-    };
+  0% {
+    transform: translateX(-50%);
+    box-shadow: 0 10px 20px rgba($color-primary-light, 0.5);
+    filter: blur(0.1rem);
+  }
 
-    100%{
-        transform: translateX(0);
-    }
+  100% {
+    transform: translateX(0);
+  }
 }

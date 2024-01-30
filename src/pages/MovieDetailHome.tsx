@@ -1,33 +1,33 @@
-import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import useActions from '../hooks/useActions';
-import useTypedSelector from '../hooks/useTypedSelector';
-import { MovieDetail } from '../components';
-import { scrollToViewId } from '../utils/utils';
-import Disclaimer from '../components/Utils/Disclaimer';
+import React, { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import useActions from '../hooks/useActions'
+import useTypedSelector from '../hooks/useTypedSelector'
+import { MovieDetail } from '../components'
+import { scrollToViewId } from '../utils/utils'
+import Disclaimer from '../components/Utils/Disclaimer'
 
 function MovieDetailHome() {
-  const { fetchMovieDetail, fetchSimilarMovieList, fetchMovieReviewList } = useActions();
-  const {
-    movieDetailLoading,
-    movieDetailData,
-    movieDetailError,
-  } = useTypedSelector((state) => state.movieDetail);
+  const { fetchMovieDetail, fetchSimilarMovieList, fetchMovieReviewList } =
+    useActions()
+  const { movieDetailLoading, movieDetailData, movieDetailError } =
+    useTypedSelector((state) => state.movieDetail)
 
-  const { id: idMovie } = useParams();
+  const { id: idMovie } = useParams()
   useEffect(() => {
     if (idMovie) {
-      fetchMovieDetail(Number(idMovie));
-      fetchMovieReviewList(Number(idMovie));
-      fetchSimilarMovieList(Number(idMovie));
+      fetchMovieDetail(Number(idMovie))
+      fetchMovieReviewList(Number(idMovie))
+      fetchSimilarMovieList(Number(idMovie))
     }
-    scrollToViewId('root');
+    scrollToViewId('root')
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [idMovie]);
+  }, [idMovie])
   return (
     <>
       {movieDetailLoading && <Disclaimer type="loading" />}
-      {movieDetailError && <Disclaimer type="error" msgDetail={movieDetailError} />}
+      {movieDetailError && (
+        <Disclaimer type="error" msgDetail={movieDetailError} />
+      )}
       {!movieDetailLoading && !movieDetailError && movieDetailData && (
         <MovieDetail
           id={movieDetailData.id}
@@ -42,7 +42,7 @@ function MovieDetailHome() {
         />
       )}
     </>
-  );
+  )
 }
 
-export default MovieDetailHome;
+export default MovieDetailHome

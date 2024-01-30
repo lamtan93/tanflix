@@ -1,4 +1,4 @@
 export interface IActor {
-    name: string,
-    imgSrc: string,
+  name: string
+  imgSrc: string
 }

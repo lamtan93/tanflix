@@ -1,15 +1,19 @@
-import React from 'react';
-import { Title, ButtonLink } from '../UI';
-import '../../styles/_components/_pricing.scss';
-import APPLICATION_PATHS from '../../utils/paths';
-import Dico from '../../utils/dico';
-import useScrollAnimation from '../../hooks/useScrollAnimation';
+import React from 'react'
+import { Title, ButtonLink } from '../UI'
+import '../../styles/_components/_pricing.scss'
+import APPLICATION_PATHS from '../../utils/paths'
+import Dico from '../../utils/dico'
+import useScrollAnimation from '../../hooks/useScrollAnimation'
 
 function Pricing() {
-  useScrollAnimation('pricing');
+  useScrollAnimation('pricing')
   return (
     <section className="pricing">
-      <Title name={Dico.SECTION_PRICING.TITLE_PRICING} position="left" size="big" />
+      <Title
+        name={Dico.SECTION_PRICING.TITLE_PRICING}
+        position="left"
+        size="big"
+      />
       <div className="pricing__container">
         <div className="pricing__box scroll--hidden-pricing">
           <div className="pricing__item pricing__item--front">
@@ -61,7 +65,9 @@ function Pricing() {
             <div className="pricing__body">
               <span>{Dico.SECTION_PRICING.DETAILS.FORMULA_FAMILY.SCREEN}</span>
               <span>{Dico.SECTION_PRICING.DETAILS.FORMULA_FAMILY.DEVICE}</span>
-              <span>{Dico.SECTION_PRICING.DETAILS.FORMULA_FAMILY.DOWNLOAD}</span>
+              <span>
+                {Dico.SECTION_PRICING.DETAILS.FORMULA_FAMILY.DOWNLOAD}
+              </span>
               <span>{Dico.SECTION_PRICING.DETAILS.FORMULA_FAMILY.SUPPORT}</span>
             </div>
           </div>
@@ -114,7 +120,7 @@ function Pricing() {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default Pricing;
+export default Pricing

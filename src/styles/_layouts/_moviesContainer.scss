@@ -1,52 +1,52 @@
-@import "../_components/card";
-@import "../_abstracts/mixins";
-@import "../_base/animation";
+@import '../_components/card';
+@import '../_abstracts/mixins';
+@import '../_base/animation';
 
 .movies-section {
-    padding: 3rem 2rem;
-    @include scrollbar-style;
-    @include mobile(){
-        padding: 3rem 0;
+  padding: 3rem 2rem;
+  @include scrollbar-style;
+  @include mobile() {
+    padding: 3rem 0;
+  }
+  &__header {
+    &--main {
+      @include flex(row, space-between, center);
+      flex-wrap: wrap;
+      @include mobile() {
+        @include flex(column);
+        justify-content: center;
+      }
     }
-    &__header {
-        &--main {
-            @include flex(row, space-between, center);
-            flex-wrap: wrap;
-            @include mobile(){
-                @include flex(column);
-                justify-content: center;
-            }
-        }
-       &--sub {
-            padding-bottom: 4rem; 
-            @include flex(row, space-between, flex-start);
-            @include mobile(){
-                @include flex(column);
-                gap: 2rem;
-                padding: 4rem 2rem;
-            }
-       }
+    &--sub {
+      padding-bottom: 4rem;
+      @include flex(row, space-between, flex-start);
+      @include mobile() {
+        @include flex(column);
+        gap: 2rem;
+        padding: 4rem 2rem;
+      }
     }
+  }
 
-    &__content {
-        @include flex(column, null, center);
+  &__content {
+    @include flex(column, null, center);
+  }
+  &__moviesList {
+    @include flex();
+    flex-wrap: wrap;
+    &--trending {
+      justify-content: center;
     }
-    &__moviesList {
-        @include flex();
-        flex-wrap: wrap;
-        &--trending {
-            justify-content: center;
-        }
-        &--others {
-            justify-content: flex-start;
-            @include mobile(){
-                justify-content: center;
-            }
-        }
+    &--others {
+      justify-content: flex-start;
+      @include mobile() {
+        justify-content: center;
+      }
     }
+  }
 
-    &__cta-loadmore {
-        width: 100%;
-        text-align: center;
-    }
+  &__cta-loadmore {
+    width: 100%;
+    text-align: center;
+  }
 }

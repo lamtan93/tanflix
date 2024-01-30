@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../../../styles/_components/_navbar.scss';
-import useIsCurrentPathActive from '../../../hooks/useIsCurrentPathActive';
-import APPLICATION_PATHS from '../../../utils/paths';
-import Dico from '../../../utils/dico';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import '../../../styles/_components/_navbar.scss'
+import useIsCurrentPathActive from '../../../hooks/useIsCurrentPathActive'
+import APPLICATION_PATHS from '../../../utils/paths'
+import Dico from '../../../utils/dico'
 
 function Navbar() {
-  const [isCheckedButtonNav, setIsCheckedButtonNav] = useState(false);
+  const [isCheckedButtonNav, setIsCheckedButtonNav] = useState(false)
 
-  const isHomePage = useIsCurrentPathActive(APPLICATION_PATHS.HOME);
-  const isMoviesPage = useIsCurrentPathActive(APPLICATION_PATHS.MOVIE_LIST);
-  const isMoviesDetailPage = useIsCurrentPathActive(APPLICATION_PATHS.MOVIE_DETAIL);
+  const isHomePage = useIsCurrentPathActive(APPLICATION_PATHS.HOME)
+  const isMoviesPage = useIsCurrentPathActive(APPLICATION_PATHS.MOVIE_LIST)
+  const isMoviesDetailPage = useIsCurrentPathActive(
+    APPLICATION_PATHS.MOVIE_DETAIL
+  )
 
   return (
     <nav className="nav">
@@ -45,7 +47,7 @@ function Navbar() {
         </Link>
       </div>
     </nav>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

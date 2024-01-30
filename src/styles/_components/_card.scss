@@ -1,147 +1,145 @@
-@import "../_abstracts/variables";
-@import "../_abstracts/mixins";
+@import '../_abstracts/variables';
+@import '../_abstracts/mixins';
 
 .card {
-    flex-grow: 0;
-    cursor: pointer;
-    &--trending {
-        @include mobile(){
-            padding: 1rem;
-            flex-basis: 10rem;
-        }
-        @include tab-port(){
-            padding: 1rem;
-            flex-basis: 25rem;
-        };
-
-        @include tab-land(){
-            padding: 1rem;
-            flex-basis: 30rem;
-        }
-
-        @include normal-screen(){
-            padding: 1rem;
-            flex-basis: 27rem;
-        }
-
-        @include big-desktop(){
-            padding: 1rem;
-            flex-basis: 30rem;
-        }
-
-        position: relative;
-        &:nth-child(1){
-            &::after {
-                content: '2';
-                font-size: 7rem;
-            }
-        }
-
-        &:nth-child(2){
-            margin-top: -4rem;
-            &::after {
-                content: '1';
-            }
-        }
-
-        &:nth-child(3){
-            &::after {
-                content: '3';
-                font-size: 7rem;
-            }
-        }
-
-        &::after {
-            content: ''; 
-            font-size: 10rem;
-            position: absolute;
-            top: -6rem;
-            left: -1.3rem;
-            font-family: $font-secondary;
-            color: rgba($color-white, .6);
-        }
+  flex-grow: 0;
+  cursor: pointer;
+  &--trending {
+    @include mobile() {
+      padding: 1rem;
+      flex-basis: 10rem;
+    }
+    @include tab-port() {
+      padding: 1rem;
+      flex-basis: 25rem;
     }
 
-    &--others { 
-        height: 25rem;
-        @include mobile(){
-            padding: 1.5rem;
-            flex-basis: 25rem;
-        }
-
-        @include tab-port(){
-            padding: 1rem;
-            flex-basis: 20rem;
-        };
-
-        @include tab-land(){
-            padding: 1rem;
-            flex-basis: 20rem;
-        }
-
-        @include normal-screen(){
-            padding: 1rem;
-            flex-basis: 20rem;
-        }
-
-        @include big-desktop(){
-            padding: 1rem;
-            flex-basis: 20rem;
-        }
-       
-    }
-    
-    &__image {
-        position: relative;
-        width: 100%;
-        border-radius: .3rem;
-        &--others {
-            height: 50%;     
-        }
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: inherit;
-        }
-
-        transition: all .4s ease-out;
+    @include tab-land() {
+      padding: 1rem;
+      flex-basis: 30rem;
     }
 
-    &__name {
-        padding: 1rem;
-        font-size: 1.8rem;
-        display: block;
-        text-align: right;
-        color: $color-white-secondary;
-        font-weight: 400;
-        transition: all .4s ease-out;
-    }
-    
-    &__description {
-        color: $color-grey;
-        font-size: 1.4rem;
-        font-weight: 300;
+    @include normal-screen() {
+      padding: 1rem;
+      flex-basis: 27rem;
     }
 
-    &:hover &__name {
-        color: $color-primary-light;
+    @include big-desktop() {
+      padding: 1rem;
+      flex-basis: 30rem;
     }
 
-    &:hover &__image {
-        transform: translateY(-1.5rem) ;
-        box-shadow: 0 10px 20px rgba($color-primary-light, .5);
+    position: relative;
+    &:nth-child(1) {
+      &::after {
+        content: '2';
+        font-size: 7rem;
+      }
     }
+
+    &:nth-child(2) {
+      margin-top: -4rem;
+      &::after {
+        content: '1';
+      }
+    }
+
+    &:nth-child(3) {
+      &::after {
+        content: '3';
+        font-size: 7rem;
+      }
+    }
+
+    &::after {
+      content: '';
+      font-size: 10rem;
+      position: absolute;
+      top: -6rem;
+      left: -1.3rem;
+      font-family: $font-secondary;
+      color: rgba($color-white, 0.6);
+    }
+  }
+
+  &--others {
+    height: 25rem;
+    @include mobile() {
+      padding: 1.5rem;
+      flex-basis: 25rem;
+    }
+
+    @include tab-port() {
+      padding: 1rem;
+      flex-basis: 20rem;
+    }
+
+    @include tab-land() {
+      padding: 1rem;
+      flex-basis: 20rem;
+    }
+
+    @include normal-screen() {
+      padding: 1rem;
+      flex-basis: 20rem;
+    }
+
+    @include big-desktop() {
+      padding: 1rem;
+      flex-basis: 20rem;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    border-radius: 0.3rem;
+    &--others {
+      height: 50%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+    }
+
+    transition: all 0.4s ease-out;
+  }
+
+  &__name {
+    padding: 1rem;
+    font-size: 1.8rem;
+    display: block;
+    text-align: right;
+    color: $color-white-secondary;
+    font-weight: 400;
+    transition: all 0.4s ease-out;
+  }
+
+  &__description {
+    color: $color-grey;
+    font-size: 1.4rem;
+    font-weight: 300;
+  }
+
+  &:hover &__name {
+    color: $color-primary-light;
+  }
+
+  &:hover &__image {
+    transform: translateY(-1.5rem);
+    box-shadow: 0 10px 20px rgba($color-primary-light, 0.5);
+  }
 }
 
 .scroll--hidden-card {
-    @include scroll-effect-hidden-gen();
-    transform: translateY(2rem);
+  @include scroll-effect-hidden-gen();
+  transform: translateY(2rem);
 }
 
-
 .scroll--show-card {
-    @include scroll-effect-show-gen(.2s);
-    transform: translateY(0);
+  @include scroll-effect-show-gen(0.2s);
+  transform: translateY(0);
 }

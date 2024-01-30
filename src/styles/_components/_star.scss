@@ -1,38 +1,39 @@
-@import "../_abstracts/variables";
+@import '../_abstracts/variables';
 
 /*--------------------Star------------------------*/
 .star {
-    width: 2rem;
-    height: 2rem;
-    position: absolute;
-    bottom: 2rem;
-    left: 2rem;
-    cursor: pointer;
-    transition: all .3s ease-out;
-    clip-path: polygon(
-        50% 0%,
-        61% 35%, 
-        98% 35%, 
-        68% 57%, 
-        79% 91%, 
-        50% 70%, 
-        21% 91%, 
-        32% 57%, 
-        2% 35%, 
-        39% 35%);
-    &:hover {
-        background-color: $color-primary-light;
-    }
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  &:hover {
+    background-color: $color-primary-light;
+  }
 
-    &:active {
-        transform: scale(2);
-    }
+  &:active {
+    transform: scale(2);
+  }
 
-    &--disliked{
-        background-color: $color-white;
-    }
+  &--disliked {
+    background-color: $color-white;
+  }
 
-    &--liked {
-        background-color: $color-primary-light;
-    }
+  &--liked {
+    background-color: $color-primary-light;
+  }
 }

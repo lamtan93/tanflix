@@ -1,47 +1,47 @@
-@import "../_abstracts/mixins";
-@import "../_abstracts/variables";
+@import '../_abstracts/mixins';
+@import '../_abstracts/variables';
 
 .footer {
-    color: $color-white-secondary;
-    height: 25vh;
-    font-size: 1.4rem;
-    background: $color-black;
+  color: $color-white-secondary;
+  height: 25vh;
+  font-size: 1.4rem;
+  background: $color-black;
+  font-weight: 300;
+  text-transform: uppercase;
+  h3,
+  h4 {
+    color: $color-grey;
     font-weight: 300;
-    text-transform: uppercase;
-    h3, h4 {
-        color: $color-grey;
-        font-weight: 300;
-    }
+  }
 
-    &__container {
-        @include flex(row, space-between, center);
-        height: 100%;
-        width: 100%;
-        padding: 2rem;
-    }
+  &__container {
+    @include flex(row, space-between, center);
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+  }
 
-    &__social{
-        @include flex(column, center, flex-start);
-        height: 100%;
-        gap: 2rem;
-    }
+  &__social {
+    @include flex(column, center, flex-start);
+    height: 100%;
+    gap: 2rem;
+  }
 
-    &__brand{
-        @include flex(column, null, center);
-    }
+  &__brand {
+    @include flex(column, null, center);
+  }
 
-    &__general{
-        @include flex(column, center, flex-end);
-        height: 100%;
-        gap: 2rem;
-    }
+  &__general {
+    @include flex(column, center, flex-end);
+    height: 100%;
+    gap: 2rem;
+  }
 
-    &__url {
-        transition: all .5s ease-out;
-    }
+  &__url {
+    transition: all 0.5s ease-out;
+  }
 
-    &__url:hover {
-        text-decoration: underline $color-primary-light;
-
-    }
+  &__url:hover {
+    text-decoration: underline $color-primary-light;
+  }
 }

@@ -1,68 +1,66 @@
-@import "../_abstracts/variables";
-@import "../_abstracts/mixins";
+@import '../_abstracts/variables';
+@import '../_abstracts/mixins';
 
 .composition {
-    @include mobile(){
-        min-height: 10rem;
-    }
-    &__item { 
-        position: absolute;
-        width: 55%;
-        object-fit: cover;
+  @include mobile() {
+    min-height: 10rem;
+  }
+  &__item {
+    position: absolute;
+    width: 55%;
+    object-fit: cover;
 
-        video {
-            width: 100%;
-        }
-
-        @include tab-port(){
-            width: 70%;
-        };
-
-        @include mobile(){
-            width: 60%;
-        }
-        transition: all .4s ease-out;
-        border-radius: 1px;
-
-        &:hover {
-            transform: scale(1.5) translateY(-.5rem);
-            outline: .1rem solid $color-primary-light;
-            outline-offset: .2rem;
-            z-index: 10;
-            box-shadow: 0 .5rem 1rem rgba($color-primary-light, .5);
-            
-        }
-
-        &--1{
-            left: 0;
-            top: -2rem;
-            @include mobile(){
-                left: -10%;
-                top: 20%;
-            }
-        }
-
-        &--2{
-            right: 0;
-            top: 2rem;
-            @include mobile(){
-                right: -5%;
-                top: 40%;
-            }
-        }
-        
-        &--3{
-            left: 20%;
-            top: 10rem;
-            @include mobile(){
-                left: 20%;
-                top: 90%;
-            }
-        }
+    video {
+      width: 100%;
     }
 
-    &:hover &__item:not(:hover) {
-        transform: scale(.8);
+    @include tab-port() {
+      width: 70%;
     }
-    
+
+    @include mobile() {
+      width: 60%;
+    }
+    transition: all 0.4s ease-out;
+    border-radius: 1px;
+
+    &:hover {
+      transform: scale(1.5) translateY(-0.5rem);
+      outline: 0.1rem solid $color-primary-light;
+      outline-offset: 0.2rem;
+      z-index: 10;
+      box-shadow: 0 0.5rem 1rem rgba($color-primary-light, 0.5);
+    }
+
+    &--1 {
+      left: 0;
+      top: -2rem;
+      @include mobile() {
+        left: -10%;
+        top: 20%;
+      }
+    }
+
+    &--2 {
+      right: 0;
+      top: 2rem;
+      @include mobile() {
+        right: -5%;
+        top: 40%;
+      }
+    }
+
+    &--3 {
+      left: 20%;
+      top: 10rem;
+      @include mobile() {
+        left: 20%;
+        top: 90%;
+      }
+    }
+  }
+
+  &:hover &__item:not(:hover) {
+    transform: scale(0.8);
+  }
 }

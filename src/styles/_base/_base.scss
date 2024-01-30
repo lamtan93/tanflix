@@ -1,62 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Bevan&family=Roboto:wght@300;400;500;700;900&display=swap');
-@import "../_abstracts/mixins";
-@import "../_abstracts/variables";
+@import '../_abstracts/mixins';
+@import '../_abstracts/variables';
 
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 
-    @include big-desktop(){
-        font-size: 75%; 
-    }
+  @include big-desktop() {
+    font-size: 75%;
+  }
 
-    @include tab-land(){
-        font-size: 56.25%;
-    }
+  @include tab-land() {
+    font-size: 56.25%;
+  }
 
-    @include tab-port(){
-        font-size: 50%;
-    }
+  @include tab-port() {
+    font-size: 50%;
+  }
 
-    font-family: $font-default;
-    color: white;
-    scroll-behavior: smooth;
+  font-family: $font-default;
+  color: white;
+  scroll-behavior: smooth;
 }
 
 body {
-    height: 100%;
-    background: $color-background;
+  height: 100%;
+  background: $color-background;
 
-    &::-webkit-scrollbar{
-        width: 0;
-    }
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
 #root {
-    @include flex(column);
+  @include flex(column);
 }
 
 .main {
-    flex-grow: 1;
-    min-height: 60rem;
-    & > * {
-        background: #1a1a1a;
+  flex-grow: 1;
+  min-height: 60rem;
+  & > * {
+    background: #1a1a1a;
+  }
+  @include mobile() {
+    & > *:not(:last-child) {
+      padding-bottom: 8rem;
     }
-    @include mobile(){
-        & > *:not(:last-child){
-            padding-bottom: 8rem;
-        }
-    }
+  }
 }
 
 a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }

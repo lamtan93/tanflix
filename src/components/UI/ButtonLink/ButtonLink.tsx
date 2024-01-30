@@ -1,9 +1,9 @@
-import React from 'react';
-import '../../../styles/_components/_button.scss';
-import '../../../styles/_base/_utility.scss';
-import { Link } from 'react-router-dom';
-import { IButtonLink } from './interfaces/IButtonLink';
-import APPLICATION_PATHS from '../../../utils/paths';
+import React from 'react'
+import '../../../styles/_components/_button.scss'
+import '../../../styles/_base/_utility.scss'
+import { Link } from 'react-router-dom'
+import { IButtonLink } from './interfaces/IButtonLink'
+import APPLICATION_PATHS from '../../../utils/paths'
 
 function ButtonLink({
   animated,
@@ -17,13 +17,11 @@ function ButtonLink({
 }: IButtonLink) {
   return (
     <Link
-      className={
-        `btn ${animated && 'btn--animated'}
+      className={`btn ${animated && 'btn--animated'}
         ${loading && 'btn--loading'}
         ${disabled && 'btn--disabled'}
         btn--${color}
-        btn--${size}`
-      }
+        btn--${size}`}
       aria-label="anchor-button"
       role="button"
       to={href}
@@ -31,7 +29,7 @@ function ButtonLink({
     >
       {name}
     </Link>
-  );
+  )
 }
 
-export default ButtonLink;
+export default ButtonLink

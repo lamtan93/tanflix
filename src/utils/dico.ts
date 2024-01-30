@@ -2,7 +2,7 @@ const Dico = {
   HEADER: {
     SLOGAN: {
       MAIN: 'together',
-      SUB: 'let\'s make memories',
+      SUB: "let's make memories",
     },
     BUTTONLINK_DISCOVER_MOVIES: 'discover movies',
   },
@@ -16,21 +16,24 @@ const Dico = {
     TITLE_PRESENTATION_GENERAL: 'Our best new movies just for you',
 
     TITLE_PRESENTATION_1: 'you are going fall in love with our movies',
-    PARAGRAPH_PRESENTATION_1: 'Experience love at first sight'
-    + ' with our curated collection of must-watch films'
-    + 'and get ready to be enchanted as you explore the magic of cinema on our site.',
+    PARAGRAPH_PRESENTATION_1:
+      'Experience love at first sight' +
+      ' with our curated collection of must-watch films' +
+      'and get ready to be enchanted as you explore the magic of cinema on our site.',
 
     TITLE_PRESENTATION_2: 'live adventures like you never have bedore',
-    PARAGRAPH_PRESENTATION_2: 'Indulge in a world of unforgettable stories'
-    + ' and breathtaking visuals at our movie paradise.',
+    PARAGRAPH_PRESENTATION_2:
+      'Indulge in a world of unforgettable stories' +
+      ' and breathtaking visuals at our movie paradise.',
 
     BUTTONLINK_LEARN_MORE: 'learn more',
   },
 
   SECTION_PRICING: {
     TITLE_PRICING: 'Pricing',
-    LIMITED_PRICING_PARAGRAPH: 'The price displayed for this best offer'
-    + ' is guaranteed only until 02/03/2024',
+    LIMITED_PRICING_PARAGRAPH:
+      'The price displayed for this best offer' +
+      ' is guaranteed only until 02/03/2024',
     BUTTONLINK_JOIN_NOW: 'join now',
     DETAILS: {
       FORMULA_SOLO: {
@@ -113,6 +116,6 @@ const Dico = {
       FAQ: 'faq',
     },
   },
-};
+}
 
-export default Dico;
+export default Dico

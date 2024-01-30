@@ -1,6 +1,6 @@
-import React from 'react';
-import { IGenreUI } from './interfaces/IGenre';
-import '../../../styles/_components/_genre.scss';
+import React from 'react'
+import { IGenreUI } from './interfaces/IGenre'
+import '../../../styles/_components/_genre.scss'
 
 function Genre({
   genre,
@@ -14,19 +14,18 @@ function Genre({
   return (
     <button
       type="button"
-      className={
-        `genre__item
+      className={`genre__item
         genre__item--${color}
         ${withLineThrough && 'genre__item--lineThrough'}
         ${withLineThroughHover && 'genre__item--lineThrough-hover'}
-        ${disabled && 'genre__item--disabled'
-      }`
-}
-      onClick={() => { onClickGenre(genre); }}
+        ${disabled && 'genre__item--disabled'}`}
+      onClick={() => {
+        onClickGenre(genre)
+      }}
     >
       {`${withSharp ? '#' : ''}${genre.name}`}
     </button>
-  );
+  )
 }
 
-export default Genre;
+export default Genre

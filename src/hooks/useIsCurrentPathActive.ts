@@ -1,8 +1,8 @@
-import { useLocation, matchPath } from 'react-router-dom';
+import { useLocation, matchPath } from 'react-router-dom'
 
 const useIsCurrentPathActive = (pathToCheck: string) => {
-  const { pathname } = useLocation();
-  return !!matchPath(pathToCheck, pathname);
-};
+  const { pathname } = useLocation()
+  return !!matchPath(pathToCheck, pathname)
+}
 
-export default useIsCurrentPathActive;
+export default useIsCurrentPathActive
