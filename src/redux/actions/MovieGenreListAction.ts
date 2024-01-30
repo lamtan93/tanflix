@@ -1,7 +1,7 @@
-import { IGenre } from './../../components/UI/Genre/interfaces/IGenre';
-import { MovieGenreListActionType } from "../action-types.ts/MovieGenreListActionType";
+import { IGenre } from '../../components/UI/Genre/interfaces/IGenre';
+import MovieGenreListActionType from '../action-types.ts/MovieGenreListActionType';
 
-//Fetch movie genre list
+// Fetch movie genre list
 interface FetchMovieGenreListRequestAction {
     type: MovieGenreListActionType.FETCH_MOVIE_GENRE_LIST_REQUEST;
 }
@@ -15,7 +15,6 @@ interface FetchMovieGenreListRequestErrorAction {
     type: MovieGenreListActionType.FETCH_MOVIE_GENRE_LIST_REQUEST_ERROR;
     payload: string,
 }
-
 
 export type MovieGenreListAction = FetchMovieGenreListRequestAction
 | FetchMovieGenreListRequestSucessAction

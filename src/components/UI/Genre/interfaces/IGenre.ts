@@ -1,9 +1,9 @@
-import { IComponentUIColor } from "../../interfacesUI";
+import { IComponentUIColor } from '../../interfacesUI';
 
 export interface IGenre {
     id: number,
     name: string,
-};
+}
 
 export interface IGenreUI {
     genre: IGenre,
@@ -14,4 +14,3 @@ export interface IGenreUI {
     disabled?: boolean,
     onClickGenre: (genre: IGenre) => void;
 }
-

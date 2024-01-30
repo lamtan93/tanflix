@@ -13,6 +13,7 @@
         position: relative;
         transition: all .3s ease-out;
         animation: moveGenre .3s ease-out;
+        border: none;
 
         &--orange {
             background: $color-primary-light;

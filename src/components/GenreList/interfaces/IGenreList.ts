@@ -1,4 +1,4 @@
-import { IGenre } from "../../UI/Genre/interfaces/IGenre";
+import { IGenre } from '../../UI/Genre/interfaces/IGenre';
 
 export interface IGenreList {
     genresList: IGenre[];

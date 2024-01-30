@@ -1,5 +1,6 @@
-import { IGenre } from './../../UI/Genre/interfaces/IGenre';
+import { IGenre } from '../../UI/Genre/interfaces/IGenre';
 import { ICard } from '../../UI/Card/interfaces/ICard';
+
 interface IName {
     name: string,
 }

@@ -1,5 +1,5 @@
-import { ComponentPropsWithoutRef } from "react";
-import { IComponentUIColor, IComponentUISize } from "../../interfacesUI";
+import { ComponentPropsWithoutRef } from 'react';
+import { IComponentUIColor, IComponentUISize } from '../../interfacesUI';
 
 export interface IButtonLink extends ComponentPropsWithoutRef<'a'>{
     animated: boolean,

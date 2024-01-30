@@ -1,7 +1,7 @@
-import { ICard } from "../../components/UI/Card/interfaces/ICard";
-import { MovieListActionType } from "../action-types.ts/MovieListActionType";
+import { ICard } from '../../components/UI/Card/interfaces/ICard';
+import MovieListActionType from '../action-types.ts/MovieListActionType';
 
-//Fetch movie list
+// Fetch movie list
 interface FetchMovieListRequestAction {
     type: MovieListActionType.FETCH_MOVIE_LIST_REQUEST
 }
@@ -16,7 +16,7 @@ interface FetchMovieListRequestErrorAction {
     payload: string,
 }
 
-//Fetch trending movie list
+// Fetch trending movie list
 interface FetchTrendingMovieListRequestAction {
     type: MovieListActionType.FETCH_TRENDING_MOVIE_LIST_REQUEST
 }
@@ -31,7 +31,7 @@ interface FetchTrendingMovieListRequestErrorAction {
     payload: string,
 }
 
-//Fetch similar movie list
+// Fetch similar movie list
 interface FetchSimilarMovieListRequestAction {
     type: MovieListActionType.FETCH_SIMILAR_MOVIE_LIST_REQUEST,
 }
@@ -46,7 +46,7 @@ interface FetchSimilarMovieListRequestErrorAction {
     payload: string,
 }
 
-//Update liked movies
+// Update liked movies
 interface UpdateLikeMovieListRequestAction {
     type: MovieListActionType.UPDATE_LIKE_MOVIE_LIST_REQUEST,
     payload: number;

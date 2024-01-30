@@ -1,4 +1,4 @@
-import { MovieReviewListActionType } from './../action-types.ts/MovieReviewActionType';
+import MovieReviewListActionType from '../action-types.ts/MovieReviewActionType';
 import { IReviewItem } from '../../components/Reviewer/interfaces/IReviewer';
 
 interface FetchMovieReviewListRequestAction {

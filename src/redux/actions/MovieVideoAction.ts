@@ -1,4 +1,4 @@
-import { MovieVideoActionType } from '../action-types.ts/MovieVideoActionType';
+import MovieVideoActionType from '../action-types.ts/MovieVideoActionType';
 import { IRawMovieVideoDataFromAPI } from '../action-creators/interfaces';
 
 interface FetchMovieVideoRequestAction {

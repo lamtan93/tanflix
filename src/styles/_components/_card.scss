@@ -3,6 +3,7 @@
 
 .card {
     flex-grow: 0;
+    cursor: pointer;
     &--trending {
         @include mobile(){
             padding: 1rem;

@@ -1,15 +1,17 @@
-import { useState, } from 'react';
+import { useState } from 'react';
 
-export const useSearchInput = () => {
-    const [searchValue, setSearchValue] = useState('');
+const useSearchInput = () => {
+  const [searchValue, setSearchValue] = useState('');
 
-    const handleOnChangeSearchValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const value = e.target.value;
-        setSearchValue(value);
-    }
+  const handleOnChangeSearchValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setSearchValue(value);
+  };
 
-    return {
-        searchValue,
-        handleOnChangeSearchValue,
-    }
-}
+  return {
+    searchValue,
+    handleOnChangeSearchValue,
+  };
+};
+
+export default useSearchInput;

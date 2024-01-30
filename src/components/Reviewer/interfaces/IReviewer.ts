@@ -11,4 +11,4 @@ export interface IReviewer {
     title: string,
     withVideoBackground?: boolean,
     reviewerList: IReviewItem[];
-};
+}

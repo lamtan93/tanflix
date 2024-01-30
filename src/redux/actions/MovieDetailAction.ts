@@ -1,5 +1,5 @@
-import { IMovieDetail } from './../../components/MovieDetail/interfaces/IMovieDetail';
-import { MovieDetailActionType } from './../action-types.ts/MovieDetailActionType';
+import { IMovieDetail } from '../../components/MovieDetail/interfaces/IMovieDetail';
+import MovieDetailActionType from '../action-types.ts/MovieDetailActionType';
 
 interface FetchMovieDetailRequestAction {
     type: MovieDetailActionType.FETCH_MOVIE_DETAIL_REQUEST

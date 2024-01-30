@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { Title } from "../UI"
+import React from 'react';
+import { Title } from '../UI';
 import '../../styles/_base/_utility.scss';
-import { Dico } from "../../utils/dico";
+import Dico from '../../utils/dico';
 
 interface ILoading {
     type: 'loading'
@@ -20,19 +20,37 @@ interface IError {
 
 type IDisclaimer = ILoading | IInfos | IError;
 
-const Disclaimer: FC<IDisclaimer> = (props) => {
+function Disclaimer(props: IDisclaimer) {
+  const { type } = props;
+  if (type === 'loading') {
+    return (<Title name="loading..." position="center" size="small" />);
+  }
+
+  if (type === 'infos') {
+    const { msg } = props || {};
+    return (<Title name={msg} position="center" size="small" />);
+  }
+
+  if (type === 'error') {
+    const { msgGlobal, msgDetail } = props || {};
     return (
-        <div className="u__mt--small">
-            {props.type === 'loading' && <Title name='loading...' position='center' size='small'/>}
-            {props.type === 'infos' && <Title name={props.msg} position='center' size='small'/>}
-            {props.type === 'error' && (
-                <>
-                    <Title name={props.msgGlobal || Dico.DISCLAIMER.ERROR_GLOBAL_MSG} position='center' size='small'/>
-                    <Title name={props.msgDetail} position='center' size='small'/>
-                </>
-            )}
-        </div>
-    )
+      <>
+        <Title
+          name={msgGlobal || Dico.DISCLAIMER.ERROR_GLOBAL_MSG}
+          position="center"
+          size="small"
+        />
+        <Title
+          name={msgDetail}
+          position="center"
+          size="small"
+        />
+        ;
+      </>
+    );
+  }
+
+  return null;
 }
 
 export default Disclaimer;

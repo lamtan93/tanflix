@@ -1,4 +1,4 @@
-import { IGenre } from './../../components/UI/Genre/interfaces/IGenre';
+import { IGenre } from '../../components/UI/Genre/interfaces/IGenre';
 
 interface IResultsListDataFromAPI<T> {
     results: T
@@ -44,9 +44,8 @@ export interface IRawMovieReviewDataFromAPI {
 
 export interface IRawMovieGenreListDataFromAPI {
     genres: IGenre[];
-};
+}
 
 export type IRawMovieListDataFromAPI = IResultsListDataFromAPI<IRawMovieDataFromAPI[]>;
 export type IRawMovieVideoListDataFromAPI = IResultsListDataFromAPI<IRawMovieVideoDataFromAPI[]>;
 export type IRawMovieReviewListDataFromAPI = IResultsListDataFromAPI<IRawMovieReviewDataFromAPI[]>;
-

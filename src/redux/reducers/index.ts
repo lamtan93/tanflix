@@ -8,14 +8,14 @@ import MovieReviewListReducer from './reviews/MovieReviewListReducer';
 import MovieGenreListReducer from './moviegenre/MovieGenreReducer';
 
 const reducers = combineReducers({
-    movieList: MovieListReducer,
-    trendingMovieList: TrendingMovieListReducer,
-    similarMovieList: SimilarMovieListReducer,
-    movieDetail: MovieDetailReducer,
-    movieVideos: MovieVideoReducer,
-    movieReviewList: MovieReviewListReducer,
-    movieGenreList: MovieGenreListReducer,
-})
+  movieList: MovieListReducer,
+  trendingMovieList: TrendingMovieListReducer,
+  similarMovieList: SimilarMovieListReducer,
+  movieDetail: MovieDetailReducer,
+  movieVideos: MovieVideoReducer,
+  movieReviewList: MovieReviewListReducer,
+  movieGenreList: MovieGenreListReducer,
+});
 
 export default reducers;
 export type RootState = ReturnType<typeof reducers>;

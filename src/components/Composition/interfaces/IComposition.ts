@@ -1,3 +1,7 @@
 export interface IComposition {
-    listSourceVideos: [string, string, string];
+    listSourceVideos: [
+        {key: number, sourceVideo: string},
+        {key: number, sourceVideo: string},
+        {key: number, sourceVideo: string},
+    ];
 }

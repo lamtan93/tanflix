@@ -1,9 +1,9 @@
 export interface ICard {
-    type?: "trending" | "others",
+    type?: 'trending' | 'others',
     id: number,
     name: string,
     description: string,
     imgSrc: string,
     genre_ids: number[],
-    liked?: boolean ,
+    liked?: boolean,
 }
