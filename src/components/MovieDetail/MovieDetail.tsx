@@ -94,7 +94,7 @@ function MovieDetail({
             </Popup>
           )}
           <ButtonLink
-            name="Watch trailer"
+            name={Dico.SECTION_DETAIL_MOVIE.BUTTONLINK_WATCH_TRAILER}
             animated
             color="orange"
             size="med"
@@ -113,41 +113,38 @@ function MovieDetail({
                 color="white"
                 withSharp
                 disabled
-                onClickGenre={() => {}}
               />
             ))}
           </div>
           <p className="detailmovie__resume">{description}</p>
-          <span className="detailmovie__companies">Production companies: </span>
+          <span className="detailmovie__companies">
+            {`${Dico.SECTION_DETAIL_MOVIE.PRODUCTION_COMPANIES_LABEL}:`}
+          </span>
           <div className="detailmovie__actors">
             {companies.map((company) => {
-              if (company.logo_path) {
-                return (
-                  <Actor
-                    key={company.name}
-                    name={company.name}
-                    imgSrc={`${CONFIG_API.BASE_IMAGE_URL}/${company.logo_path}`}
-                  />
-                )
-              }
+              if (company.logo_path)
+                <Actor
+                  key={company.name}
+                  name={company.name}
+                  imgSrc={`${CONFIG_API.BASE_IMAGE_URL}/${company.logo_path}`}
+                />
               return false
             })}
           </div>
 
           <span className="detailmovie__country">
-            Country:
+            {`${Dico.SECTION_DETAIL_MOVIE.COUNTRY_LABEL}: `}
             {countries.map((country) => `${country.name} `)}
           </span>
           <span className="detailmovie__popularity">
-            Popularity:
-            {popularity}
+            {`${Dico.SECTION_DETAIL_MOVIE.POPULARITY_LABEL}: ${popularity}`}
           </span>
           <span className="detailmovie__autor">
-            Author: updated in progress
+            {`${Dico.SECTION_DETAIL_MOVIE.AUTHOR_LABEL}: 
+            ${Dico.SECTION_DETAIL_MOVIE.UPDATED_IN_PROGRESS_LABEL}`}
           </span>
           <span className="detailmovie__date">
-            Date:
-            {date}
+            {`${Dico.SECTION_DETAIL_MOVIE.DATE_LABEL}: ${date}`}
           </span>
         </div>
       </div>

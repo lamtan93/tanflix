@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import classNames from 'classnames'
 import Star from '../Star/Star'
 import '../../../styles/_components/_card.scss'
 import { ICard } from './interfaces/ICard'
@@ -24,15 +25,21 @@ function Card({ type, id, name, description, imgSrc, liked }: ICard) {
   }
   useScrollAnimation('card')
 
+  const cardClassNames = classNames('card', `card--${type}`, {
+    'scroll--hidden-card': type === 'others',
+  })
+
+  const cardImageClassNames = classNames('card__image', `card__image--${type}`)
+
   return (
     <div
-      className={`card card--${type} ${type === 'others' && 'scroll--hidden-card'}`}
+      className={cardClassNames}
       role="button"
       tabIndex={id}
       onClick={() => handleOnClick(id)}
       onKeyDown={() => handleOnClick(id)}
     >
-      <div className={`card__image card__image--${type}`}>
+      <div className={cardImageClassNames}>
         <Star
           id={id}
           isLiked={liked || false}

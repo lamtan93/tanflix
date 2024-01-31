@@ -1,19 +1,26 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../../../styles/_components/_navbar.scss'
+import classNames from 'classnames'
 import useIsCurrentPathActive from '../../../hooks/useIsCurrentPathActive'
 import APPLICATION_PATHS from '../../../utils/paths'
 import Dico from '../../../utils/dico'
 
 function Navbar() {
   const [isCheckedButtonNav, setIsCheckedButtonNav] = useState(false)
-
   const isHomePage = useIsCurrentPathActive(APPLICATION_PATHS.HOME)
   const isMoviesPage = useIsCurrentPathActive(APPLICATION_PATHS.MOVIE_LIST)
   const isMoviesDetailPage = useIsCurrentPathActive(
     APPLICATION_PATHS.MOVIE_DETAIL
   )
 
+  const linkHomePageClassNames = classNames({
+    'nav__links--active': isHomePage,
+  })
+
+  const linkMoviesPageClassNames = classNames({
+    'nav__links--active': isMoviesPage || isMoviesDetailPage,
+  })
   return (
     <nav className="nav">
       <label
@@ -32,14 +39,14 @@ function Navbar() {
 
       <div className="nav__links" id="navbar">
         <Link
-          className={`${isHomePage && 'nav__links--active'}`}
+          className={linkHomePageClassNames}
           to={APPLICATION_PATHS.HOME}
           onClick={() => setIsCheckedButtonNav(false)}
         >
           {Dico.NAVBAR.MENU_HOME}
         </Link>
         <Link
-          className={`${(isMoviesPage || isMoviesDetailPage) && 'nav__links--active'} `}
+          className={linkMoviesPageClassNames}
           to={APPLICATION_PATHS.MOVIE_LIST}
           onClick={() => setIsCheckedButtonNav(false)}
         >

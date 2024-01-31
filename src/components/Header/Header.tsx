@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 import { Brand, ButtonLink, Navbar } from '../UI'
 import '../../styles/_layouts/_header.scss'
 import APPLICATION_PATHS from '../../utils/paths'
@@ -7,11 +8,14 @@ import Dico from '../../utils/dico'
 
 function Header() {
   const isHomePage = useIsCurrentPathActive(APPLICATION_PATHS.HOME)
+  const headerClassNames = classNames('header', {
+    'header--homePage': isHomePage,
+  })
 
   return (
     <>
       <Navbar />
-      <header className={`header ${isHomePage && 'header--homePage'}`}>
+      <header className={headerClassNames}>
         <Brand size="big" />
         {isHomePage && (
           <div className="header__container-slogan">

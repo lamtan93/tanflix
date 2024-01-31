@@ -2,6 +2,7 @@ import React from 'react'
 import '../../../styles/_components/_button.scss'
 import '../../../styles/_base/_utility.scss'
 import { Link } from 'react-router-dom'
+import classNames from 'classnames'
 import { IButtonLink } from './interfaces/IButtonLink'
 import APPLICATION_PATHS from '../../../utils/paths'
 
@@ -15,13 +16,20 @@ function ButtonLink({
   href = APPLICATION_PATHS.HOME,
   onClick,
 }: IButtonLink) {
+  const buttonLinkClassNames = classNames(
+    'btn',
+    `btn--${color}`,
+    `btn--${size}`,
+    {
+      'btn--animated': animated,
+      'btn--loading': loading,
+      'btn--disabled': disabled,
+    }
+  )
+
   return (
     <Link
-      className={`btn ${animated && 'btn--animated'}
-        ${loading && 'btn--loading'}
-        ${disabled && 'btn--disabled'}
-        btn--${color}
-        btn--${size}`}
+      className={buttonLinkClassNames}
       aria-label="anchor-button"
       role="button"
       to={href}

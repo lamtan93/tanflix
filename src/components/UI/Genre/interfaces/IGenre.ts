@@ -12,5 +12,5 @@ export interface IGenreUI {
   withLineThroughHover?: boolean
   withSharp?: boolean
   disabled?: boolean
-  onClickGenre: (genre: IGenre) => void
+  onClickGenre?: (genre: IGenre) => void
 }

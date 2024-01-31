@@ -27,6 +27,8 @@ const Dico = {
       ' and breathtaking visuals at our movie paradise.',
 
     BUTTONLINK_LEARN_MORE: 'learn more',
+    BROWSER_NOT_SUPPORT_VIDEO_LABEL:
+      'Your browser does not support the video tag.',
   },
 
   SECTION_PRICING: {
@@ -95,6 +97,12 @@ const Dico = {
 
   SECTION_DETAIL_MOVIE: {
     BUTTONLINK_WATCH_TRAILER: 'watch trailer',
+    PRODUCTION_COMPANIES_LABEL: 'Production companies',
+    COUNTRY_LABEL: 'Country',
+    POPULARITY_LABEL: 'Popularity',
+    AUTHOR_LABEL: 'Author',
+    UPDATED_IN_PROGRESS_LABEL: 'updated in progress',
+    DATE_LABEL: 'Date',
   },
 
   SECTION_GENRE: {

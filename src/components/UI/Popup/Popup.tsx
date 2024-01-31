@@ -1,11 +1,16 @@
 import React from 'react'
+import classNames from 'classnames'
 import { IPopup } from './IPopup'
 import ButtonLink from '../ButtonLink/ButtonLink'
 import '../../../styles/_components/_popup.scss'
 
 function Popup({ name, children, open, close }: IPopup) {
+  const popupClassNames = classNames('popup', {
+    'popup--open': open,
+    'popup--close': !open,
+  })
   return (
-    <div className={`popup popup${open ? '--open' : '--close'}`}>
+    <div className={popupClassNames}>
       <div className="popup__header">
         <h4 className="popup__title">{name}</h4>
         <ButtonLink

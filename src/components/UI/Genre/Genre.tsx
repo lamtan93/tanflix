@@ -1,4 +1,5 @@
 import React from 'react'
+import classNames from 'classnames'
 import { IGenreUI } from './interfaces/IGenre'
 import '../../../styles/_components/_genre.scss'
 
@@ -9,16 +10,17 @@ function Genre({
   withLineThroughHover = false,
   withSharp = false,
   disabled = false,
-  onClickGenre,
+  onClickGenre = () => {},
 }: IGenreUI) {
+  const genreClassNames = classNames('genre__item', `genre__item--${color}`, {
+    'genre__item--lineThrough': withLineThrough,
+    'genre__item--lineThrough-hover': withLineThroughHover,
+    'genre__item--disabled': disabled,
+  })
   return (
     <button
       type="button"
-      className={`genre__item
-        genre__item--${color}
-        ${withLineThrough && 'genre__item--lineThrough'}
-        ${withLineThroughHover && 'genre__item--lineThrough-hover'}
-        ${disabled && 'genre__item--disabled'}`}
+      className={genreClassNames}
       onClick={() => {
         onClickGenre(genre)
       }}

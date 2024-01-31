@@ -2,6 +2,7 @@ import React from 'react'
 import '../../styles/_components/_composition.scss'
 import { IComposition } from './interfaces/IComposition'
 import { playOrPauseVideoById } from '../../utils/utils'
+import Dico from '../../utils/dico'
 
 function Composition({ listSourceVideos }: IComposition) {
   return (
@@ -27,7 +28,7 @@ function Composition({ listSourceVideos }: IComposition) {
             }
           >
             <source src={`${srcVideo.sourceVideo}#t=1`} type="video/mp4" />
-            Your browser does not support the video tag.
+            {Dico.SECTION_ABOUT.BROWSER_NOT_SUPPORT_VIDEO_LABEL}
           </video>
         </div>
       ))}
