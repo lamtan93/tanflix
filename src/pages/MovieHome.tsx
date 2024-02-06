@@ -40,9 +40,8 @@ function MovieHome() {
       )}
       {!trendingMovieListLoading && !trendingMovieListError && (
         <Trending
-          categoryLabel="Trending movies"
+          categoryLabel={Dico.SECTION_MOVIES_LIST.TRENDING.TITLE_TRENDING}
           movieList={trendingMovieListData.slice(0, 3)}
-          searchValue=""
         />
       )}
 

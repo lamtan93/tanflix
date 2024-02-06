@@ -1,5 +1,4 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import classNames from 'classnames'
 import Star from '../Star/Star'
 import '../../../styles/_components/_card.scss'
@@ -8,13 +7,16 @@ import useActions from '../../../hooks/useActions'
 import { CONFIG_API } from '../../../utils/api'
 import useScrollAnimation from '../../../hooks/useScrollAnimation'
 
-function Card({ type, id, name, description, imgSrc, liked }: ICard) {
-  const navigate = useNavigate()
+function Card({
+  type,
+  id,
+  name,
+  description,
+  imgSrc,
+  liked,
+  handleOnClick,
+}: ICard) {
   const { updateLikeMovieList } = useActions()
-
-  const handleOnClick = (idMovie: number) => {
-    navigate(`/movies/detail/${idMovie}`)
-  }
 
   const handleOnClickStar = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
@@ -38,6 +40,7 @@ function Card({ type, id, name, description, imgSrc, liked }: ICard) {
       tabIndex={id}
       onClick={() => handleOnClick(id)}
       onKeyDown={() => handleOnClick(id)}
+      data-testid="movie-card"
     >
       <div className={cardImageClassNames}>
         <Star

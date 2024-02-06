@@ -11,9 +11,10 @@ function Star({ id, isLiked, onClick }: IStar) {
   return (
     <button
       type="button"
-      aria-label="favoris-button"
       className={starClassNames}
       onClick={(e) => onClick(e, id)}
+      aria-label="favoris-button"
+      data-testid="favoris-button"
     />
   )
 }

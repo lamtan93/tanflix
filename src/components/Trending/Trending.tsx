@@ -1,17 +1,17 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Title, Card } from '../UI'
 import { IMovieList } from '../MovieList/interfaces/IMovieList'
 import '../../styles/_layouts/_moviesContainer.scss'
-import Dico from '../../utils/dico'
 
-function Trending({ movieList }: IMovieList) {
+function Trending({ movieList, categoryLabel }: IMovieList) {
+  const navigate = useNavigate()
+  const onClickHandle = (idMovie: number) => {
+    navigate(`/movies/detail/${idMovie}`)
+  }
   return (
     <section className="movies-section">
-      <Title
-        name={Dico.SECTION_MOVIES_LIST.TRENDING.TITLE_TRENDING}
-        position="right"
-        size="big"
-      />
+      <Title name={categoryLabel} position="right" size="big" />
       <div className="movies-section__content">
         <div className="movies-section__moviesList movies-section__moviesList--trending">
           {movieList.map((movie) => (
@@ -24,6 +24,7 @@ function Trending({ movieList }: IMovieList) {
               imgSrc={movie.imgSrc}
               genre_ids={movie.genre_ids}
               liked={movie.liked}
+              handleOnClick={(idMovie) => onClickHandle(idMovie)}
             />
           ))}
         </div>

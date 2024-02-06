@@ -21,6 +21,7 @@ export const getMappingMovieListData = (
     imgSrc: data.poster_path,
     genre_ids: data.genre_ids,
     liked: false,
+    handleOnClick: () => {},
   }))
 
 export const getMappingMovieDetailData = (
@@ -46,7 +47,7 @@ export const getMappingMovieDetailData = (
     description: overview,
     imgSrc: posterPath,
     date: new Date(releaseDate).toLocaleDateString(),
-    companies: productionCompanies,
+    companies: productionCompanies.filter((company) => company.logo_path),
     countries: productionCountries,
   }
 }

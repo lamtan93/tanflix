@@ -23,17 +23,18 @@ function Navbar() {
   })
   return (
     <nav className="nav">
+      <input
+        checked={isCheckedButtonNav}
+        type="checkbox"
+        id="nav__ctaNavigation-button"
+        className="nav__ctaNavigation-button"
+        onChange={(e) => setIsCheckedButtonNav(e.currentTarget.checked)}
+      />
+      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
       <label
         className="nav__ctaNavigation-label"
         htmlFor="nav__ctaNavigation-button"
       >
-        <input
-          checked={isCheckedButtonNav}
-          type="checkbox"
-          id="nav__ctaNavigation-button"
-          className="nav__ctaNavigation-button"
-          onChange={(e) => setIsCheckedButtonNav(e.currentTarget.checked)}
-        />
         T
       </label>
 

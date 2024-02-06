@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useLoadMore } from '../../hooks/useLoadMore'
 import { Title, Card, ButtonLink } from '../UI'
 import { IMovieList } from './interfaces/IMovieList'
@@ -10,6 +11,7 @@ import Disclaimer from '../Utils/Disclaimer'
 import { getMoviesByGenres } from '../../utils/mapping'
 import GenreList from '../GenreList/GenreList'
 import { IGenre } from '../UI/Genre/interfaces/IGenre'
+import Dico from '../../utils/dico'
 
 function MovieList({
   categoryLabel,
@@ -19,6 +21,11 @@ function MovieList({
 }: IMovieList) {
   const [isShowAll, setIsShowAll] = useState(false)
   const [selectedGenres, setSelectedGenres] = useState<IGenre[]>([])
+
+  const navigate = useNavigate()
+  const onClickHandle = (idMovie: number) => {
+    navigate(`/movies/detail/${idMovie}`)
+  }
 
   const {
     listDataFinal: movieListLoadMore,
@@ -65,9 +72,10 @@ function MovieList({
           <Title name={categoryLabel} position="left" size="big" />
           <Input
             type="text"
-            placeholder="search your movie"
+            placeholder={Dico.SECTION_MOVIES_LIST.SEARCH_INPUT.PLACE_HOLDER}
             onChange={(e) => onChange(e)}
-            labelName="search your movie"
+            labelName={Dico.SECTION_MOVIES_LIST.SEARCH_INPUT.LABEL}
+            value={searchValue}
           />
         </div>
         <div className="movies-section__header--sub">
@@ -93,10 +101,9 @@ function MovieList({
       <div className="movies-section__content">
         <div className="movies-section__moviesList movies-section__moviesList--others">
           {movieListToRender.length === 0 ? (
-            <Title
-              name="sorry, no movies to display :("
-              position="center"
-              size="small"
+            <Disclaimer
+              type="infos"
+              msg={Dico.DISCLAIMER.DETAILS.NO_MOVIE_TO_DISPLAY}
             />
           ) : (
             movieListToRender.map((movie) => (
@@ -109,6 +116,7 @@ function MovieList({
                 imgSrc={movie.imgSrc}
                 genre_ids={movie.genre_ids}
                 liked={movie.liked}
+                handleOnClick={(idMovie) => onClickHandle(idMovie)}
               />
             ))
           )}

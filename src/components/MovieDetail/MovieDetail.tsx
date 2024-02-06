@@ -69,10 +69,10 @@ function MovieDetail({
             alt={`img-${name}`}
           />
           {movieVideosError && (
-            <Title
-              name="sorry, error loading video..."
-              position="center"
-              size="small"
+            <Disclaimer
+              type="error"
+              msgGlobal="sorry"
+              msgDetail={Dico.DISCLAIMER.DETAILS.ERROR_LOADING_VIDEO}
             />
           )}
           {!movieVideosLoading && !movieVideosError && movieVideosData && (
@@ -121,15 +121,13 @@ function MovieDetail({
             {`${Dico.SECTION_DETAIL_MOVIE.PRODUCTION_COMPANIES_LABEL}:`}
           </span>
           <div className="detailmovie__actors">
-            {companies.map((company) => {
-              if (company.logo_path)
-                <Actor
-                  key={company.name}
-                  name={company.name}
-                  imgSrc={`${CONFIG_API.BASE_IMAGE_URL}/${company.logo_path}`}
-                />
-              return false
-            })}
+            {companies.map((company) => (
+              <Actor
+                key={company.name}
+                name={company.name}
+                imgSrc={`${CONFIG_API.BASE_IMAGE_URL}/${company.logo_path}`}
+              />
+            ))}
           </div>
 
           <span className="detailmovie__country">

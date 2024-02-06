@@ -26,7 +26,7 @@ function Pricing() {
                 />
               </div>
             </div>
-            <div className="pricing__body">
+            <div className="pricing__body" data-testid="pricing__body--SOLO">
               <span>{Dico.SECTION_PRICING.DETAILS.FORMULA_SOLO.SCREEN}</span>
               <span>{Dico.SECTION_PRICING.DETAILS.FORMULA_SOLO.DEVICE}</span>
               <span>{Dico.SECTION_PRICING.DETAILS.FORMULA_SOLO.DOWNLOAD}</span>
@@ -62,7 +62,7 @@ function Pricing() {
                 />
               </div>
             </div>
-            <div className="pricing__body">
+            <div className="pricing__body" data-testid="pricing__body--FAMILY">
               <span>{Dico.SECTION_PRICING.DETAILS.FORMULA_FAMILY.SCREEN}</span>
               <span>{Dico.SECTION_PRICING.DETAILS.FORMULA_FAMILY.DEVICE}</span>
               <span>
@@ -97,7 +97,7 @@ function Pricing() {
                 />
               </div>
             </div>
-            <div className="pricing__body">
+            <div className="pricing__body" data-testid="pricing__body--GROUP">
               <span>{Dico.SECTION_PRICING.DETAILS.FORMULA_GROUP.SCREEN}</span>
               <span>{Dico.SECTION_PRICING.DETAILS.FORMULA_GROUP.DEVICE}</span>
               <span>{Dico.SECTION_PRICING.DETAILS.FORMULA_GROUP.DOWNLOAD}</span>

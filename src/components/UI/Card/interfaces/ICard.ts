@@ -6,4 +6,5 @@ export interface ICard {
   imgSrc: string
   genre_ids: number[]
   liked?: boolean
+  handleOnClick: (idMovie: number) => void
 }

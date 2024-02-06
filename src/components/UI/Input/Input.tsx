@@ -2,7 +2,7 @@ import React from 'react'
 import { IInput } from './interfaces/IInput'
 import '../../../styles/_components/_input.scss'
 
-function Input({ type, placeholder, onChange, labelName }: IInput) {
+function Input({ type, placeholder, onChange, labelName, value }: IInput) {
   return (
     <div className="search">
       <input
@@ -12,6 +12,7 @@ function Input({ type, placeholder, onChange, labelName }: IInput) {
         type={type}
         placeholder={placeholder}
         onChange={onChange}
+        value={value}
       />
       <label className="search__label" htmlFor="search__input">
         {labelName}

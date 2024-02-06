@@ -4,5 +4,5 @@ export interface IMovieList {
   categoryLabel: string
   movieList: ICard[]
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
-  searchValue: string
+  searchValue?: string
 }

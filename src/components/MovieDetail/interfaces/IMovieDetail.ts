@@ -11,7 +11,8 @@ interface ICompany extends IName {
 
 interface ICountry extends IName {}
 
-export interface IMovieDetail extends Omit<ICard, 'genre_ids'> {
+export interface IMovieDetail
+  extends Omit<ICard, 'genre_ids' | 'handleOnClick'> {
   popularity: number
   genres: IGenre[]
   date: string

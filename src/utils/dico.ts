@@ -78,10 +78,18 @@ const Dico = {
     LOADING_MSG: 'loading...',
     ERROR_GLOBAL_MSG: 'sorry, something went wrong, please try later :(',
     NOT_FOUND_MSG: 'sorry, page not found :(',
+    DETAILS: {
+      NO_MOVIE_TO_DISPLAY: 'sorry, no movies to display :(',
+      ERROR_LOADING_VIDEO: 'sorry, error loading video...',
+    },
   },
 
   SECTION_MOVIES_LIST: {
     BUTTONLINK_LOADMORE: 'loadmore',
+    SEARCH_INPUT: {
+      LABEL: 'search your movie',
+      PLACE_HOLDER: 'search your movie',
+    },
     TRENDING: {
       TITLE_TRENDING: 'Trending',
     },
