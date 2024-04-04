@@ -1,6 +1,6 @@
-# Welcome to TANFLIX
+# Welcome to TANFLIX(consulter le site ici: [TANFLIX](https://tanflix-prod.netlify.app/))
 
-C'est une application web pour les personnes qui aiment les films/TV/Cinéma
+C'est une application web pour les personnes qui aiment les films/TV/Cinéma.
 
 ## Pour lancer le projet
 
